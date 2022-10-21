@@ -42,6 +42,7 @@
             this.button_BatDau.TabIndex = 0;
             this.button_BatDau.Text = "Bắt đầu";
             this.button_BatDau.UseVisualStyleBackColor = false;
+            this.button_BatDau.Click += new System.EventHandler(this.button_BatDau_Click);
             // 
             // button_Thoat
             // 

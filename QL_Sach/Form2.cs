@@ -14,7 +14,10 @@ namespace QL_Sach
     {
         public Form2()
         {
+            
             InitializeComponent();
         }
+
+        
     }
 }

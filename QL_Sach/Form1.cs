@@ -16,5 +16,13 @@ namespace QL_Sach
         {
             InitializeComponent();
         }
+
+        private void button_BatDau_Click(object sender, EventArgs e)
+        {
+            
+            Form2 f = new Form2();  
+            f.Show();
+            
+        }
     }
 }
