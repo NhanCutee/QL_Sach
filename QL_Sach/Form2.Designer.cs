@@ -49,7 +49,7 @@
             // 
             this.label_ID.AutoSize = true;
             this.label_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ID.Location = new System.Drawing.Point(8, 30);
+            this.label_ID.Location = new System.Drawing.Point(40, 41);
             this.label_ID.Name = "label_ID";
             this.label_ID.Size = new System.Drawing.Size(29, 18);
             this.label_ID.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(234, 32);
+            this.label2.Location = new System.Drawing.Point(349, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.label_TacGia.AutoSize = true;
             this.label_TacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TacGia.Location = new System.Drawing.Point(518, 32);
+            this.label_TacGia.Location = new System.Drawing.Point(755, 39);
             this.label_TacGia.Name = "label_TacGia";
             this.label_TacGia.Size = new System.Drawing.Size(73, 18);
             this.label_TacGia.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             this.label_Gia.AutoSize = true;
             this.label_Gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Gia.Location = new System.Drawing.Point(797, 33);
+            this.label_Gia.Location = new System.Drawing.Point(1092, 39);
             this.label_Gia.Name = "label_Gia";
             this.label_Gia.Size = new System.Drawing.Size(44, 18);
             this.label_Gia.TabIndex = 3;
@@ -87,28 +87,28 @@
             // 
             // textBox_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(43, 28);
+            this.textBox_ID.Location = new System.Drawing.Point(75, 37);
             this.textBox_ID.Name = "textBox_ID";
             this.textBox_ID.Size = new System.Drawing.Size(185, 22);
             this.textBox_ID.TabIndex = 4;
             // 
             // textBox_TenSach
             // 
-            this.textBox_TenSach.Location = new System.Drawing.Point(322, 28);
+            this.textBox_TenSach.Location = new System.Drawing.Point(437, 36);
             this.textBox_TenSach.Name = "textBox_TenSach";
             this.textBox_TenSach.Size = new System.Drawing.Size(185, 22);
             this.textBox_TenSach.TabIndex = 5;
             // 
             // textBox_TacGia
             // 
-            this.textBox_TacGia.Location = new System.Drawing.Point(597, 29);
+            this.textBox_TacGia.Location = new System.Drawing.Point(834, 36);
             this.textBox_TacGia.Name = "textBox_TacGia";
             this.textBox_TacGia.Size = new System.Drawing.Size(185, 22);
             this.textBox_TacGia.TabIndex = 6;
             // 
             // textBox_Gia
             // 
-            this.textBox_Gia.Location = new System.Drawing.Point(847, 28);
+            this.textBox_Gia.Location = new System.Drawing.Point(1142, 38);
             this.textBox_Gia.Name = "textBox_Gia";
             this.textBox_Gia.Size = new System.Drawing.Size(185, 22);
             this.textBox_Gia.TabIndex = 7;
