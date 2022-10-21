@@ -41,6 +41,7 @@
             this.button_Sửa = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Thoát = new System.Windows.Forms.Button();
+            this.button_LamMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,18 +160,30 @@
             // 
             this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(865, 661);
+            this.button_Thoát.Location = new System.Drawing.Point(1165, 661);
             this.button_Thoát.Name = "button_Thoát";
             this.button_Thoát.Size = new System.Drawing.Size(119, 48);
             this.button_Thoát.TabIndex = 12;
             this.button_Thoát.Text = "Thoát";
             this.button_Thoát.UseVisualStyleBackColor = false;
             // 
+            // button_LamMoi
+            // 
+            this.button_LamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LamMoi.Location = new System.Drawing.Point(883, 661);
+            this.button_LamMoi.Name = "button_LamMoi";
+            this.button_LamMoi.Size = new System.Drawing.Size(119, 48);
+            this.button_LamMoi.TabIndex = 13;
+            this.button_LamMoi.Text = "Làm mới";
+            this.button_LamMoi.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 750);
+            this.Controls.Add(this.button_LamMoi);
             this.Controls.Add(this.button_Thoát);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sửa);
@@ -186,7 +199,6 @@
             this.Controls.Add(this.label_ID);
             this.Name = "Form2";
             this.Text = "Form2";
-            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,5 +220,6 @@
         private System.Windows.Forms.Button button_Sửa;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Thoát;
+        private System.Windows.Forms.Button button_LamMoi;
     }
 }
