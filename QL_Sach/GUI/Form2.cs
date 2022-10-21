@@ -34,7 +34,7 @@ namespace QL_Sach
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            
+            //john cena 
         }
     }
 }
