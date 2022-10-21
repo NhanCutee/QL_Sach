@@ -16,6 +16,7 @@ namespace QL_Sach.DTO
         private string nhaXuatBan;
         private DateTime? ngayXuatBan;
         private string ghiChu;
+        private int gia;
 
         public SachDTO()
         {
@@ -26,8 +27,9 @@ namespace QL_Sach.DTO
             this.nhaXuatBan = "N/A";
             this.ngayXuatBan = null;
             this.ghiChu = "N/A";
+            this.gia = 0;
         }
-        public SachDTO(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu)
+        public SachDTO(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
         {
             this.maSach = enter_maSach;
             this.tenSach = enter_tenSach;
@@ -36,6 +38,7 @@ namespace QL_Sach.DTO
             this.nhaXuatBan = enter_nhaXuatBan;
             this.ngayXuatBan = enter_ngayXuatBan;
             this.ghiChu = enter_ghiChu;
+            this.gia=enter_gia;
         }
 
         public string MaSach { get => maSach; set => maSach = value; }
@@ -45,5 +48,6 @@ namespace QL_Sach.DTO
         public string NhaXuatBan { get => nhaXuatBan; set => nhaXuatBan = value; }
         public DateTime? NgayXuatBan { get => ngayXuatBan; set => ngayXuatBan = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public int Gia { get => gia; set => gia = value; }
     }
 }

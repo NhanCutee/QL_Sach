@@ -36,13 +36,17 @@
             this.textBox_TenSach = new System.Windows.Forms.TextBox();
             this.textBox_TacGia = new System.Windows.Forms.TextBox();
             this.textBox_Gia = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button_Them = new System.Windows.Forms.Button();
             this.button_Sửa = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Thoát = new System.Windows.Forms.Button();
             this.button_LamMoi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label_ID
@@ -113,15 +117,20 @@
             this.textBox_Gia.Size = new System.Drawing.Size(185, 22);
             this.textBox_Gia.TabIndex = 7;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1346, 565);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenSach,
+            this.TacGia,
+            this.Gia});
+            this.dataGridView.Location = new System.Drawing.Point(12, 71);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(1346, 565);
+            this.dataGridView.TabIndex = 8;
             // 
             // button_Them
             // 
@@ -133,6 +142,7 @@
             this.button_Them.TabIndex = 9;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = false;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
             // 
             // button_Sửa
             // 
@@ -178,6 +188,38 @@
             this.button_LamMoi.Text = "Làm mới";
             this.button_LamMoi.UseVisualStyleBackColor = false;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaSach";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên sách";
+            this.TenSach.MinimumWidth = 6;
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 125;
+            // 
+            // TacGia
+            // 
+            this.TacGia.DataPropertyName = "TenTacGia";
+            this.TacGia.HeaderText = "Tác giả";
+            this.TacGia.MinimumWidth = 6;
+            this.TacGia.Name = "TacGia";
+            this.TacGia.Width = 125;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            this.Gia.Width = 125;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,7 +230,7 @@
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sửa);
             this.Controls.Add(this.button_Them);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textBox_Gia);
             this.Controls.Add(this.textBox_TacGia);
             this.Controls.Add(this.textBox_TenSach);
@@ -199,7 +241,8 @@
             this.Controls.Add(this.label_ID);
             this.Name = "Form2";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,11 +258,15 @@
         private System.Windows.Forms.TextBox textBox_TenSach;
         private System.Windows.Forms.TextBox textBox_TacGia;
         private System.Windows.Forms.TextBox textBox_Gia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button button_Them;
         private System.Windows.Forms.Button button_Sửa;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Thoát;
         private System.Windows.Forms.Button button_LamMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TacGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }
