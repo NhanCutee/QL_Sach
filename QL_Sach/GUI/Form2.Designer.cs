@@ -37,15 +37,16 @@
             this.textBox_TacGia = new System.Windows.Forms.TextBox();
             this.textBox_Gia = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Them = new System.Windows.Forms.Button();
             this.button_Sửa = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Thoát = new System.Windows.Forms.Button();
             this.button_LamMoi = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_test = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,10 @@
             // 
             this.label_ID.AutoSize = true;
             this.label_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ID.Location = new System.Drawing.Point(8, 30);
+            this.label_ID.Location = new System.Drawing.Point(6, 24);
+            this.label_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ID.Name = "label_ID";
-            this.label_ID.Size = new System.Drawing.Size(29, 18);
+            this.label_ID.Size = new System.Drawing.Size(25, 15);
             this.label_ID.TabIndex = 0;
             this.label_ID.Text = "ID:";
             // 
@@ -63,9 +65,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(234, 32);
+            this.label2.Location = new System.Drawing.Point(176, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 18);
+            this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên sách:";
             // 
@@ -73,9 +76,10 @@
             // 
             this.label_TacGia.AutoSize = true;
             this.label_TacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TacGia.Location = new System.Drawing.Point(518, 32);
+            this.label_TacGia.Location = new System.Drawing.Point(388, 26);
+            this.label_TacGia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_TacGia.Name = "label_TacGia";
-            this.label_TacGia.Size = new System.Drawing.Size(73, 18);
+            this.label_TacGia.Size = new System.Drawing.Size(62, 15);
             this.label_TacGia.TabIndex = 2;
             this.label_TacGia.Text = "Tác giả: ";
             // 
@@ -83,38 +87,43 @@
             // 
             this.label_Gia.AutoSize = true;
             this.label_Gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Gia.Location = new System.Drawing.Point(797, 33);
+            this.label_Gia.Location = new System.Drawing.Point(598, 27);
+            this.label_Gia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Gia.Name = "label_Gia";
-            this.label_Gia.Size = new System.Drawing.Size(44, 18);
+            this.label_Gia.Size = new System.Drawing.Size(37, 15);
             this.label_Gia.TabIndex = 3;
             this.label_Gia.Text = "Giá: ";
             // 
             // textBox_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(43, 28);
+            this.textBox_ID.Location = new System.Drawing.Point(32, 23);
+            this.textBox_ID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_ID.Name = "textBox_ID";
-            this.textBox_ID.Size = new System.Drawing.Size(185, 22);
+            this.textBox_ID.Size = new System.Drawing.Size(140, 20);
             this.textBox_ID.TabIndex = 4;
             // 
             // textBox_TenSach
             // 
-            this.textBox_TenSach.Location = new System.Drawing.Point(322, 28);
+            this.textBox_TenSach.Location = new System.Drawing.Point(242, 23);
+            this.textBox_TenSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_TenSach.Name = "textBox_TenSach";
-            this.textBox_TenSach.Size = new System.Drawing.Size(185, 22);
+            this.textBox_TenSach.Size = new System.Drawing.Size(140, 20);
             this.textBox_TenSach.TabIndex = 5;
             // 
             // textBox_TacGia
             // 
-            this.textBox_TacGia.Location = new System.Drawing.Point(597, 29);
+            this.textBox_TacGia.Location = new System.Drawing.Point(448, 24);
+            this.textBox_TacGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_TacGia.Name = "textBox_TacGia";
-            this.textBox_TacGia.Size = new System.Drawing.Size(185, 22);
+            this.textBox_TacGia.Size = new System.Drawing.Size(140, 20);
             this.textBox_TacGia.TabIndex = 6;
             // 
             // textBox_Gia
             // 
-            this.textBox_Gia.Location = new System.Drawing.Point(847, 28);
+            this.textBox_Gia.Location = new System.Drawing.Point(635, 23);
+            this.textBox_Gia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_Gia.Name = "textBox_Gia";
-            this.textBox_Gia.Size = new System.Drawing.Size(185, 22);
+            this.textBox_Gia.Size = new System.Drawing.Size(140, 20);
             this.textBox_Gia.TabIndex = 7;
             // 
             // dataGridView
@@ -125,68 +134,13 @@
             this.TenSach,
             this.TacGia,
             this.Gia});
-            this.dataGridView.Location = new System.Drawing.Point(12, 71);
+            this.dataGridView.Location = new System.Drawing.Point(9, 58);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1346, 565);
+            this.dataGridView.Size = new System.Drawing.Size(1010, 459);
             this.dataGridView.TabIndex = 8;
-            // 
-            // button_Them
-            // 
-            this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(43, 661);
-            this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(119, 48);
-            this.button_Them.TabIndex = 9;
-            this.button_Them.Text = "Thêm";
-            this.button_Them.UseVisualStyleBackColor = false;
-            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
-            // 
-            // button_Sửa
-            // 
-            this.button_Sửa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_Sửa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Sửa.Location = new System.Drawing.Point(312, 661);
-            this.button_Sửa.Name = "button_Sửa";
-            this.button_Sửa.Size = new System.Drawing.Size(119, 48);
-            this.button_Sửa.TabIndex = 10;
-            this.button_Sửa.Text = "Sửa";
-            this.button_Sửa.UseVisualStyleBackColor = false;
-            // 
-            // button_Xoa
-            // 
-            this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(597, 661);
-            this.button_Xoa.Name = "button_Xoa";
-            this.button_Xoa.Size = new System.Drawing.Size(119, 48);
-            this.button_Xoa.TabIndex = 11;
-            this.button_Xoa.Text = "Xóa";
-            this.button_Xoa.UseVisualStyleBackColor = false;
-            // 
-            // button_Thoát
-            // 
-            this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(1165, 661);
-            this.button_Thoát.Name = "button_Thoát";
-            this.button_Thoát.Size = new System.Drawing.Size(119, 48);
-            this.button_Thoát.TabIndex = 12;
-            this.button_Thoát.Text = "Thoát";
-            this.button_Thoát.UseVisualStyleBackColor = false;
-            // 
-            // button_LamMoi
-            // 
-            this.button_LamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LamMoi.Location = new System.Drawing.Point(883, 661);
-            this.button_LamMoi.Name = "button_LamMoi";
-            this.button_LamMoi.Size = new System.Drawing.Size(119, 48);
-            this.button_LamMoi.TabIndex = 13;
-            this.button_LamMoi.Text = "Làm mới";
-            this.button_LamMoi.UseVisualStyleBackColor = false;
             // 
             // ID
             // 
@@ -220,11 +174,83 @@
             this.Gia.Name = "Gia";
             this.Gia.Width = 125;
             // 
+            // button_Them
+            // 
+            this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Them.Location = new System.Drawing.Point(32, 537);
+            this.button_Them.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Them.Name = "button_Them";
+            this.button_Them.Size = new System.Drawing.Size(89, 39);
+            this.button_Them.TabIndex = 9;
+            this.button_Them.Text = "Thêm";
+            this.button_Them.UseVisualStyleBackColor = false;
+            this.button_Them.Click += new System.EventHandler(this.button_Them_Click);
+            // 
+            // button_Sửa
+            // 
+            this.button_Sửa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Sửa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Sửa.Location = new System.Drawing.Point(234, 537);
+            this.button_Sửa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Sửa.Name = "button_Sửa";
+            this.button_Sửa.Size = new System.Drawing.Size(89, 39);
+            this.button_Sửa.TabIndex = 10;
+            this.button_Sửa.Text = "Sửa";
+            this.button_Sửa.UseVisualStyleBackColor = false;
+            // 
+            // button_Xoa
+            // 
+            this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Xoa.Location = new System.Drawing.Point(448, 537);
+            this.button_Xoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Xoa.Name = "button_Xoa";
+            this.button_Xoa.Size = new System.Drawing.Size(89, 39);
+            this.button_Xoa.TabIndex = 11;
+            this.button_Xoa.Text = "Xóa";
+            this.button_Xoa.UseVisualStyleBackColor = false;
+            this.button_Xoa.Click += new System.EventHandler(this.button_Xoa_Click);
+            // 
+            // button_Thoát
+            // 
+            this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Thoát.Location = new System.Drawing.Point(874, 537);
+            this.button_Thoát.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Thoát.Name = "button_Thoát";
+            this.button_Thoát.Size = new System.Drawing.Size(89, 39);
+            this.button_Thoát.TabIndex = 12;
+            this.button_Thoát.Text = "Thoát";
+            this.button_Thoát.UseVisualStyleBackColor = false;
+            // 
+            // button_LamMoi
+            // 
+            this.button_LamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LamMoi.Location = new System.Drawing.Point(662, 537);
+            this.button_LamMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LamMoi.Name = "button_LamMoi";
+            this.button_LamMoi.Size = new System.Drawing.Size(89, 39);
+            this.button_LamMoi.TabIndex = 13;
+            this.button_LamMoi.Text = "Làm mới";
+            this.button_LamMoi.UseVisualStyleBackColor = false;
+            // 
+            // label_test
+            // 
+            this.label_test.AutoSize = true;
+            this.label_test.Location = new System.Drawing.Point(814, 27);
+            this.label_test.Name = "label_test";
+            this.label_test.Size = new System.Drawing.Size(35, 13);
+            this.label_test.TabIndex = 14;
+            this.label_test.Text = "label1";
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 750);
+            this.ClientSize = new System.Drawing.Size(1070, 609);
+            this.Controls.Add(this.label_test);
             this.Controls.Add(this.button_LamMoi);
             this.Controls.Add(this.button_Thoát);
             this.Controls.Add(this.button_Xoa);
@@ -239,6 +265,7 @@
             this.Controls.Add(this.label_TacGia);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_ID);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -268,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TacGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.Label label_test;
     }
 }

@@ -14,7 +14,7 @@ namespace QL_Sach
 {
     public partial class Form2 : Form
     {
-        List<SachBUS> sachList;
+        SachBUS sachBUS;
         public Form2()
         {
             
@@ -23,18 +23,27 @@ namespace QL_Sach
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            sachList = new List<SachBUS>();
+            sachBUS = new SachBUS();
+            sachBUS.themSach();
             LoadSach();
 
         }
         private void LoadSach()
         {
-            dataGridView.DataSource = sachList.ToList();
+            dataGridView.DataSource = sachBUS.SachList.ToList();
         }
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            //john cena 
+            sachBUS.themSach();
+            LoadSach();
+        }
+
+        private void button_Xoa_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView.CurrentCell.RowIndex;
+            sachBUS.xoaSach(index);
+            LoadSach();
         }
     }
 }

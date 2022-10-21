@@ -12,14 +12,22 @@ namespace QL_Sach.BUS
     {
         private List<SachDTO> sachList;
 
+        internal List<SachDTO> SachList { get => sachList; set => sachList = value; }
+
         public SachBUS()
         {
             this.sachList = new List<SachDTO>();
         }
 
-        public void themSach(SachDTO sach)
+        public void themSach()
         {
+            SachDTO sach = new SachDTO();
             this.sachList.Add(sach);
+        }
+        public void xoaSach(int index)
+        {
+            sachList.Remove(sachList[index]);
+
         }
 
         public int soLuongSach()
