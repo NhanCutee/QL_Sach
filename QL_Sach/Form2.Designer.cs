@@ -119,14 +119,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1021, 433);
+            this.dataGridView1.Size = new System.Drawing.Size(1346, 565);
             this.dataGridView1.TabIndex = 8;
             // 
             // button_Them
             // 
             this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(1087, 32);
+            this.button_Them.Location = new System.Drawing.Point(43, 661);
             this.button_Them.Name = "button_Them";
             this.button_Them.Size = new System.Drawing.Size(119, 48);
             this.button_Them.TabIndex = 9;
@@ -137,7 +137,7 @@
             // 
             this.button_Sửa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Sửa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Sửa.Location = new System.Drawing.Point(1228, 32);
+            this.button_Sửa.Location = new System.Drawing.Point(312, 661);
             this.button_Sửa.Name = "button_Sửa";
             this.button_Sửa.Size = new System.Drawing.Size(119, 48);
             this.button_Sửa.TabIndex = 10;
@@ -148,7 +148,7 @@
             // 
             this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(1087, 110);
+            this.button_Xoa.Location = new System.Drawing.Point(597, 661);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(119, 48);
             this.button_Xoa.TabIndex = 11;
@@ -159,7 +159,7 @@
             // 
             this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(1228, 110);
+            this.button_Thoát.Location = new System.Drawing.Point(865, 661);
             this.button_Thoát.Name = "button_Thoát";
             this.button_Thoát.Size = new System.Drawing.Size(119, 48);
             this.button_Thoát.TabIndex = 12;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 527);
+            this.ClientSize = new System.Drawing.Size(1426, 750);
             this.Controls.Add(this.button_Thoát);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_Sửa);
