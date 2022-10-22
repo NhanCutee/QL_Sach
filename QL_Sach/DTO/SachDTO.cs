@@ -8,7 +8,7 @@ namespace QL_Sach.DTO
 {
     class SachDTO
     {
-        //Thong tin do an
+        //Thong tin Sach
         private string maSach;
         private string tenSach;
         private string theLoai;

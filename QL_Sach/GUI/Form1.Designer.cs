@@ -1,4 +1,4 @@
-﻿namespace QL_Sach
+﻿namespace QL_Sach.GUI
 {
     partial class Form1
     {

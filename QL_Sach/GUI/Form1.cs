@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QL_Sach
+namespace QL_Sach.GUI
 {
     public partial class Form1 : Form
     {

@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace QL_Sach
+namespace QL_Sach.GUI
 {
     public partial class Form2 : Form
     {
+        Form3 f;
         SachBUS sachBUS;
         public Form2()
         {
@@ -24,7 +25,6 @@ namespace QL_Sach
         private void Form2_Load(object sender, EventArgs e)
         {
             sachBUS = new SachBUS();
-            sachBUS.themSach();
             LoadSach();
 
         }
@@ -35,11 +35,14 @@ namespace QL_Sach
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            
-            List<SachBUS> list = new List<SachBUS>();
-            dataGridView.DataSource = list;
-            
-            sachBUS.themSach();
+            string fTitle = "Nhập thông tin quyển sách";
+            f = new Form3(fTitle);
+            f.ShowDialog();
+            if(f.UserPress==true)
+            {
+                sachBUS.themSach(f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
+            }    
+
             LoadSach();
         }
 
@@ -50,6 +53,10 @@ namespace QL_Sach
             LoadSach();
         }
 
-       
+        private void button_ChinhSua_Click(object sender, EventArgs e)
+        {
+            string fTitle = "Sửa thông tin quyển sách";
+            f = new Form3(fTitle);
+        }
     }
 }
