@@ -53,12 +53,20 @@ namespace QL_Sach.GUI
             this.iTitle =title;
 
         }
-        public Form3(string title,bool shit)
+        public Form3(string title, DataGridViewRow currentRow)
         {
-            //phuong thuc khoi tao form chinh sua
             InitializeComponent();
+            //phuong thuc khoi tao form chinh sua
             this.iTitle = title;
-
+            textbox_MaSach.Text = currentRow.Cells[0].Value.ToString();
+            textBox_TenSach.Text = currentRow.Cells[1].Value.ToString();
+            comboBox_TheLoai.Text = currentRow.Cells[2].Value.ToString();
+            textBox_TacGia.Text = currentRow.Cells[3].Value.ToString();
+            
+            comboBox_NhaXuatBan.Text = currentRow.Cells[4].Value.ToString();
+            dateTimePicker_NgayXuatBan.Value = (DateTime)currentRow.Cells[5].Value;
+            textBox_GhiChu.Text = currentRow.Cells[6].Value.ToString();
+            textBox_Gia.Text = currentRow.Cells[7].Value.ToString();
         }
 
         private void Form3_Load(object sender, EventArgs e)

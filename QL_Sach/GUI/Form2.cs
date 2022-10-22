@@ -56,7 +56,17 @@ namespace QL_Sach.GUI
         private void button_ChinhSua_Click(object sender, EventArgs e)
         {
             string fTitle = "Sửa thông tin quyển sách";
-            f = new Form3(fTitle);
+           
+            DataGridViewRow currentRow = dataGridView.SelectedRows[0];
+
+            f = new Form3(fTitle,currentRow);
+            f.ShowDialog();
+
+            //Dang lam chinh sua, them code sua sach o day
+           // MessageBox.Show(currentRow.Cells[5].Value.ToString());
+             
+
+
         }
     }
 }
