@@ -35,6 +35,10 @@ namespace QL_Sach
 
         private void button_Them_Click(object sender, EventArgs e)
         {
+            
+            List<SachBUS> list = new List<SachBUS>();
+            dataGridView.DataSource = list;
+            
             sachBUS.themSach();
             LoadSach();
         }
@@ -45,5 +49,7 @@ namespace QL_Sach
             sachBUS.xoaSach(index);
             LoadSach();
         }
+
+       
     }
 }
