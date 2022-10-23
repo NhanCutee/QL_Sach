@@ -65,5 +65,9 @@ namespace QL_Sach.BUS
         {
             return sachList[n];
         }
+        public void reset()
+        {
+            SachList.Clear();
+        }
     }
 }

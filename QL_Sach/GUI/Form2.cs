@@ -107,7 +107,12 @@ namespace QL_Sach.GUI
 
         private void button_LamMoi_Click(object sender, EventArgs e)
         {
+
+            sachBUS.reset();
             LoadSach();
+            
+                
+        
         }
     }
 }
