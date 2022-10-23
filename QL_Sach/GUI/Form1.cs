@@ -15,6 +15,7 @@ namespace QL_Sach.GUI
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Đăng nhập";
         }
 
         private void button_BatDau_Click(object sender, EventArgs e)

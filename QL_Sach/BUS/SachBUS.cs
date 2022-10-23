@@ -39,6 +39,18 @@ namespace QL_Sach.BUS
 
             this.sachList.Add(sach);
         }
+
+        public void suaSach(int index, string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
+        {
+            sachList[index].MaSach = enter_maSach;
+            sachList[index].TenSach = enter_tenSach;
+            sachList[index].TheLoai = enter_theLoai;
+            sachList[index].TenTacGia = enter_tenTacGia;
+            sachList[index].NhaXuatBan = enter_nhaXuatBan;
+            sachList[index].NgayXuatBan = enter_ngayXuatBan;
+            sachList[index].GhiChu = enter_ghiChu;
+            sachList[index].Gia = enter_gia;
+        }
         public void xoaSach(int index)
         {
             sachList.Remove(sachList[index]);

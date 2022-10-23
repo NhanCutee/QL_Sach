@@ -26,8 +26,8 @@ namespace QL_Sach.GUI
         private string tenTacGia;
         private string nhaXuatBan;
         private DateTime? ngayXuatBan;
-        private string ghiChu;
-        private int gia;
+        private string ghiChu="";
+        private int gia=0;
 
         public string MaSach { get => maSach; set => maSach = value; }
         public string TenSach { get => tenSach; set => tenSach = value; }
@@ -51,6 +51,7 @@ namespace QL_Sach.GUI
             //phuong thuc khoi tao form nhap
             InitializeComponent();
             this.iTitle =title;
+            this.Text = iTitle;
 
         }
         public Form3(string title, DataGridViewRow currentRow)
@@ -81,12 +82,49 @@ namespace QL_Sach.GUI
         private void button_Nhap_Click(object sender, EventArgs e)
         {
             bool nhapDung = true;
-            //viet them dieu kien nhap
+            //viet them dieu kien nhap, them so phan tu toi da duoc nhap, viet hoa ki tu, chuan hoa chuoi, .................
+            if (!textbox_MaSach.Text.All(Char.IsLetterOrDigit))
+            {
+                nhapDung = false;
+                MessageBox.Show("Nhập sai mã sách, kí tự hợp lệ: a-z, A-Z, 0-9");
+                return;
+            }
+            if (textBox_TenSach.Text.Any(Char.IsSymbol))
+            {
+                nhapDung = false;
+                MessageBox.Show("Nhập sai tên sách, kí tự hợp lệ: a-z, A-Z");
+                return;
+            }
+            if (!comboBox_TheLoai.Text.All(Char.IsLetterOrDigit)) // sửa lại thành any
+            {
+                nhapDung = false;
+                MessageBox.Show("Sai thể loại, kí tự hợp lệ: a-z, A-Z, 0-9, khoảng trắng");
+                return;
+            }
+            if (textBox_TacGia.Text.Any(Char.IsDigit) || textBox_TacGia.Text.Any(Char.IsSymbol))// check khoảng trắng, isymbol là sai
+            {
+                nhapDung = false;
+                MessageBox.Show("Nhập sai tên tác giả, kí tự hợp lệ: a-z, A-Z, khoảng trắng");
+                return;
+            }
+            if (comboBox_NhaXuatBan.Text.Any(Char.IsDigit) )
+            {
+                nhapDung = false;
+                MessageBox.Show("Sai nhà xuất bản, kí tự hợp lệ: a-z, A-Z, 0-9, khoảng trắng");
+                return;
+            }
+            //check ngay xuatban sau
+            if (!textBox_Gia.Text.All(Char.IsDigit))
+            {
+                nhapDung = false;
+                MessageBox.Show("Nhập sai giá tiền, kí tự hợp lệ: 0-9");
+                return;
+            }
 
             if (nhapDung)
             {
                 userPress = true;
-                maSach = textbox_MaSach.Text;
+                maSach = textbox_MaSach.Text.ToUpper();
                 tenSach = textBox_TenSach.Text;
                 theLoai = comboBox_TheLoai.Text;
                 tenTacGia = textBox_TacGia.Text;
@@ -96,7 +134,7 @@ namespace QL_Sach.GUI
                 gia = Convert.ToInt32(textBox_Gia.Text);
                 this.Close();
             }
-            
+
         }
         private void button_NhapLai_Click(object sender, EventArgs e)
         {
@@ -107,7 +145,7 @@ namespace QL_Sach.GUI
             comboBox_NhaXuatBan.Text = "";
             dateTimePicker_NgayXuatBan.Value = dateTimePicker_NgayXuatBan.MinDate;
             textBox_GhiChu.Text = "";
-            textBox_Gia.Text = "";
+            textBox_Gia.Text = "0";
 
             textbox_MaSach.Select();
         }

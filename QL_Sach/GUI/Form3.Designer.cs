@@ -57,23 +57,25 @@ namespace QL_Sach.GUI
             this.label_MaSach.Location = new System.Drawing.Point(52, 75);
             this.label_MaSach.Name = "label_MaSach";
             this.label_MaSach.Size = new System.Drawing.Size(48, 13);
-            this.label_MaSach.TabIndex = 0;
+            this.label_MaSach.TabIndex = 999;
             this.label_MaSach.Text = "Mã sách";
             // 
             // textbox_MaSach
             // 
             this.textbox_MaSach.Location = new System.Drawing.Point(137, 68);
+            this.textbox_MaSach.MaxLength = 10;
             this.textbox_MaSach.Name = "textbox_MaSach";
             this.textbox_MaSach.Size = new System.Drawing.Size(305, 20);
-            this.textbox_MaSach.TabIndex = 1;
+            this.textbox_MaSach.TabIndex = 0;
             this.textbox_MaSach.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox_TenSach
             // 
             this.textBox_TenSach.Location = new System.Drawing.Point(137, 106);
+            this.textBox_TenSach.MaxLength = 100;
             this.textBox_TenSach.Name = "textBox_TenSach";
             this.textBox_TenSach.Size = new System.Drawing.Size(305, 20);
-            this.textBox_TenSach.TabIndex = 3;
+            this.textBox_TenSach.TabIndex = 1;
             // 
             // label_TenSach
             // 
@@ -81,7 +83,7 @@ namespace QL_Sach.GUI
             this.label_TenSach.Location = new System.Drawing.Point(52, 113);
             this.label_TenSach.Name = "label_TenSach";
             this.label_TenSach.Size = new System.Drawing.Size(54, 13);
-            this.label_TenSach.TabIndex = 2;
+            this.label_TenSach.TabIndex = 999;
             this.label_TenSach.Text = "Tên Sách";
             // 
             // comboBox_TheLoai
@@ -90,7 +92,7 @@ namespace QL_Sach.GUI
             this.comboBox_TheLoai.Location = new System.Drawing.Point(137, 194);
             this.comboBox_TheLoai.Name = "comboBox_TheLoai";
             this.comboBox_TheLoai.Size = new System.Drawing.Size(305, 21);
-            this.comboBox_TheLoai.TabIndex = 6;
+            this.comboBox_TheLoai.TabIndex = 3;
             // 
             // label3
             // 
@@ -98,7 +100,7 @@ namespace QL_Sach.GUI
             this.label3.Location = new System.Drawing.Point(52, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 999;
             this.label3.Text = "Thể loại";
             // 
             // label2
@@ -107,7 +109,7 @@ namespace QL_Sach.GUI
             this.label2.Location = new System.Drawing.Point(52, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 999;
             this.label2.Text = "Nhà xuất bản";
             // 
             // comboBox_NhaXuatBan
@@ -116,7 +118,7 @@ namespace QL_Sach.GUI
             this.comboBox_NhaXuatBan.Location = new System.Drawing.Point(137, 235);
             this.comboBox_NhaXuatBan.Name = "comboBox_NhaXuatBan";
             this.comboBox_NhaXuatBan.Size = new System.Drawing.Size(305, 21);
-            this.comboBox_NhaXuatBan.TabIndex = 8;
+            this.comboBox_NhaXuatBan.TabIndex = 4;
             // 
             // label4
             // 
@@ -124,15 +126,18 @@ namespace QL_Sach.GUI
             this.label4.Location = new System.Drawing.Point(52, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 999;
             this.label4.Text = "Tác Giả";
             // 
             // dateTimePicker_NgayXuatBan
             // 
             this.dateTimePicker_NgayXuatBan.Location = new System.Drawing.Point(137, 279);
+            this.dateTimePicker_NgayXuatBan.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_NgayXuatBan.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_NgayXuatBan.Name = "dateTimePicker_NgayXuatBan";
             this.dateTimePicker_NgayXuatBan.Size = new System.Drawing.Size(305, 20);
-            this.dateTimePicker_NgayXuatBan.TabIndex = 12;
+            this.dateTimePicker_NgayXuatBan.TabIndex = 5;
+            this.dateTimePicker_NgayXuatBan.Value = new System.DateTime(2022, 10, 23, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -140,7 +145,7 @@ namespace QL_Sach.GUI
             this.label5.Location = new System.Drawing.Point(52, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 13;
+            this.label5.TabIndex = 999;
             this.label5.Text = "Ngày xuất bản";
             // 
             // textBox_GhiChu
@@ -149,7 +154,7 @@ namespace QL_Sach.GUI
             this.textBox_GhiChu.Multiline = true;
             this.textBox_GhiChu.Name = "textBox_GhiChu";
             this.textBox_GhiChu.Size = new System.Drawing.Size(305, 67);
-            this.textBox_GhiChu.TabIndex = 15;
+            this.textBox_GhiChu.TabIndex =7;
             // 
             // label6
             // 
@@ -157,15 +162,16 @@ namespace QL_Sach.GUI
             this.label6.Location = new System.Drawing.Point(52, 365);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 14;
+            this.label6.TabIndex = 999;
             this.label6.Text = "Ghi chú ";
             // 
             // textBox_Gia
             // 
             this.textBox_Gia.Location = new System.Drawing.Point(137, 316);
+            this.textBox_Gia.MaxLength = 9;
             this.textBox_Gia.Name = "textBox_Gia";
             this.textBox_Gia.Size = new System.Drawing.Size(151, 20);
-            this.textBox_Gia.TabIndex = 17;
+            this.textBox_Gia.TabIndex = 6;
             // 
             // label7
             // 
@@ -173,23 +179,25 @@ namespace QL_Sach.GUI
             this.label7.Location = new System.Drawing.Point(52, 323);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
-            this.label7.TabIndex = 16;
+            this.label7.TabIndex =999;
             this.label7.Text = "Giá";
             // 
             // textBox_TacGia
             // 
             this.textBox_TacGia.Location = new System.Drawing.Point(137, 151);
+            this.textBox_TacGia.MaxLength = 100;
             this.textBox_TacGia.Name = "textBox_TacGia";
             this.textBox_TacGia.Size = new System.Drawing.Size(305, 20);
-            this.textBox_TacGia.TabIndex = 18;
+            this.textBox_TacGia.TabIndex = 2;
             // 
             // label_Title
             // 
             this.label_Title.AutoSize = true;
-            this.label_Title.Location = new System.Drawing.Point(189, 26);
+            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(133, 22);
             this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(137, 13);
-            this.label_Title.TabIndex = 19;
+            this.label_Title.Size = new System.Drawing.Size(226, 20);
+            this.label_Title.TabIndex = 999;
             this.label_Title.Text = "Nhập thông tin quyển Sách";
             // 
             // button_Nhap
@@ -197,7 +205,7 @@ namespace QL_Sach.GUI
             this.button_Nhap.Location = new System.Drawing.Point(100, 468);
             this.button_Nhap.Name = "button_Nhap";
             this.button_Nhap.Size = new System.Drawing.Size(75, 23);
-            this.button_Nhap.TabIndex = 20;
+            this.button_Nhap.TabIndex = 8;
             this.button_Nhap.Text = "Nhập";
             this.button_Nhap.UseVisualStyleBackColor = true;
             this.button_Nhap.Click += new System.EventHandler(this.button_Nhap_Click);
@@ -207,7 +215,7 @@ namespace QL_Sach.GUI
             this.button_NhapLai.Location = new System.Drawing.Point(210, 468);
             this.button_NhapLai.Name = "button_NhapLai";
             this.button_NhapLai.Size = new System.Drawing.Size(75, 23);
-            this.button_NhapLai.TabIndex = 21;
+            this.button_NhapLai.TabIndex = 9;
             this.button_NhapLai.Text = "Nhập lại";
             this.button_NhapLai.UseVisualStyleBackColor = true;
             this.button_NhapLai.Click += new System.EventHandler(this.button_NhapLai_Click);
@@ -217,7 +225,7 @@ namespace QL_Sach.GUI
             this.button_Huy.Location = new System.Drawing.Point(316, 468);
             this.button_Huy.Name = "button_Huy";
             this.button_Huy.Size = new System.Drawing.Size(75, 23);
-            this.button_Huy.TabIndex = 22;
+            this.button_Huy.TabIndex = 10;
             this.button_Huy.Text = "Hủy";
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
@@ -247,6 +255,7 @@ namespace QL_Sach.GUI
             this.Controls.Add(this.label_TenSach);
             this.Controls.Add(this.textbox_MaSach);
             this.Controls.Add(this.label_MaSach);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);

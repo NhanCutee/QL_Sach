@@ -179,6 +179,7 @@
             this.button_Thoát.TabIndex = 12;
             this.button_Thoát.Text = "Thoát";
             this.button_Thoát.UseVisualStyleBackColor = false;
+            this.button_Thoát.Click += new System.EventHandler(this.button_Thoát_Click);
             // 
             // button_LamMoi
             // 
@@ -191,6 +192,7 @@
             this.button_LamMoi.TabIndex = 13;
             this.button_LamMoi.Text = "Làm mới";
             this.button_LamMoi.UseVisualStyleBackColor = false;
+            this.button_LamMoi.Click += new System.EventHandler(this.button_LamMoi_Click);
             // 
             // Form2
             // 
