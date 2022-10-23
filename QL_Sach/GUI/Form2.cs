@@ -36,9 +36,11 @@ namespace QL_Sach.GUI
 
         private void button_Them_Click(object sender, EventArgs e)
         {
-            sachBUS.themSachRong();
-            LoadSach();
-            return;
+            //dung de test
+            //sachBUS.themSachRong();
+            //LoadSach();
+            //return;
+
             string fTitle = "Nhập thông tin quyển sách";
             f = new Form3(fTitle);
             f.ShowDialog();
