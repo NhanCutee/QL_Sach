@@ -69,5 +69,7 @@ namespace QL_Sach.BUS
         {
             SachList.Clear();
         }
+
+
     }
 }

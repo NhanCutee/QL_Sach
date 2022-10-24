@@ -41,7 +41,7 @@
             this.button_ChinhSua = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Thoát = new System.Windows.Forms.Button();
-            this.button_LamMoi = new System.Windows.Forms.Button();
+            this.button_XoaTatCa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,25 +181,25 @@
             this.button_Thoát.UseVisualStyleBackColor = false;
             this.button_Thoát.Click += new System.EventHandler(this.button_Thoát_Click);
             // 
-            // button_LamMoi
+            // button_XoaTatCa
             // 
-            this.button_LamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_LamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LamMoi.Location = new System.Drawing.Point(662, 537);
-            this.button_LamMoi.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LamMoi.Name = "button_LamMoi";
-            this.button_LamMoi.Size = new System.Drawing.Size(89, 39);
-            this.button_LamMoi.TabIndex = 13;
-            this.button_LamMoi.Text = "Làm mới";
-            this.button_LamMoi.UseVisualStyleBackColor = false;
-            this.button_LamMoi.Click += new System.EventHandler(this.button_LamMoi_Click);
+            this.button_XoaTatCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_XoaTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_XoaTatCa.Location = new System.Drawing.Point(662, 537);
+            this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XoaTatCa.Name = "button_XoaTatCa";
+            this.button_XoaTatCa.Size = new System.Drawing.Size(89, 39);
+            this.button_XoaTatCa.TabIndex = 13;
+            this.button_XoaTatCa.Text = "Xóa tất cả";
+            this.button_XoaTatCa.UseVisualStyleBackColor = false;
+            this.button_XoaTatCa.Click += new System.EventHandler(this.button_XoaTatCa_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 609);
-            this.Controls.Add(this.button_LamMoi);
+            this.Controls.Add(this.button_XoaTatCa);
             this.Controls.Add(this.button_Thoát);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_ChinhSua);
@@ -220,7 +220,7 @@
         private System.Windows.Forms.Button button_ChinhSua;
         private System.Windows.Forms.Button button_Xoa;
         private System.Windows.Forms.Button button_Thoát;
-        private System.Windows.Forms.Button button_LamMoi;
+        private System.Windows.Forms.Button button_XoaTatCa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;

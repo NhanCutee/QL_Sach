@@ -38,8 +38,8 @@ namespace QL_Sach.GUI
         {
             //dung de test
             //sachBUS.themSachRong();
-            //LoadSach();
-            //return;
+           // LoadSach();
+           // return;
 
             string fTitle = "Nhập thông tin quyển sách";
             f = new Form3(fTitle);
@@ -102,17 +102,25 @@ namespace QL_Sach.GUI
 
         private void button_Thoát_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Thoát chương trình?", "Chú ý", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
+            else
+                this.Close();
         }
 
-        private void button_LamMoi_Click(object sender, EventArgs e)
+        private void button_XoaTatCa_Click(object sender, EventArgs e)
         {
-
+            if (sachBUS.soLuongSach() == 0)
+            {
+                MessageBox.Show("Danh sách rỗng, không thể xóa", "Thông báo");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Chú ý, TOÀN BỘ danh sách sẽ bị xóa", "Chú ý", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
             sachBUS.reset();
             LoadSach();
-            
-                
-        
         }
     }
 }

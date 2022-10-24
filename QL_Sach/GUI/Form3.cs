@@ -123,6 +123,13 @@ namespace QL_Sach.GUI
 
             if (nhapDung)
             {
+                DialogResult dialogResult;
+                if(iTitle== "Nhập thông tin quyển sách")
+                    dialogResult = MessageBox.Show("Nhập quyển sách?", "Chú ý", MessageBoxButtons.YesNo);
+                else 
+                    dialogResult = MessageBox.Show("Xác nhận sửa sách?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
                 userPress = true;
                 maSach = textbox_MaSach.Text.ToUpper();
                 tenSach = textBox_TenSach.Text;
