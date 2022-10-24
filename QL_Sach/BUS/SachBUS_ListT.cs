@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace QL_Sach.BUS
 {
-    class SachBUS
+    class SachBUS_ListT
     {
         private List<SachDTO> sachList;
 
         internal List<SachDTO> SachList { get => sachList; set => sachList = value; }
 
-        public SachBUS()
+        public SachBUS_ListT()
         {
             this.sachList = new List<SachDTO>();
         }

@@ -40,6 +40,17 @@ namespace QL_Sach.DTO
             this.ghiChu = enter_ghiChu;
             this.gia=enter_gia;
         }
+        public SachDTO(SachDTO enter_SachDTO)
+        {
+            this.maSach = enter_SachDTO.maSach;
+            this.tenSach = enter_SachDTO.tenSach;
+            this.theLoai = enter_SachDTO.theLoai;
+            this.tenTacGia = enter_SachDTO.tenTacGia;
+            this.nhaXuatBan = enter_SachDTO.nhaXuatBan;
+            this.ngayXuatBan = enter_SachDTO.ngayXuatBan;
+            this.ghiChu = enter_SachDTO.ghiChu;
+            this.gia = enter_SachDTO.gia;
+        }
 
         public string MaSach { get => maSach; set => maSach = value; }
         public string TenSach { get => tenSach; set => tenSach = value; }

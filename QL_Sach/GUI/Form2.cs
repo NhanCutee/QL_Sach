@@ -15,7 +15,7 @@ namespace QL_Sach.GUI
     public partial class Form2 : Form
     {
         Form3 f;
-        SachBUS sachBUS;
+        SachBUS_ListT sachBUS;
         public Form2()
         {
             
@@ -25,7 +25,7 @@ namespace QL_Sach.GUI
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            sachBUS = new SachBUS();
+            sachBUS = new SachBUS_ListT();
             LoadSach();
 
         }
