@@ -43,6 +43,7 @@ namespace QL_Sach.BUS
             {
                 LinkedListNode node = new LinkedListNode(enter_sachDTO);
                 node.Next = firstNode;
+                count++;
             }
 
         }
