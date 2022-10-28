@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using QL_Sach.DTO;
 
 namespace QL_Sach.GUI
 {
@@ -16,6 +18,8 @@ namespace QL_Sach.GUI
     {
         Form3 f;
         SachBUS_ListT sachBUS;
+        private List<SachDTO> sachList;
+
         public Form2()
         {
             
@@ -121,6 +125,17 @@ namespace QL_Sach.GUI
                 return;
             sachBUS.reset();
             LoadSach();
+        }
+
+        private void button_Luu_Click(object sender, EventArgs e)
+        {
+            FileStream fs = new FileStream("Sach.dat", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            sachList = (List<SachDTO>)bf.Deserialize(fs);
+            fs.Close();
+            LoadSach();
+            
+
         }
     }
 }

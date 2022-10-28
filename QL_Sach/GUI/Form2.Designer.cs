@@ -42,6 +42,8 @@
             this.button_Xoa = new System.Windows.Forms.Button();
             this.button_Thoát = new System.Windows.Forms.Button();
             this.button_XoaTatCa = new System.Windows.Forms.Button();
+            this.button_Luu = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,12 +59,12 @@
             this.NhaXuatBan,
             this.GhiChu,
             this.Gia});
-            this.dataGridView.Location = new System.Drawing.Point(9, 45);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView.Location = new System.Drawing.Point(12, 55);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1050, 471);
+            this.dataGridView.Size = new System.Drawing.Size(1400, 580);
             this.dataGridView.TabIndex = 8;
             // 
             // ID
@@ -133,10 +135,10 @@
             // 
             this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(32, 537);
-            this.button_Them.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Them.Location = new System.Drawing.Point(43, 661);
+            this.button_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Them.Name = "button_Them";
-            this.button_Them.Size = new System.Drawing.Size(89, 39);
+            this.button_Them.Size = new System.Drawing.Size(119, 48);
             this.button_Them.TabIndex = 9;
             this.button_Them.Text = "Thêm";
             this.button_Them.UseVisualStyleBackColor = false;
@@ -146,10 +148,10 @@
             // 
             this.button_ChinhSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_ChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ChinhSua.Location = new System.Drawing.Point(234, 537);
-            this.button_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
+            this.button_ChinhSua.Location = new System.Drawing.Point(283, 661);
+            this.button_ChinhSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_ChinhSua.Name = "button_ChinhSua";
-            this.button_ChinhSua.Size = new System.Drawing.Size(89, 39);
+            this.button_ChinhSua.Size = new System.Drawing.Size(119, 48);
             this.button_ChinhSua.TabIndex = 10;
             this.button_ChinhSua.Text = "Chỉnh sửa";
             this.button_ChinhSua.UseVisualStyleBackColor = false;
@@ -159,10 +161,10 @@
             // 
             this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(448, 537);
-            this.button_Xoa.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Xoa.Location = new System.Drawing.Point(534, 661);
+            this.button_Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Xoa.Name = "button_Xoa";
-            this.button_Xoa.Size = new System.Drawing.Size(89, 39);
+            this.button_Xoa.Size = new System.Drawing.Size(119, 48);
             this.button_Xoa.TabIndex = 11;
             this.button_Xoa.Text = "Xóa";
             this.button_Xoa.UseVisualStyleBackColor = false;
@@ -172,10 +174,10 @@
             // 
             this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(874, 537);
-            this.button_Thoát.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Thoát.Location = new System.Drawing.Point(1272, 661);
+            this.button_Thoát.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Thoát.Name = "button_Thoát";
-            this.button_Thoát.Size = new System.Drawing.Size(89, 39);
+            this.button_Thoát.Size = new System.Drawing.Size(119, 48);
             this.button_Thoát.TabIndex = 12;
             this.button_Thoát.Text = "Thoát";
             this.button_Thoát.UseVisualStyleBackColor = false;
@@ -185,27 +187,41 @@
             // 
             this.button_XoaTatCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_XoaTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaTatCa.Location = new System.Drawing.Point(662, 537);
-            this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XoaTatCa.Location = new System.Drawing.Point(797, 661);
+            this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_XoaTatCa.Name = "button_XoaTatCa";
-            this.button_XoaTatCa.Size = new System.Drawing.Size(89, 39);
+            this.button_XoaTatCa.Size = new System.Drawing.Size(119, 48);
             this.button_XoaTatCa.TabIndex = 13;
             this.button_XoaTatCa.Text = "Xóa tất cả";
             this.button_XoaTatCa.UseVisualStyleBackColor = false;
             this.button_XoaTatCa.Click += new System.EventHandler(this.button_XoaTatCa_Click);
             // 
+            // button_Luu
+            // 
+            this.button_Luu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Luu.Location = new System.Drawing.Point(1039, 661);
+            this.button_Luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_Luu.Name = "button_Luu";
+            this.button_Luu.Size = new System.Drawing.Size(119, 48);
+            this.button_Luu.TabIndex = 14;
+            this.button_Luu.Text = "Lưu File";
+            this.button_Luu.UseVisualStyleBackColor = false;
+            this.button_Luu.Click += new System.EventHandler(this.button_Luu_Click);
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 609);
+            this.ClientSize = new System.Drawing.Size(1427, 750);
+            this.Controls.Add(this.button_Luu);
             this.Controls.Add(this.button_XoaTatCa);
             this.Controls.Add(this.button_Thoát);
             this.Controls.Add(this.button_Xoa);
             this.Controls.Add(this.button_ChinhSua);
             this.Controls.Add(this.button_Them);
             this.Controls.Add(this.dataGridView);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -229,5 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NhaXuatBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.Button button_Luu;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

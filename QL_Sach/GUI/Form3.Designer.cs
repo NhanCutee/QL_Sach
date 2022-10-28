@@ -64,7 +64,7 @@ namespace QL_Sach.GUI
             // textbox_MaSach
             // 
             this.textbox_MaSach.Location = new System.Drawing.Point(183, 84);
-            this.textbox_MaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textbox_MaSach.Margin = new System.Windows.Forms.Padding(4);
             this.textbox_MaSach.MaxLength = 10;
             this.textbox_MaSach.Name = "textbox_MaSach";
             this.textbox_MaSach.Size = new System.Drawing.Size(405, 22);
@@ -74,7 +74,7 @@ namespace QL_Sach.GUI
             // textBox_TenSach
             // 
             this.textBox_TenSach.Location = new System.Drawing.Point(183, 130);
-            this.textBox_TenSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_TenSach.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_TenSach.MaxLength = 100;
             this.textBox_TenSach.Name = "textBox_TenSach";
             this.textBox_TenSach.Size = new System.Drawing.Size(405, 22);
@@ -94,7 +94,7 @@ namespace QL_Sach.GUI
             // 
             this.comboBox_TheLoai.FormattingEnabled = true;
             this.comboBox_TheLoai.Location = new System.Drawing.Point(183, 239);
-            this.comboBox_TheLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_TheLoai.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_TheLoai.Name = "comboBox_TheLoai";
             this.comboBox_TheLoai.Size = new System.Drawing.Size(405, 24);
             this.comboBox_TheLoai.TabIndex = 3;
@@ -123,7 +123,7 @@ namespace QL_Sach.GUI
             // 
             this.comboBox_NhaXuatBan.FormattingEnabled = true;
             this.comboBox_NhaXuatBan.Location = new System.Drawing.Point(183, 289);
-            this.comboBox_NhaXuatBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_NhaXuatBan.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_NhaXuatBan.Name = "comboBox_NhaXuatBan";
             this.comboBox_NhaXuatBan.Size = new System.Drawing.Size(405, 24);
             this.comboBox_NhaXuatBan.TabIndex = 4;
@@ -141,7 +141,7 @@ namespace QL_Sach.GUI
             // dateTimePicker_NgayXuatBan
             // 
             this.dateTimePicker_NgayXuatBan.Location = new System.Drawing.Point(183, 343);
-            this.dateTimePicker_NgayXuatBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_NgayXuatBan.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_NgayXuatBan.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_NgayXuatBan.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_NgayXuatBan.Name = "dateTimePicker_NgayXuatBan";
@@ -161,8 +161,8 @@ namespace QL_Sach.GUI
             // 
             // textBox_GhiChu
             // 
-            this.textBox_GhiChu.Location = new System.Drawing.Point(183, 441);
-            this.textBox_GhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_GhiChu.Location = new System.Drawing.Point(183, 462);
+            this.textBox_GhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_GhiChu.Multiline = true;
             this.textBox_GhiChu.Name = "textBox_GhiChu";
             this.textBox_GhiChu.Size = new System.Drawing.Size(405, 82);
@@ -171,7 +171,7 @@ namespace QL_Sach.GUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(69, 449);
+            this.label6.Location = new System.Drawing.Point(73, 462);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 16);
@@ -180,17 +180,17 @@ namespace QL_Sach.GUI
             // 
             // textBox_Gia
             // 
-            this.textBox_Gia.Location = new System.Drawing.Point(183, 389);
-            this.textBox_Gia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Gia.Location = new System.Drawing.Point(183, 398);
+            this.textBox_Gia.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Gia.MaxLength = 9;
             this.textBox_Gia.Name = "textBox_Gia";
-            this.textBox_Gia.Size = new System.Drawing.Size(200, 22);
+            this.textBox_Gia.Size = new System.Drawing.Size(405, 22);
             this.textBox_Gia.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 398);
+            this.label7.Location = new System.Drawing.Point(69, 404);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 16);
@@ -200,7 +200,7 @@ namespace QL_Sach.GUI
             // textBox_TacGia
             // 
             this.textBox_TacGia.Location = new System.Drawing.Point(183, 186);
-            this.textBox_TacGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_TacGia.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_TacGia.MaxLength = 100;
             this.textBox_TacGia.Name = "textBox_TacGia";
             this.textBox_TacGia.Size = new System.Drawing.Size(405, 22);
@@ -223,7 +223,7 @@ namespace QL_Sach.GUI
             this.button_Nhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Nhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button_Nhap.Location = new System.Drawing.Point(133, 576);
-            this.button_Nhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Nhap.Margin = new System.Windows.Forms.Padding(4);
             this.button_Nhap.Name = "button_Nhap";
             this.button_Nhap.Size = new System.Drawing.Size(100, 28);
             this.button_Nhap.TabIndex = 8;
@@ -236,7 +236,7 @@ namespace QL_Sach.GUI
             this.button_NhapLai.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_NhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_NhapLai.Location = new System.Drawing.Point(280, 576);
-            this.button_NhapLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_NhapLai.Margin = new System.Windows.Forms.Padding(4);
             this.button_NhapLai.Name = "button_NhapLai";
             this.button_NhapLai.Size = new System.Drawing.Size(100, 28);
             this.button_NhapLai.TabIndex = 9;
@@ -249,7 +249,7 @@ namespace QL_Sach.GUI
             this.button_Huy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Huy.Location = new System.Drawing.Point(421, 576);
-            this.button_Huy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.button_Huy.Name = "button_Huy";
             this.button_Huy.Size = new System.Drawing.Size(100, 28);
             this.button_Huy.TabIndex = 10;
@@ -283,7 +283,7 @@ namespace QL_Sach.GUI
             this.Controls.Add(this.textbox_MaSach);
             this.Controls.Add(this.label_MaSach);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
