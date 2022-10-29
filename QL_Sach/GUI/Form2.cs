@@ -129,13 +129,23 @@ namespace QL_Sach.GUI
 
         private void button_Luu_Click(object sender, EventArgs e)
         {
+            FileStream fs = new FileStream("Sach.dat", FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(fs, sachList);
+            fs.Close();
+            
+            
+
+        }
+
+        private void button_Doc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
             FileStream fs = new FileStream("Sach.dat", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             sachList = (List<SachDTO>)bf.Deserialize(fs);
             fs.Close();
             LoadSach();
-            
-
         }
     }
 }
