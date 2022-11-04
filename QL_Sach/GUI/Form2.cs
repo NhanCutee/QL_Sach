@@ -147,5 +147,10 @@ namespace QL_Sach.GUI
             fs.Close();
             LoadSach();
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
