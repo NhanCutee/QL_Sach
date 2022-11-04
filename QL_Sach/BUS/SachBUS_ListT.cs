@@ -62,11 +62,8 @@ namespace QL_Sach.BUS
         {
             return sachList.Count;
         }
-        public SachDTO layRaSachThu(int n)
-        {
-            return sachList[n];
-        }
-        public void reset()
+
+        public void xoaTatCa()
         {
             SachList.Clear();
         }

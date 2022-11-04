@@ -123,7 +123,7 @@ namespace QL_Sach.GUI
             DialogResult dialogResult = MessageBox.Show("Chú ý, TOÀN BỘ danh sách sẽ bị xóa", "Chú ý", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.No)
                 return;
-            sachBUS.reset();
+            sachBUS.xoaTatCa();
             LoadSach();
         }
 

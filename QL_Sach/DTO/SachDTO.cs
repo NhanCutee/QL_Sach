@@ -16,7 +16,7 @@ namespace QL_Sach.DTO
         private string theLoai;
         private string tenTacGia;
         private string nhaXuatBan;
-        private DateTime? ngayXuatBan;
+        private DateTime ngayXuatBan;
         private string ghiChu;
         private int gia;
 
@@ -27,7 +27,7 @@ namespace QL_Sach.DTO
             this.theLoai = "N/A";
             this.tenTacGia = "N/A";
             this.nhaXuatBan = "N/A";
-            this.ngayXuatBan = null;
+            this.ngayXuatBan = DateTime.Today;
             this.ghiChu = "N/A";
             this.gia = 0;
         }
@@ -59,7 +59,7 @@ namespace QL_Sach.DTO
         public string TheLoai { get => theLoai; set => theLoai = value; }
         public string TenTacGia { get => tenTacGia; set => tenTacGia = value; }
         public string NhaXuatBan { get => nhaXuatBan; set => nhaXuatBan = value; }
-        public DateTime? NgayXuatBan { get => ngayXuatBan; set => ngayXuatBan = value; }
+        public DateTime NgayXuatBan { get => ngayXuatBan; set => ngayXuatBan = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public int Gia { get => gia; set => gia = value; }
     }
