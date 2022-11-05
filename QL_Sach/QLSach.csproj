@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="BUS\SachBUS_LinkedList.cs" />
     <Compile Include="BUS\SachBUS_ListT.cs" />
-    <Compile Include="DTO\DSD_Sach.cs" />
+    <Compile Include="BUS\DSD_Sach.cs" />
     <Compile Include="DTO\SachDTO.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
