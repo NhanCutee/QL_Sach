@@ -17,31 +17,30 @@ namespace QL_Sach.GUI
     public partial class Form2 : Form
     {
         Form3 f;
-        SachBUS_ListT sachBUS;
-        private List<SachDTO> sachList;
+        SachBUS_View sachView;
 
-        public Form2()
+        public Form2(string loaiDS)
         {
             
             InitializeComponent();
             this.Text = "Quản lý sách";
+            sachView = new SachBUS_View(loaiDS);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            sachBUS = new SachBUS_ListT();
             LoadSach();
 
         }
         private void LoadSach()
         {
-            dataGridView.DataSource = sachBUS.SachList.ToList();
+            dataGridView.DataSource = sachView.SachList.ToList();
         }
 
         private void button_Them_Click(object sender, EventArgs e)
         {
             //dung de test
-            //sachBUS.themSachRong();
+            //sachView.themSachRong();
            // LoadSach();
            // return;
 
@@ -50,7 +49,7 @@ namespace QL_Sach.GUI
             f.ShowDialog();
             if(f.UserPress==true)
             {
-                sachBUS.themSach(f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
+                sachView.themSach(f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
             }    
 
             LoadSach();
@@ -71,7 +70,7 @@ namespace QL_Sach.GUI
                 int[] rowIndexes = (from sc in dataGridView.SelectedCells.Cast<DataGridViewCell>()
                                     select sc.RowIndex).Distinct().ToArray();
                 foreach (int i in rowIndexes)
-                    sachBUS.xoaSach(i);
+                    sachView.xoaSach(i);
 
                 LoadSach();
 
@@ -96,7 +95,7 @@ namespace QL_Sach.GUI
                 f.ShowDialog();
                 if (f.UserPress == true)
                 {
-                    sachBUS.suaSach(index, f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
+                    sachView.suaSach(index, f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
                 }
                 LoadSach();
             }
@@ -115,7 +114,7 @@ namespace QL_Sach.GUI
 
         private void button_XoaTatCa_Click(object sender, EventArgs e)
         {
-            if (sachBUS.soLuongSach() == 0)
+            if (sachView.soLuongSach() == 0)
             {
                 MessageBox.Show("Danh sách rỗng, không thể xóa", "Thông báo");
                 return;
@@ -123,7 +122,7 @@ namespace QL_Sach.GUI
             DialogResult dialogResult = MessageBox.Show("Chú ý, TOÀN BỘ danh sách sẽ bị xóa", "Chú ý", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.No)
                 return;
-            sachBUS.xoaTatCa();
+            sachView.xoaTatCa();
             LoadSach();
         }
 
@@ -131,21 +130,19 @@ namespace QL_Sach.GUI
         {
             FileStream fs = new FileStream("Sach.dat", FileMode.Create);
             BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(fs, sachList);
-            fs.Close();
-            
-            
+            bf.Serialize(fs, sachView.SachList);
+            fs.Close();   
 
         }
 
         private void button_Doc_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            FileStream fs = new FileStream("Sach.dat", FileMode.Open);
-            BinaryFormatter bf = new BinaryFormatter();
-            sachList = (List<SachDTO>)bf.Deserialize(fs);
-            fs.Close();
-            LoadSach();
+            //OpenFileDialog open = new OpenFileDialog();
+            //FileStream fs = new FileStream("Sach.dat", FileMode.Open);
+            //BinaryFormatter bf = new BinaryFormatter();
+            //sachView.SachList = (List<SachDTO>)bf.Deserialize(fs);
+            //fs.Close();
+            //LoadSach();
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -13,7 +13,7 @@ namespace QL_Sach.BUS
     {
         private List<SachDTO> sachList;
 
-        internal List<SachDTO> SachList { get => sachList; set => sachList = value; }
+        public List<SachDTO> SachList { get => sachList; set => sachList = value; }
 
         public SachBUS_ListT()
         {

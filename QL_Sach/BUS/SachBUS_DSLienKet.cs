@@ -7,8 +7,6 @@ using QL_Sach.DTO;
 
 namespace QL_Sach.BUS
 {
-    class SachBUS_LinkedList
-    {
        class LinkedListNode
         {
             private SachDTO sachDTO;
@@ -47,13 +45,16 @@ namespace QL_Sach.BUS
             public LinkedListNode Next { get => next; set => next = value; }
             public LinkedListNode Prev { get => prev; set => prev = value; }
         }
-        class LinkedList
+        class SachBUS_DSLienKet
         {
             private int count;
             private LinkedListNode firstNode;
+
+            public LinkedListNode SachList { get => firstNode; set => firstNode = value; }
+
             //private LinkedListNode lastNode;
 
-            public LinkedList()
+            public SachBUS_DSLienKet()
             {
                 count =0;
                 firstNode=null;
@@ -159,4 +160,4 @@ namespace QL_Sach.BUS
 
         }
     }
-}
+

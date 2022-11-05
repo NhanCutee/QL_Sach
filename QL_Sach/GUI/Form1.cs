@@ -23,8 +23,9 @@ namespace QL_Sach.GUI
             if (radioButton_LibListT.Checked == true)
             {
                 this.Hide();
-                Form2 f = new Form2();
-                f.Show();
+                Form2 f = new Form2("LibListT");
+                f.ShowDialog();
+                this.Close();
             }
             else
             {

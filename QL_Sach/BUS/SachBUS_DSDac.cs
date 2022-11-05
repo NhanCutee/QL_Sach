@@ -11,6 +11,20 @@ namespace QL_Sach.BUS
     {
         private SachDTO[] sachDTO;
         private int n;
+
+        public List<SachDTO> SachList
+        {
+            get {
+            List<SachDTO> kq = new List<SachDTO>();
+            foreach(SachDTO sach in sachDTO)
+                {
+                    kq.Add(sach);
+                }
+                return kq;
+            }
+        }
+        public int N { get => n; set => n = value; }
+
         public SachBUS_DSD()
         {
             sachDTO = new SachDTO[100];
