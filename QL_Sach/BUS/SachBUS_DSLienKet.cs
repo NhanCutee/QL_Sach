@@ -7,82 +7,84 @@ using QL_Sach.DTO;
 
 namespace QL_Sach.BUS
 {
-       class LinkedListNode
+       class nodeLienKet
         {
             private SachDTO sachDTO;
-            private LinkedListNode next;
-            private LinkedListNode prev;
-            public LinkedListNode()
+            private nodeLienKet next;
+            private nodeLienKet prev;
+            public nodeLienKet()
             {
-                this.sachDTO = new SachDTO();
                 this.next = null;
                 this.prev = null;
-
             }
 
-            public LinkedListNode(LinkedListNode anotherNode)
+            public nodeLienKet(nodeLienKet anotherNode)
             {
                 this.sachDTO = anotherNode.sachDTO;
                 this.next = anotherNode.next;
                 this.prev = anotherNode.prev;
 
             }
-            public LinkedListNode(SachDTO enter_SachDTO)
+            public nodeLienKet(SachDTO enter_SachDTO)
             {
                 sachDTO = new SachDTO(enter_SachDTO);
                 next = null;
                 prev = null;
             }
-            public LinkedListNode(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
+            public nodeLienKet(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
             {
                 sachDTO = new SachDTO(enter_maSach,enter_tenSach,enter_theLoai,enter_tenTacGia,enter_nhaXuatBan,enter_ngayXuatBan,enter_ghiChu,enter_gia);
                 next = null;
                 prev = null;
             }
-            ~LinkedListNode() { }
+            ~nodeLienKet() { }
 
             public SachDTO SachDTO { get => sachDTO; set => sachDTO = value; }
-            public LinkedListNode Next { get => next; set => next = value; }
-            public LinkedListNode Prev { get => prev; set => prev = value; }
+            public nodeLienKet Next { get => next; set => next = value; }
+            public nodeLienKet Prev { get => prev; set => prev = value; }
         }
         class SachBUS_DSLienKet
         {
             private int count;
-            private LinkedListNode firstNode;
+            private nodeLienKet firstNode;
 
-            public LinkedListNode SachList { get => firstNode; set => firstNode = value; }
-
-            //private LinkedListNode lastNode;
+            public List<SachDTO> SachList 
+        {
+            get 
+            {
+                List<SachDTO> sachList = new List<SachDTO>();
+                for (nodeLienKet node = firstNode; node.Next != null; node = node.Next)
+                    sachList.Add(node.SachDTO);
+                return sachList;
+            }
+        }
 
             public SachBUS_DSLienKet()
             {
                 count =0;
-                firstNode=null;
-                //lastNode = null;
+                firstNode=new nodeLienKet();
             }
-            public void themDauBangSachDTO(SachDTO enter_sachDTO)
+        public void themSach(SachDTO sach)
+        {
+            nodeLienKet node = new nodeLienKet(sach);
+            node.Next = firstNode;
+            firstNode.Prev = node;
+            firstNode = node;
+            count++;
+        }
+
+        public void themSach(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
             {
-                LinkedListNode node = new LinkedListNode(enter_sachDTO);
+                nodeLienKet node = new nodeLienKet(enter_maSach, enter_tenSach, enter_theLoai, enter_tenTacGia, enter_nhaXuatBan, enter_ngayXuatBan, enter_ghiChu, enter_gia);
                 node.Next = firstNode;
-                node.Prev = null;
-                firstNode.Prev=node;
-                firstNode = node;
-                count++;
-            }
-            public void themSach(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
-            {
-                LinkedListNode node = new LinkedListNode(enter_maSach, enter_tenSach, enter_theLoai, enter_tenTacGia, enter_nhaXuatBan, enter_ngayXuatBan, enter_ghiChu, enter_gia);
-                node.Next = firstNode;
-                node.Prev = null;
                 firstNode.Prev = node;
                 firstNode = node;
                 count++;
             }
-            //check
 
             public void suaSach(int index, string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
             {
-                LinkedListNode node = this.firstNode;
+                nodeLienKet node = this.firstNode;
                 for (int i = 0; i < index; i++)
                     node = node.Next;
                 node.SachDTO.MaSach = enter_maSach;
@@ -97,7 +99,7 @@ namespace QL_Sach.BUS
             //check
             public void suaSach(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
             {
-                LinkedListNode node = this.firstNode;
+                nodeLienKet node = this.firstNode;
                 while(node!=null)
                 {
                     if (node.SachDTO.MaSach == enter_maSach)
@@ -115,8 +117,8 @@ namespace QL_Sach.BUS
             //check
             public void xoaSach(int index)
             {
-                LinkedListNode node = this.firstNode;
-                LinkedListNode nodeTemp = new LinkedListNode();
+                nodeLienKet node = this.firstNode;
+                nodeLienKet nodeTemp = new nodeLienKet();
                 for (int i = 0; i < index-1; i++)
                     node = node.Next;
                 nodeTemp = node.Next;
@@ -125,8 +127,8 @@ namespace QL_Sach.BUS
             }
             public void xoaSach(string enter_maSach)
             {
-                LinkedListNode node = this.firstNode;
-                LinkedListNode nodeTemp;
+                nodeLienKet node = this.firstNode;
+                nodeLienKet nodeTemp;
                 while (node != null)
                 {
                     if (node.SachDTO.MaSach == enter_maSach)
@@ -141,15 +143,10 @@ namespace QL_Sach.BUS
                 }
             }
 
-            public int soLuongSach()
-            {
-                return count;
-            }
-
             public void xoaTatCa()
             {
-                LinkedListNode node = this.firstNode;
-                LinkedListNode nodeTemp;
+                nodeLienKet node = this.firstNode;
+                nodeLienKet nodeTemp;
                 while (node!=null)
                 {
                     nodeTemp = node;
@@ -158,6 +155,12 @@ namespace QL_Sach.BUS
                 }
             }
 
+        public int soLuongSach()
+        {
+            return count;
         }
+
+
     }
+}
 

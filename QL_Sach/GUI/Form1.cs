@@ -27,6 +27,32 @@ namespace QL_Sach.GUI
                 f.ShowDialog();
                 this.Close();
             }
+            else if (radioButton_DSDac.Checked == true)
+            {
+                this.Hide();
+                Form2 f = new Form2("DSDac");
+                f.ShowDialog();
+                this.Close();
+            }
+            else if (radioButton_DSLK.Checked == true)
+            {
+                this.Hide();
+                Form2 f = new Form2("DSLK");
+                f.ShowDialog();
+                this.Close();
+            }
+            else if (radioButton_LibDic.Checked == true)
+            {
+                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
+            }
+            else if (radioButton_LibHash.Checked== true)
+            {
+                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
+            }
+            else if (radioButton_BangBam.Checked == true)
+            {
+                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
+            }
             else
             {
                 MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.","Thông báo");

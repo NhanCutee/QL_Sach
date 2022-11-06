@@ -83,38 +83,38 @@ namespace QL_Sach.GUI
         {
             bool nhapDung = true;
             //viet them dieu kien nhap, them so phan tu toi da duoc nhap, viet hoa ki tu, chuan hoa chuoi, .................
-            if (!textbox_MaSach.Text.All(Char.IsLetterOrDigit))
+            if (!textbox_MaSach.Text.All(Char.IsLetterOrDigit) || textbox_MaSach.Text == "")
             {
                 nhapDung = false;
                 MessageBox.Show("Nhập sai mã sách, kí tự hợp lệ: a-z, A-Z, 0-9");
                 return;
             }
-            if (textBox_TenSach.Text.Any(Char.IsSymbol))
+            if (textBox_TenSach.Text =="" || textBox_TenSach.Text.Substring(0,1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Nhập sai tên sách, kí tự hợp lệ: a-z, A-Z");
+                MessageBox.Show("Tên sách không được để trống.");
                 return;
             }
-            if (!comboBox_TheLoai.Text.All(Char.IsLetterOrDigit)) // sửa lại thành any
+            if (textBox_TacGia.Text == "" || textBox_TacGia.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Sai thể loại, kí tự hợp lệ: a-z, A-Z, 0-9, khoảng trắng");
+                MessageBox.Show("Tên tác giả không được để trống");
                 return;
             }
-            if (textBox_TacGia.Text.Any(Char.IsDigit) || textBox_TacGia.Text.Any(Char.IsSymbol))// check khoảng trắng, isymbol là sai
+            if (comboBox_TheLoai.Text == "" || comboBox_TheLoai.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Nhập sai tên tác giả, kí tự hợp lệ: a-z, A-Z, khoảng trắng");
+                MessageBox.Show("Thể loại không được để trống.");
                 return;
             }
-            if (comboBox_NhaXuatBan.Text.Any(Char.IsDigit) )
+            if (comboBox_NhaXuatBan.Text == "" || comboBox_NhaXuatBan.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Sai nhà xuất bản, kí tự hợp lệ: a-z, A-Z, 0-9, khoảng trắng");
+                MessageBox.Show("Nhà xuất bản không được để trống.");
                 return;
             }
-            //check ngay xuatban sau
-            if (!textBox_Gia.Text.All(Char.IsDigit))
+
+            if (!textBox_Gia.Text.All(Char.IsDigit) || textBox_Gia.Text == "")
             {
                 nhapDung = false;
                 MessageBox.Show("Nhập sai giá tiền, kí tự hợp lệ: 0-9");

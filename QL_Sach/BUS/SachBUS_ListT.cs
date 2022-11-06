@@ -25,7 +25,10 @@ namespace QL_Sach.BUS
             SachDTO sach = new SachDTO();
             this.sachList.Add(sach);
         }
-
+        public void themSach(SachDTO sach)
+        {
+            this.sachList.Add(sach);
+        }
         public void themSach(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
         {
             SachDTO sach = new SachDTO();

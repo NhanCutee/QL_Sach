@@ -16,10 +16,8 @@ namespace QL_Sach.BUS
         {
             get {
             List<SachDTO> kq = new List<SachDTO>();
-            foreach(SachDTO sach in sachDTO)
-                {
-                    kq.Add(sach);
-                }
+                for (int i=0; i < this.n;i++)
+                    kq.Add(sachDTO[i]);
                 return kq;
             }
         }
@@ -29,6 +27,12 @@ namespace QL_Sach.BUS
         {
             sachDTO = new SachDTO[100];
             n = 0;
+        }
+        public void themSach(SachDTO sach)
+        {
+
+            sachDTO[n] = sach;
+            n++;
         }
         public void themSach(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
         {
@@ -44,19 +48,37 @@ namespace QL_Sach.BUS
             sachDTO[n] = sach;
             n++;
         }
+        public void suaSach(int index, string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)
+        {
+            sachDTO[index].MaSach = enter_maSach;
+            sachDTO[index].TenSach = enter_tenSach;
+            sachDTO[index].TheLoai = enter_theLoai;
+            sachDTO[index].TenTacGia = enter_tenTacGia;
+            sachDTO[index].NhaXuatBan = enter_nhaXuatBan;
+            sachDTO[index].NgayXuatBan = enter_ngayXuatBan;
+            sachDTO[index].GhiChu = enter_ghiChu;
+            sachDTO[index].Gia = enter_gia;
+        }
+
 
         ~SachBUS_DSD()
         {
             sachDTO = null;
         }
-        public void xoaSach()
+        public void xoaSach(int vt)
         {
-            n = 0;
+            for (int i = vt; i < this.n-1; i++)
+                sachDTO[i] = sachDTO[i + 1];
+            this.n--;
         }
-        public void xoa1sach(SachBUS_DSD ds, int vt)
+        public void xoaTatCa()
         {
-            for (int i = vt; i > ds.n; i++)
-                ds.sachDTO[i] = ds.sachDTO[i + 1];
+            this.n=0;
+        }
+
+        public int soLuongSach()
+        {
+            return this.n;
         }
 
     }
