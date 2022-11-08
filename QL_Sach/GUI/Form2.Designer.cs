@@ -48,6 +48,9 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button_Doc = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox_TimKiem = new System.Windows.Forms.TextBox();
+            this.label_TimKiem = new System.Windows.Forms.Label();
+            this.button_TimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +67,7 @@
             this.NhaXuatBan,
             this.GhiChu,
             this.Gia});
-            this.dataGridView.Location = new System.Drawing.Point(11, 22);
+            this.dataGridView.Location = new System.Drawing.Point(15, 22);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
@@ -141,7 +144,7 @@
             // 
             this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(832, 22);
+            this.button_Them.Location = new System.Drawing.Point(858, 22);
             this.button_Them.Margin = new System.Windows.Forms.Padding(2);
             this.button_Them.Name = "button_Them";
             this.button_Them.Size = new System.Drawing.Size(89, 39);
@@ -154,7 +157,7 @@
             // 
             this.button_ChinhSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_ChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ChinhSua.Location = new System.Drawing.Point(954, 22);
+            this.button_ChinhSua.Location = new System.Drawing.Point(858, 87);
             this.button_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.button_ChinhSua.Name = "button_ChinhSua";
             this.button_ChinhSua.Size = new System.Drawing.Size(89, 39);
@@ -167,7 +170,7 @@
             // 
             this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(832, 106);
+            this.button_Xoa.Location = new System.Drawing.Point(858, 151);
             this.button_Xoa.Margin = new System.Windows.Forms.Padding(2);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(89, 39);
@@ -178,9 +181,9 @@
             // 
             // button_Thoát
             // 
-            this.button_Thoát.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_Thoát.BackColor = System.Drawing.Color.LightCoral;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(954, 301);
+            this.button_Thoát.Location = new System.Drawing.Point(858, 436);
             this.button_Thoát.Margin = new System.Windows.Forms.Padding(2);
             this.button_Thoát.Name = "button_Thoát";
             this.button_Thoát.Size = new System.Drawing.Size(89, 39);
@@ -193,7 +196,7 @@
             // 
             this.button_XoaTatCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_XoaTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaTatCa.Location = new System.Drawing.Point(954, 106);
+            this.button_XoaTatCa.Location = new System.Drawing.Point(858, 221);
             this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaTatCa.Name = "button_XoaTatCa";
             this.button_XoaTatCa.Size = new System.Drawing.Size(89, 39);
@@ -206,7 +209,7 @@
             // 
             this.button_Luu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Luu.Location = new System.Drawing.Point(954, 201);
+            this.button_Luu.Location = new System.Drawing.Point(858, 361);
             this.button_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.button_Luu.Name = "button_Luu";
             this.button_Luu.Size = new System.Drawing.Size(89, 39);
@@ -219,7 +222,7 @@
             // 
             this.button_Doc.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Doc.Location = new System.Drawing.Point(832, 201);
+            this.button_Doc.Location = new System.Drawing.Point(858, 289);
             this.button_Doc.Margin = new System.Windows.Forms.Padding(2);
             this.button_Doc.Name = "button_Doc";
             this.button_Doc.Size = new System.Drawing.Size(89, 39);
@@ -232,11 +235,43 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textBox_TimKiem
+            // 
+            this.textBox_TimKiem.Location = new System.Drawing.Point(109, 569);
+            this.textBox_TimKiem.Name = "textBox_TimKiem";
+            this.textBox_TimKiem.Size = new System.Drawing.Size(327, 20);
+            this.textBox_TimKiem.TabIndex = 16;
+            // 
+            // label_TimKiem
+            // 
+            this.label_TimKiem.AutoSize = true;
+            this.label_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TimKiem.Location = new System.Drawing.Point(12, 570);
+            this.label_TimKiem.Name = "label_TimKiem";
+            this.label_TimKiem.Size = new System.Drawing.Size(82, 15);
+            this.label_TimKiem.TabIndex = 17;
+            this.label_TimKiem.Text = "Tiềm kiếm :";
+            // 
+            // button_TimKiem
+            // 
+            this.button_TimKiem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_TimKiem.Location = new System.Drawing.Point(458, 558);
+            this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.button_TimKiem.Name = "button_TimKiem";
+            this.button_TimKiem.Size = new System.Drawing.Size(89, 39);
+            this.button_TimKiem.TabIndex = 19;
+            this.button_TimKiem.Text = "Tìm";
+            this.button_TimKiem.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 544);
+            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.button_TimKiem);
+            this.Controls.Add(this.label_TimKiem);
+            this.Controls.Add(this.textBox_TimKiem);
             this.Controls.Add(this.button_Doc);
             this.Controls.Add(this.button_Luu);
             this.Controls.Add(this.button_XoaTatCa);
@@ -253,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -276,5 +312,8 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button button_Doc;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textBox_TimKiem;
+        private System.Windows.Forms.Label label_TimKiem;
+        private System.Windows.Forms.Button button_TimKiem;
     }
 }
