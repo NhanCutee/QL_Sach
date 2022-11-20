@@ -14,12 +14,12 @@ using QL_Sach.DTO;
 
 namespace QL_Sach.GUI
 {
-    public partial class Form2 : Form
+    public partial class Form_QLSach : Form
     {
-        Form3 f;
+        Form_1Sach f;
         SachBUS_View sachView;
 
-        public Form2(string loaiDS)
+        public Form_QLSach(string loaiDS)
         {
             
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace QL_Sach.GUI
            // return;
 
             string fTitle = "Nhập thông tin quyển sách";
-            f = new Form3(fTitle);
+            f = new Form_1Sach(fTitle);
             f.ShowDialog();
             if(f.UserPress==true)
             {
@@ -91,7 +91,7 @@ namespace QL_Sach.GUI
 
                 int index = dataGridView.CurrentCell.RowIndex;
                 DataGridViewRow currentRow = dataGridView.Rows[index];
-                f = new Form3(fTitle, currentRow);
+                f = new Form_1Sach(fTitle, currentRow);
                 f.ShowDialog();
                 if (f.UserPress == true)
                 {
@@ -165,6 +165,29 @@ namespace QL_Sach.GUI
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox_TimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_TimKiem_Click(object sender, EventArgs e)
+        {
+            if(textBox_TimKiem.Text=="")
+                MessageBox.Show("Vui lòng nhập từ khoá để tìm kiếm.");
+            else if (sachView.timKiem(textBox_TimKiem.Text).Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy kết quả tương ứng.");
+            }
+            else
+                dataGridView.DataSource = sachView.timKiem(textBox_TimKiem.Text).ToList();
+        }
+
+        private void button_Huy_Click(object sender, EventArgs e)
+        {
+            textBox_TimKiem.Clear();
+            LoadSach();
         }
     }
 }

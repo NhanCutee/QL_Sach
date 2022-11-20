@@ -1,6 +1,6 @@
 ﻿namespace QL_Sach.GUI
 {
-    partial class Form2
+    partial class Form_QLSach
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,7 @@
             this.textBox_TimKiem = new System.Windows.Forms.TextBox();
             this.button_TimKiem = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button_Huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -241,6 +242,7 @@
             this.textBox_TimKiem.Name = "textBox_TimKiem";
             this.textBox_TimKiem.Size = new System.Drawing.Size(327, 20);
             this.textBox_TimKiem.TabIndex = 16;
+            this.textBox_TimKiem.TextChanged += new System.EventHandler(this.textBox_TimKiem_TextChanged);
             // 
             // button_TimKiem
             // 
@@ -254,6 +256,18 @@
             this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
             this.button_TimKiem.TabIndex = 19;
             this.button_TimKiem.UseVisualStyleBackColor = false;
+            this.button_TimKiem.Click += new System.EventHandler(this.button_TimKiem_Click);
+            // 
+            // button_Huy
+            // 
+            this.button_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button_Huy.Location = new System.Drawing.Point(389, 13);
+            this.button_Huy.Name = "button_Huy";
+            this.button_Huy.Size = new System.Drawing.Size(42, 39);
+            this.button_Huy.TabIndex = 20;
+            this.button_Huy.Text = "X";
+            this.button_Huy.UseVisualStyleBackColor = true;
+            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
             // Form2
             // 
@@ -261,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.button_Huy);
             this.Controls.Add(this.button_TimKiem);
             this.Controls.Add(this.textBox_TimKiem);
             this.Controls.Add(this.button_Doc);
@@ -305,5 +320,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox_TimKiem;
         private System.Windows.Forms.Button button_TimKiem;
+        private System.Windows.Forms.Button button_Huy;
     }
 }

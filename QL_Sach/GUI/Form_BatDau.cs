@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL_Sach.GUI
 {
-    public partial class Form1 : Form
+    public partial class Form_BatDau : Form
     {
-        public Form1()
+        public Form_BatDau()
         {
             InitializeComponent();
             this.Text = "Chọn cấu trúc dữ liệu";
@@ -20,38 +20,52 @@ namespace QL_Sach.GUI
 
         private void button_BatDau_Click(object sender, EventArgs e)
         {
+            if (radioButton_Sach.Checked == true)
+            {
+                //this.Hide();
+                //Form2 f = new Form2("LibListT");
+                //f.ShowDialog();
+                //this.Close();
+            }
+            else if (radioButton_NhanVien.Checked == true)
+            {
+                //this.Hide();
+                //Form2 f = new Form2("DSDac");
+                //f.ShowDialog();
+                //this.Close();
+            }
+            else if (radioButton_NhaSach.Checked == true)
+            {
+                //this.Hide();
+                //Form2 f = new Form2("DSLK");
+                //f.ShowDialog();
+                //this.Close();
+            }
+            else
+            {
+                //MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
+            }
+
             if (radioButton_LibListT.Checked == true)
             {
                 this.Hide();
-                Form2 f = new Form2("LibListT");
+                Form_QLSach f = new Form_QLSach("LibListT");
                 f.ShowDialog();
                 this.Close();
             }
             else if (radioButton_DSDac.Checked == true)
             {
                 this.Hide();
-                Form2 f = new Form2("DSDac");
+                Form_QLSach f = new Form_QLSach("DSDac");
                 f.ShowDialog();
                 this.Close();
             }
             else if (radioButton_DSLK.Checked == true)
             {
                 this.Hide();
-                Form2 f = new Form2("DSLK");
+                Form_QLSach f = new Form_QLSach("DSLK");
                 f.ShowDialog();
                 this.Close();
-            }
-            else if (radioButton_LibDic.Checked == true)
-            {
-                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
-            }
-            else if (radioButton_LibHash.Checked== true)
-            {
-                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
-            }
-            else if (radioButton_BangBam.Checked == true)
-            {
-                MessageBox.Show("Chức năng đang được phát triển.\nHãy chọn chức năng khác.", "Thông báo");
             }
             else
             {
