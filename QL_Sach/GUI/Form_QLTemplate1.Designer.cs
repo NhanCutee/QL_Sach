@@ -52,8 +52,13 @@ namespace QL_Sach.GUI
             this.button_TimKiem = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button_Huy = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhàSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -68,7 +73,7 @@ namespace QL_Sach.GUI
             this.NhaXuatBan,
             this.GhiChu,
             this.Gia});
-            this.dataGridView.Location = new System.Drawing.Point(12, 66);
+            this.dataGridView.Location = new System.Drawing.Point(11, 79);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
@@ -145,7 +150,7 @@ namespace QL_Sach.GUI
             // 
             this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(858, 66);
+            this.button_Them.Location = new System.Drawing.Point(858, 79);
             this.button_Them.Margin = new System.Windows.Forms.Padding(2);
             this.button_Them.Name = "button_Them";
             this.button_Them.Size = new System.Drawing.Size(89, 39);
@@ -159,7 +164,7 @@ namespace QL_Sach.GUI
             // 
             this.button_ChinhSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_ChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ChinhSua.Location = new System.Drawing.Point(858, 132);
+            this.button_ChinhSua.Location = new System.Drawing.Point(858, 155);
             this.button_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.button_ChinhSua.Name = "button_ChinhSua";
             this.button_ChinhSua.Size = new System.Drawing.Size(89, 39);
@@ -172,7 +177,7 @@ namespace QL_Sach.GUI
             // 
             this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(858, 203);
+            this.button_Xoa.Location = new System.Drawing.Point(858, 234);
             this.button_Xoa.Margin = new System.Windows.Forms.Padding(2);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(89, 39);
@@ -185,7 +190,7 @@ namespace QL_Sach.GUI
             // 
             this.button_Thoát.BackColor = System.Drawing.Color.LightCoral;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(858, 517);
+            this.button_Thoát.Location = new System.Drawing.Point(858, 551);
             this.button_Thoát.Margin = new System.Windows.Forms.Padding(2);
             this.button_Thoát.Name = "button_Thoát";
             this.button_Thoát.Size = new System.Drawing.Size(89, 39);
@@ -198,7 +203,7 @@ namespace QL_Sach.GUI
             // 
             this.button_XoaTatCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_XoaTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaTatCa.Location = new System.Drawing.Point(858, 283);
+            this.button_XoaTatCa.Location = new System.Drawing.Point(858, 309);
             this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaTatCa.Name = "button_XoaTatCa";
             this.button_XoaTatCa.Size = new System.Drawing.Size(89, 39);
@@ -211,7 +216,7 @@ namespace QL_Sach.GUI
             // 
             this.button_Luu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Luu.Location = new System.Drawing.Point(858, 436);
+            this.button_Luu.Location = new System.Drawing.Point(858, 469);
             this.button_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.button_Luu.Name = "button_Luu";
             this.button_Luu.Size = new System.Drawing.Size(89, 39);
@@ -224,7 +229,7 @@ namespace QL_Sach.GUI
             // 
             this.button_Doc.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Doc.Location = new System.Drawing.Point(858, 355);
+            this.button_Doc.Location = new System.Drawing.Point(858, 393);
             this.button_Doc.Margin = new System.Windows.Forms.Padding(2);
             this.button_Doc.Name = "button_Doc";
             this.button_Doc.Size = new System.Drawing.Size(89, 39);
@@ -239,7 +244,7 @@ namespace QL_Sach.GUI
             // 
             // textBox_TimKiem
             // 
-            this.textBox_TimKiem.Location = new System.Drawing.Point(12, 22);
+            this.textBox_TimKiem.Location = new System.Drawing.Point(472, 27);
             this.textBox_TimKiem.Name = "textBox_TimKiem";
             this.textBox_TimKiem.Size = new System.Drawing.Size(327, 20);
             this.textBox_TimKiem.TabIndex = 16;
@@ -251,7 +256,7 @@ namespace QL_Sach.GUI
             this.button_TimKiem.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
             this.button_TimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_TimKiem.Location = new System.Drawing.Point(344, 12);
+            this.button_TimKiem.Location = new System.Drawing.Point(822, 15);
             this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.button_TimKiem.Name = "button_TimKiem";
             this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
@@ -262,7 +267,7 @@ namespace QL_Sach.GUI
             // button_Huy
             // 
             this.button_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button_Huy.Location = new System.Drawing.Point(389, 13);
+            this.button_Huy.Location = new System.Drawing.Point(867, 16);
             this.button_Huy.Name = "button_Huy";
             this.button_Huy.Size = new System.Drawing.Size(42, 39);
             this.button_Huy.TabIndex = 20;
@@ -270,12 +275,42 @@ namespace QL_Sach.GUI
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
-            // Form2
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nhânViênToolStripMenuItem,
+            this.sáchToolStripMenuItem,
+            this.nhàSáchToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(988, 24);
+            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // nhânViênToolStripMenuItem
+            // 
+            this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.nhânViênToolStripMenuItem.Text = "Nhân Viên";
+            // 
+            // sáchToolStripMenuItem
+            // 
+            this.sáchToolStripMenuItem.Name = "sáchToolStripMenuItem";
+            this.sáchToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.sáchToolStripMenuItem.Text = "Sách";
+            // 
+            // nhàSáchToolStripMenuItem
+            // 
+            this.nhàSáchToolStripMenuItem.Name = "nhàSáchToolStripMenuItem";
+            this.nhàSáchToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.nhàSáchToolStripMenuItem.Text = "Nhà sách";
+            // 
+            // Form_QLTemplate1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(988, 627);
             this.Controls.Add(this.button_Huy);
             this.Controls.Add(this.button_TimKiem);
             this.Controls.Add(this.textBox_TimKiem);
@@ -287,13 +322,17 @@ namespace QL_Sach.GUI
             this.Controls.Add(this.button_ChinhSua);
             this.Controls.Add(this.button_Them);
             this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form2";
+            this.Name = "Form_QLTemplate1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +361,9 @@ namespace QL_Sach.GUI
         private System.Windows.Forms.TextBox textBox_TimKiem;
         private System.Windows.Forms.Button button_TimKiem;
         private System.Windows.Forms.Button button_Huy;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sáchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nhàSáchToolStripMenuItem;
     }
 }
