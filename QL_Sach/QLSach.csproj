@@ -49,10 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\NhaSachBUS_DSDac.cs" />
+    <Compile Include="BUS\NhaSachBUS_DSLienKet.cs" />
+    <Compile Include="BUS\NhaSachBUS_ListT.cs" />
+    <Compile Include="BUS\NhaSachBUS_Vew.cs" />
     <Compile Include="BUS\SachBUS_DSLienKet.cs" />
     <Compile Include="BUS\SachBUS_ListT.cs" />
     <Compile Include="BUS\SachBUS_DSDac.cs" />
     <Compile Include="BUS\SachBUS_View.cs" />
+    <Compile Include="DTO\NhaSachDTO.cs" />
     <Compile Include="DTO\SachDTO.cs" />
     <Compile Include="GUI\Form_1NhanVien.cs">
       <SubType>Form</SubType>
