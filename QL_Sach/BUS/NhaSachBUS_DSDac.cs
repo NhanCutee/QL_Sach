@@ -11,7 +11,7 @@ namespace QL_Sach.BUS
         private NhaSachDTO[] nhasachDTO;
         private int n;
 
-        public List<NhaSachDTO> SachList
+        public List<NhaSachDTO> NhaSachList
         {
             get
             {
@@ -28,7 +28,7 @@ namespace QL_Sach.BUS
             nhasachDTO = new NhaSachDTO[100];
             n = 0;
         }
-        public void themSach(NhaSachDTO ns)
+        public void themNhaSach(NhaSachDTO ns)
         {
 
             nhasachDTO[n] = ns;
@@ -46,7 +46,7 @@ namespace QL_Sach.BUS
             nhasachDTO[n] = ns;
             n++;
         }
-        public void suaSach(int index, string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
+        public void suaNhaSach(int index, string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
         {
             nhasachDTO[index].MaNhaSach = enter_maNhaSach;
             nhasachDTO[index].TenNhaSach = enter_tenNhaSach;
