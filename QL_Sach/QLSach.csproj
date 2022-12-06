@@ -100,12 +100,6 @@
     <Compile Include="GUI\Form_1Sach.Designer.cs">
       <DependentUpon>Form_1Sach.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_QLTemplate1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Form_QLTemplate1.Designer.cs">
-      <DependentUpon>Form_QLTemplate1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Form_1NhanVien.resx">
@@ -125,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_1Sach.resx">
       <DependentUpon>Form_1Sach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_QLTemplate1.resx">
-      <DependentUpon>Form_QLTemplate1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
