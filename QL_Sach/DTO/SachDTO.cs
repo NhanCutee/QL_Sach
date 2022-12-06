@@ -22,13 +22,13 @@ namespace QL_Sach.DTO
 
         public SachDTO()
         {
-            this.maSach = "N/A";
-            this.tenSach = "N/A";
-            this.theLoai = "N/A";
-            this.tenTacGia = "N/A";
-            this.nhaXuatBan = "N/A";
+            this.maSach = "";
+            this.tenSach = "";
+            this.theLoai = "";
+            this.tenTacGia = "";
+            this.nhaXuatBan = "";
             this.ngayXuatBan = DateTime.Today;
-            this.ghiChu = "N/A";
+            this.ghiChu = "";
             this.gia = 0;
         }
         public SachDTO(string enter_maSach, string enter_tenSach, string enter_theLoai, string enter_tenTacGia, string enter_nhaXuatBan, DateTime enter_ngayXuatBan, string enter_ghiChu, int enter_gia)

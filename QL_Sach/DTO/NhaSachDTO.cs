@@ -19,10 +19,10 @@ namespace QL_Sach.DTO
 
         public NhaSachDTO()
         {
-            this.maNhaSach = "N/A";
-            this.tenNhaSach = "N/A";
-            this.diaChi = "N/A";
-            this.tenQuanLi = "N/A";
+            this.maNhaSach = "";
+            this.tenNhaSach = "";
+            this.diaChi = "";
+            this.tenQuanLi = "";
             this.soLuongNhanVien = 0;
         }
         public NhaSachDTO(string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
