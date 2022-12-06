@@ -43,6 +43,31 @@ namespace QL_Sach.BUS
         private NodeNhanVien m_firstNode;
         private int m_n;
 
+        public List<NhanVienDTO> NhanVienList
+        {
+            get
+            {
+                List<NhanVienDTO> nvList = new List<NhanVienDTO>();
+                NodeNhanVien node = this.m_firstNode;
+                while(node!=null)
+                {
+                    nvList.Add(node.NhanVien);
+                    node = node.Next;
+                }
+                return nvList;
+            }
+            set
+            {
+                this.xoaTatCa();
+                List<NhanVienDTO> nvList =value;
+                foreach(NhanVienDTO nv in nvList)
+                {
+                    this.themNV(nv);
+                }
+
+            }
+        }
+
         public NhanVienBUS_DSLienKet()
         {
             m_firstNode = null;

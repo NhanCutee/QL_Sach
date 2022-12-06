@@ -13,7 +13,7 @@ namespace QL_Sach.BUS
         private int n;
         public static int MAX = 100;
 
-        public List<NhanVienDTO> nhanVienList {
+        public List<NhanVienDTO> NhanVienList {
             get 
             {
                 List<NhanVienDTO> nvList = new List<NhanVienDTO>() ;
