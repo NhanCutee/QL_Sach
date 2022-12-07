@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QL_Sach.GUI
 {
-    public partial class Form_QLNhaSach : Form
+    public partial class Form_NhaSach : Form
     {
         public string iTitle { get; set; }
 
@@ -41,12 +41,12 @@ namespace QL_Sach.GUI
         #endregion
 
 
-        public Form_QLNhaSach()
+        public Form_NhaSach()
         {
             InitializeComponent();
         }
 
-        public Form_QLNhaSach(string title)
+        public Form_NhaSach(string title)
         {
             //phuong thuc khoi tao form nhap
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace QL_Sach.GUI
             this.Text = iTitle;
 
         }
-        public Form_QLNhaSach(string title, DataGridViewRow currentRow)
+        public Form_NhaSach(string title, DataGridViewRow currentRow)
         {
             InitializeComponent();
             //phuong thuc khoi tao form chinh sua

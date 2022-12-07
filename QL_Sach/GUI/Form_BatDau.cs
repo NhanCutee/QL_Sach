@@ -49,21 +49,21 @@ namespace QL_Sach.GUI
             if (radioButton_LibListT.Checked == true)
             {
                 this.Hide();
-                Form_QLSach f = new Form_QLSach("LibListT");
+                Form_QLChụng f = new Form_QLChụng("LibListT");
                 f.ShowDialog();
                 this.Close();
             }
             else if (radioButton_DSDac.Checked == true)
             {
                 this.Hide();
-                Form_QLSach f = new Form_QLSach("DSDac");
+                Form_QLChụng f = new Form_QLChụng("DSDac");
                 f.ShowDialog();
                 this.Close();
             }
             else if (radioButton_DSLK.Checked == true)
             {
                 this.Hide();
-                Form_QLSach f = new Form_QLSach("DSLK");
+                Form_QLChụng f = new Form_QLChụng("DSLK");
                 f.ShowDialog();
                 this.Close();
             }

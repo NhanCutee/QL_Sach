@@ -1,7 +1,7 @@
 ﻿
 namespace QL_Sach.GUI
 {
-    partial class Form_1Sach
+    partial class Form_Sach
     {
         /// <summary>
         /// Required designer variable.

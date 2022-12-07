@@ -18,7 +18,7 @@ namespace QL_Sach.BUS
         private NhanVienBUS_ListT nhanVienListT;
         private NhanVienBUS_DSDac nhanVienDSDac;
         private NhanVienBUS_DSLienKet nhanVienDSLK;
-        public List<NhanVienDTO> SachList { get => nhanVienList; }
+        public List<NhanVienDTO> NhanVienList { get => nhanVienList; }
         public string LoaiDS {
             get => loaiDS; 
         }
@@ -40,6 +40,22 @@ namespace QL_Sach.BUS
             {
                 nhanVienDSLK = new NhanVienBUS_DSLienKet();
                 nhanVienList = nhanVienDSLK.NhanVienList;
+            }
+        }
+
+        public NhanVienDTO timNV(string ma)
+        {
+            if (loaiDS == "LibListT")
+            {
+                return nhanVienListT.timNV(ma);
+            }
+            else if (loaiDS == "DSDac")
+            {
+                return nhanVienDSDac.timNV(ma);
+            }
+            else
+            {
+                return nhanVienDSLK.timNV(ma).NhanVien; //tim tra ve node 
             }
         }
 
@@ -160,6 +176,7 @@ namespace QL_Sach.BUS
                 FileStream fs = new FileStream("NhanVienData.bin", FileMode.Open);
                 BinaryFormatter bf = new BinaryFormatter();
                 nhanVienList = (List<NhanVienDTO>)bf.Deserialize(fs);
+                chuyenDoiDuLieu();
                 fs.Close();
                 return true;
             }
@@ -252,8 +269,41 @@ namespace QL_Sach.BUS
             dsKetQua = dsKetQua.Concat(dsKetQua_NgaySinh).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_NhaSachLamViec).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_DiaChi).ToList();
-
+            //Thêm lọc chức vụ
             return dsKetQua;
+        }
+
+        public bool chuyenCauTrucDL(string ctdl)
+        {
+            if (ctdl == "LibListT")
+            {
+                if (luuFile() == false)
+                    return false;
+                nhanVienListT = new NhanVienBUS_ListT();
+                if(docFile() == false)
+                    return false;
+                return true;
+            }
+            else if (ctdl == "DSDac")
+            {
+                if (luuFile() == false)
+                    return false;
+                nhanVienDSDac = new NhanVienBUS_DSDac();
+                if (docFile() == false)
+                    return false;
+                return true;
+            }
+            else if (ctdl == "DSLK")
+            {
+                if (luuFile() == false)
+                    return false;
+                nhanVienDSLK = new NhanVienBUS_DSLienKet();
+                if (docFile() == false)
+                    return false;
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

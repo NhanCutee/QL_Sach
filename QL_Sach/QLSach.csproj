@@ -64,17 +64,17 @@
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\NhaSachDTO.cs" />
     <Compile Include="DTO\SachDTO.cs" />
-    <Compile Include="GUI\Form_1NhanVien.cs">
+    <Compile Include="GUI\Form_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_1NhanVien.Designer.cs">
-      <DependentUpon>Form_1NhanVien.cs</DependentUpon>
+    <Compile Include="GUI\Form_NhanVien.Designer.cs">
+      <DependentUpon>Form_NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_1NhaSach.cs">
+    <Compile Include="GUI\Form_NhaSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_1NhaSach.Designer.cs">
-      <DependentUpon>Form_1NhaSach.cs</DependentUpon>
+    <Compile Include="GUI\Form_NhaSach.Designer.cs">
+      <DependentUpon>Form_NhaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form_BatDau.cs">
       <SubType>Form</SubType>
@@ -82,43 +82,34 @@
     <Compile Include="GUI\Form_BatDau.Designer.cs">
       <DependentUpon>Form_BatDau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_QLNhaSach.cs">
+    <Compile Include="GUI\Form_QLChụng.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_QLNhaSach.Designer.cs">
-      <DependentUpon>Form_QLNhaSach.cs</DependentUpon>
+    <Compile Include="GUI\Form_QLChụng.Designer.cs">
+      <DependentUpon>Form_QLChụng.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_QLSach.cs">
+    <Compile Include="GUI\Form_Sach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_QLSach.Designer.cs">
-      <DependentUpon>Form_QLSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Form_1Sach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Form_1Sach.Designer.cs">
-      <DependentUpon>Form_1Sach.cs</DependentUpon>
+    <Compile Include="GUI\Form_Sach.Designer.cs">
+      <DependentUpon>Form_Sach.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\Form_1NhanVien.resx">
-      <DependentUpon>Form_1NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_NhanVien.resx">
+      <DependentUpon>Form_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_1NhaSach.resx">
-      <DependentUpon>Form_1NhaSach.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_NhaSach.resx">
+      <DependentUpon>Form_NhaSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_BatDau.resx">
       <DependentUpon>Form_BatDau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_QLNhaSach.resx">
-      <DependentUpon>Form_QLNhaSach.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_QLChụng.resx">
+      <DependentUpon>Form_QLChụng.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_QLSach.resx">
-      <DependentUpon>Form_QLSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_1Sach.resx">
-      <DependentUpon>Form_1Sach.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_Sach.resx">
+      <DependentUpon>Form_Sach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
