@@ -204,7 +204,8 @@ namespace QL_Sach.GUI
 
 
         //----------------- NHA SACH--------------------------------------------------------
-        private void button6_Click(object sender, EventArgs e)
+      
+        private void button_Exit_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Thoát chương trình?", "Chú ý", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.No)
@@ -212,7 +213,6 @@ namespace QL_Sach.GUI
             else
                 this.Close();
         }
-
         //--------------------------------------------------------------------------------
 
 
@@ -432,7 +432,11 @@ namespace QL_Sach.GUI
 
         }
 
-       
+        
+
+
+
+
 
 
 

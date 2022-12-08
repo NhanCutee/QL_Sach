@@ -61,13 +61,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button_DF = new System.Windows.Forms.Button();
+            this.button_LF = new System.Windows.Forms.Button();
+            this.button_XX = new System.Windows.Forms.Button();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_X = new System.Windows.Forms.Button();
+            this.button_S = new System.Windows.Forms.Button();
+            this.button_T = new System.Windows.Forms.Button();
             this.dGVNS = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -402,13 +402,13 @@
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button9);
+            this.tabPage2.Controls.Add(this.button_DF);
+            this.tabPage2.Controls.Add(this.button_LF);
+            this.tabPage2.Controls.Add(this.button_XX);
+            this.tabPage2.Controls.Add(this.button_Exit);
+            this.tabPage2.Controls.Add(this.button_X);
+            this.tabPage2.Controls.Add(this.button_S);
+            this.tabPage2.Controls.Add(this.button_T);
             this.tabPage2.Controls.Add(this.dGVNS);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -492,91 +492,91 @@
             this.textBox1.Size = new System.Drawing.Size(327, 20);
             this.textBox1.TabIndex = 40;
             // 
-            // button3
+            // button_DF
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(867, 342);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 39);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "Đọc File";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button_DF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_DF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_DF.Location = new System.Drawing.Point(867, 342);
+            this.button_DF.Margin = new System.Windows.Forms.Padding(2);
+            this.button_DF.Name = "button_DF";
+            this.button_DF.Size = new System.Drawing.Size(89, 39);
+            this.button_DF.TabIndex = 39;
+            this.button_DF.Text = "Đọc File";
+            this.button_DF.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button_LF
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(867, 423);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 39);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "Lưu File";
-            this.button4.UseVisualStyleBackColor = false;
+            this.button_LF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_LF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LF.Location = new System.Drawing.Point(867, 423);
+            this.button_LF.Margin = new System.Windows.Forms.Padding(2);
+            this.button_LF.Name = "button_LF";
+            this.button_LF.Size = new System.Drawing.Size(89, 39);
+            this.button_LF.TabIndex = 38;
+            this.button_LF.Text = "Lưu File";
+            this.button_LF.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // button_XX
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(867, 270);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 39);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Xóa tất cả";
-            this.button5.UseVisualStyleBackColor = false;
+            this.button_XX.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_XX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_XX.Location = new System.Drawing.Point(867, 270);
+            this.button_XX.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XX.Name = "button_XX";
+            this.button_XX.Size = new System.Drawing.Size(89, 39);
+            this.button_XX.TabIndex = 37;
+            this.button_XX.Text = "Xóa tất cả";
+            this.button_XX.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // button_Exit
             // 
-            this.button6.BackColor = System.Drawing.Color.LightCoral;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(867, 504);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(89, 39);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "Thoát";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button_Exit.BackColor = System.Drawing.Color.LightCoral;
+            this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Exit.Location = new System.Drawing.Point(867, 504);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(89, 39);
+            this.button_Exit.TabIndex = 36;
+            this.button_Exit.Text = "Thoát";
+            this.button_Exit.UseVisualStyleBackColor = false;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click_1);
             // 
-            // button7
+            // button_X
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(867, 195);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(89, 39);
-            this.button7.TabIndex = 35;
-            this.button7.Text = "Xóa";
-            this.button7.UseVisualStyleBackColor = false;
+            this.button_X.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_X.Location = new System.Drawing.Point(867, 195);
+            this.button_X.Margin = new System.Windows.Forms.Padding(2);
+            this.button_X.Name = "button_X";
+            this.button_X.Size = new System.Drawing.Size(89, 39);
+            this.button_X.TabIndex = 35;
+            this.button_X.Text = "Xóa";
+            this.button_X.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // button_S
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(867, 124);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(89, 39);
-            this.button8.TabIndex = 34;
-            this.button8.Text = "Chỉnh sửa";
-            this.button8.UseVisualStyleBackColor = false;
+            this.button_S.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_S.Location = new System.Drawing.Point(867, 124);
+            this.button_S.Margin = new System.Windows.Forms.Padding(2);
+            this.button_S.Name = "button_S";
+            this.button_S.Size = new System.Drawing.Size(89, 39);
+            this.button_S.TabIndex = 34;
+            this.button_S.Text = "Chỉnh sửa";
+            this.button_S.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // button_T
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(867, 53);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(89, 39);
-            this.button9.TabIndex = 33;
-            this.button9.Text = "Thêm";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button9.UseVisualStyleBackColor = false;
+            this.button_T.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_T.Location = new System.Drawing.Point(867, 53);
+            this.button_T.Margin = new System.Windows.Forms.Padding(2);
+            this.button_T.Name = "button_T";
+            this.button_T.Size = new System.Drawing.Size(89, 39);
+            this.button_T.TabIndex = 33;
+            this.button_T.Text = "Thêm";
+            this.button_T.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_T.UseVisualStyleBackColor = false;
             // 
             // dGVNS
             // 
@@ -942,13 +942,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button_DF;
+        private System.Windows.Forms.Button button_LF;
+        private System.Windows.Forms.Button button_XX;
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_X;
+        private System.Windows.Forms.Button button_S;
+        private System.Windows.Forms.Button button_T;
         private System.Windows.Forms.DataGridView dGVNS;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnHuyTimNV;
