@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace QL_Sach.BUS
 {
-    class NhanVienBUS_View
+    class NhanVienBUS
     {
         private string loaiDS;
         private List<NhanVienDTO> nhanVienList;
@@ -23,7 +23,7 @@ namespace QL_Sach.BUS
             get => loaiDS; 
         }
 
-        public NhanVienBUS_View(string enter_loaiDS)
+        public NhanVienBUS(string enter_loaiDS)
         {
             loaiDS = enter_loaiDS;
             if (loaiDS == "LibListT")
@@ -55,7 +55,7 @@ namespace QL_Sach.BUS
             }
             else
             {
-                return nhanVienDSLK.timNV(ma).NhanVien; //tim tra ve node 
+                return nhanVienDSLK.timNV(ma)==null?null: nhanVienDSLK.timNV(ma).NhanVien; //tim tra ve node 
             }
         }
 
@@ -186,28 +186,36 @@ namespace QL_Sach.BUS
             }
         }
 
-        private void chuyenDoiDuLieu()
+        private bool chuyenDoiDuLieu()
         {
-            if (loaiDS == "LibListT")
+            try
             {
-                foreach (NhanVienDTO nv in nhanVienList)
+                if (loaiDS == "LibListT")
                 {
-                    nhanVienListT.themNV(nv);
+                    foreach (NhanVienDTO nv in nhanVienList)
+                    {
+                        nhanVienListT.themNV(nv);
+                    }
                 }
+                else if (loaiDS == "DSDac")
+                {
+                    foreach (NhanVienDTO nv in nhanVienList)
+                    {
+                        nhanVienDSDac.themNV(nv);
+                    }
+                }
+                else if (loaiDS == "DSLK")
+                {
+                    foreach (NhanVienDTO nv in nhanVienList)
+                    {
+                        nhanVienDSLK.themNV(nv);
+                    }
+                }
+                return true;
             }
-            else if (loaiDS == "DSDac")
+            catch
             {
-                foreach (NhanVienDTO nv in nhanVienList)
-                {
-                    nhanVienDSDac.themNV(nv);
-                }
-            }
-            else if (loaiDS == "DSLK")
-            {
-                foreach (NhanVienDTO nv in nhanVienList)
-                {
-                    nhanVienDSLK.themNV(nv);
-                }
+                return false;
             }
         }
 
@@ -277,30 +285,21 @@ namespace QL_Sach.BUS
         {
             if (ctdl == "LibListT")
             {
-                if (luuFile() == false)
-                    return false;
                 nhanVienListT = new NhanVienBUS_ListT();
-                if(docFile() == false)
-                    return false;
-                return true;
+                loaiDS = "LibListT";
+                return chuyenDoiDuLieu();
             }
             else if (ctdl == "DSDac")
             {
-                if (luuFile() == false)
-                    return false;
                 nhanVienDSDac = new NhanVienBUS_DSDac();
-                if (docFile() == false)
-                    return false;
-                return true;
+                loaiDS = "DSDac";
+                return chuyenDoiDuLieu();
             }
             else if (ctdl == "DSLK")
             {
-                if (luuFile() == false)
-                    return false;
                 nhanVienDSLK = new NhanVienBUS_DSLienKet();
-                if (docFile() == false)
-                    return false;
-                return true;
+                loaiDS = "DSLK";
+                return chuyenDoiDuLieu();
             }
             else
                 return false;

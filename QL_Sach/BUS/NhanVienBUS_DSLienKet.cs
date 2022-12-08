@@ -51,6 +51,8 @@ namespace QL_Sach.BUS
                 NodeNhanVien node = this.m_firstNode;
                 while(node!=null)
                 {
+                    if (node.Next == null)
+                        break;
                     nvList.Add(node.NhanVien);
                     node = node.Next;
                 }
@@ -64,13 +66,12 @@ namespace QL_Sach.BUS
                 {
                     this.themNV(nv);
                 }
-
             }
         }
 
         public NhanVienBUS_DSLienKet()
         {
-            m_firstNode = null;
+            m_firstNode = new NodeNhanVien();
             m_n = 0;
         }
 
@@ -82,13 +83,6 @@ namespace QL_Sach.BUS
 
         public NodeNhanVien FirstNode { get => m_firstNode; set => m_firstNode = value; }
         public int N { get => m_n; set => m_n = value; }
-
-        public void themNVRong()
-        {
-            this.m_firstNode = new NodeNhanVien();
-            this.m_n++;
-
-        }
 
         public NodeNhanVien timNV(string ma)
         {
@@ -107,6 +101,7 @@ namespace QL_Sach.BUS
             if (this.timNV(nhanVien.MaNV) == null)
             {
                 NodeNhanVien node = new NodeNhanVien(nhanVien);
+                m_firstNode.Prev = node;
                 node.Next = m_firstNode;
                 m_firstNode = node;
                 m_n++;
@@ -122,9 +117,18 @@ namespace QL_Sach.BUS
             if (node != null)
             {
                NodeNhanVien nodeTemp;
-                if (node.Prev != null)
+                if(node.Prev==null) // node dau
+                {
+                    m_firstNode = m_firstNode.Next;
+                    m_firstNode.Prev = null;
+                }
+                else
+                {
                     nodeTemp = node;
-                node = node.Next;
+                    node = node.Prev;
+                    node.Next = nodeTemp.Next;
+                    nodeTemp = null;
+                }
                 m_n--;
                 return true;
             }
@@ -150,12 +154,11 @@ namespace QL_Sach.BUS
 
         public void xoaTatCa()
         {
-            NodeNhanVien node = m_firstNode;
             NodeNhanVien nodeTemp;
-            while (node != null)
+            while (m_firstNode != null)
             {
-                nodeTemp = node;
-                node = node.Next;
+                nodeTemp = m_firstNode;
+                m_firstNode = m_firstNode.Next;
                 nodeTemp = null;
             }
         }

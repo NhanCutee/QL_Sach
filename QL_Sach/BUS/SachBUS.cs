@@ -10,7 +10,7 @@ using QL_Sach.DTO;
 
 namespace QL_Sach.BUS
 {
-    class SachBUS_View
+    class SachBUS
     {
         private string loaiDS;
         private List<SachDTO> sachList;
@@ -20,7 +20,7 @@ namespace QL_Sach.BUS
         public List<SachDTO> SachList { get => sachList; }
 
 
-        public SachBUS_View(string enter_loaiDS)
+        public SachBUS(string enter_loaiDS)
         {
             loaiDS = enter_loaiDS;
             if (loaiDS == "LibListT")

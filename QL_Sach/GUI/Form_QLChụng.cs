@@ -17,15 +17,15 @@ namespace QL_Sach.GUI
     public partial class Form_QLChụng : Form
     {
         Form_Sach f;
-        SachBUS_View sachView;
+        SachBUS sachView;
 
         public Form_QLChụng(string loaiDS)
         {
             
             InitializeComponent();
             this.Text = "Quản lý sách";
-            sachView = new SachBUS_View(loaiDS);
-            dsnv = new NhanVienBUS_View(loaiDS);
+            sachView = new SachBUS(loaiDS);
+            dsnv = new NhanVienBUS(loaiDS);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace QL_Sach.GUI
 
         //--------------------- NHAN VIEN-----------------------------------------------------------
 
-        NhanVienBUS_View dsnv;
+        NhanVienBUS dsnv;
 
         private void loadNV()
         {
@@ -393,7 +393,10 @@ namespace QL_Sach.GUI
                 if (dialogResult == DialogResult.No)
                     return;
                 if (dsnv.chuyenCauTrucDL("DSDac") == false || dsnv.LoaiDS != "DSDac")
+                {
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                    radNVDSD.Checked = false;
+                }
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
                 loadNV();
