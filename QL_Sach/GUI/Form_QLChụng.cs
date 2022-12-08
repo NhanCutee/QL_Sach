@@ -419,6 +419,13 @@ namespace QL_Sach.GUI
             }
         }
 
+        private void dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
+
 
 
         //--------------------------------------------------------------------------------

@@ -92,6 +92,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -325,6 +330,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(788, 511);
             this.dataGridView.TabIndex = 21;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
             // ID
             // 
@@ -570,10 +576,17 @@
             this.button9.Text = "Thêm";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button9.UseVisualStyleBackColor = false;
+           
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12});
             this.dataGridView1.Location = new System.Drawing.Point(21, 53);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
@@ -837,6 +850,39 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaNhaSach";
+            this.Column8.HeaderText = "Mã nhà sách";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenNhaSach";
+            this.Column9.HeaderText = "Tên nhà sách";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "DiaChi";
+            this.Column10.HeaderText = "Địa chỉ";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 200;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenQuanLi";
+            this.Column11.HeaderText = "Tên quản lí";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 140;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "SoLuongNhanVien";
+            this.Column12.HeaderText = "Số lượng nhân viên";
+            this.Column12.Name = "Column12";
+            // 
             // Form_QLChụng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,5 +981,10 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }

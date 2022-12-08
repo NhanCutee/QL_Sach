@@ -20,23 +20,17 @@ namespace QL_Sach.GUI
 
 
         #region "Thong tin sach"
-        private string maSach;
-        private string tenSach;
-        private string theLoai;
-        private string tenTacGia;
-        private string nhaXuatBan;
-        private DateTime? ngayXuatBan;
-        private string ghiChu = "";
-        private int gia = 0;
+        private string maNhaSach;
+        private string tenNhaSach;
+        private string diaChi;
+        private string tenQuanLi;
+        private int soLuongNhanVien;
 
-        public string MaSach { get => maSach; set => maSach = value; }
-        public string TenSach { get => tenSach; set => tenSach = value; }
-        public string TheLoai { get => theLoai; set => theLoai = value; }
-        public string TenTacGia { get => tenTacGia; set => tenTacGia = value; }
-        public string NhaXuatBan { get => nhaXuatBan; set => nhaXuatBan = value; }
-        public DateTime? NgayXuatBan { get => ngayXuatBan; set => ngayXuatBan = value; }
-        public string GhiChu { get => ghiChu; set => ghiChu = value; }
-        public int Gia { get => gia; set => gia = value; }
+        public string MaNhaSach { get => maNhaSach; set => maNhaSach = value; }
+        public string TenNhaSach { get => tenNhaSach; set => tenNhaSach = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string TenQuanLi { get => tenQuanLi; set => tenQuanLi = value; }
+        public int SoLuongNhanVien { get => soLuongNhanVien; set => soLuongNhanVien = value; }
 
         #endregion
 
@@ -59,15 +53,13 @@ namespace QL_Sach.GUI
             InitializeComponent();
             //phuong thuc khoi tao form chinh sua
             this.iTitle = title;
-            textbox_MaSach.Text = currentRow.Cells[0].Value.ToString();
-            textBox_TenSach.Text = currentRow.Cells[1].Value.ToString();
-            comboBox_TheLoai.Text = currentRow.Cells[2].Value.ToString();
-            textBox_TacGia.Text = currentRow.Cells[3].Value.ToString();
+            textbox_MaNhaSach.Text = currentRow.Cells[0].Value.ToString();
+            textBox_TenNhaSach.Text = currentRow.Cells[1].Value.ToString();
+            
+            textBox_DiaChi.Text = currentRow.Cells[3].Value.ToString();
 
-            comboBox_NhaXuatBan.Text = currentRow.Cells[4].Value.ToString();
-            dateTimePicker_NgayXuatBan.Value = (DateTime)currentRow.Cells[5].Value;
-            textBox_GhiChu.Text = currentRow.Cells[6].Value.ToString();
-            textBox_Gia.Text = currentRow.Cells[7].Value.ToString();
+            textBox_TenQuanLi.Text= currentRow.Cells[4].Value.ToString();
+            textBox_SoLuongNhanVien.Text = currentRow.Cells[5].Value.ToString();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -83,43 +75,37 @@ namespace QL_Sach.GUI
         {
             bool nhapDung = true;
             //viet them dieu kien nhap, them so phan tu toi da duoc nhap, viet hoa ki tu, chuan hoa chuoi, .................
-            if (!textbox_MaSach.Text.All(Char.IsLetterOrDigit) || textbox_MaSach.Text == "")
+            if (!textbox_MaNhaSach.Text.All(Char.IsLetterOrDigit) || textbox_MaNhaSach.Text == "")
             {
                 nhapDung = false;
-                MessageBox.Show("Nhập sai mã sách, kí tự hợp lệ: a-z, A-Z, 0-9");
+                MessageBox.Show("Nhập sai mã nhà sách, kí tự hợp lệ: a-z, A-Z, 0-9");
                 return;
             }
-            if (textBox_TenSach.Text == "" || textBox_TenSach.Text.Substring(0, 1) == " ")
+            if (textBox_TenNhaSach.Text == "" || textBox_TenNhaSach.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Tên sách không được để trống.");
+                MessageBox.Show("Tên nhà sách không được để trống.");
                 return;
             }
-            if (textBox_TacGia.Text == "" || textBox_TacGia.Text.Substring(0, 1) == " ")
+            if (textBox_DiaChi.Text == "" || textBox_DiaChi.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Tên tác giả không được để trống");
+                MessageBox.Show("Địa chỉ không được để trống");
                 return;
             }
-            if (comboBox_TheLoai.Text == "" || comboBox_TheLoai.Text.Substring(0, 1) == " ")
+            if (textBox_TenQuanLi.Text == "" || textBox_TenQuanLi.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Thể loại không được để trống.");
+                MessageBox.Show("Tên quản lí không được để trống");
                 return;
             }
-            if (comboBox_NhaXuatBan.Text == "" || comboBox_NhaXuatBan.Text.Substring(0, 1) == " ")
+            if (textBox_SoLuongNhanVien.Text == "" || textBox_SoLuongNhanVien.Text.Substring(0, 1) == " ")
             {
                 nhapDung = false;
-                MessageBox.Show("Nhà xuất bản không được để trống.");
+                MessageBox.Show("Số lượng nhân viên không được để trống");
                 return;
             }
-
-            if (!textBox_Gia.Text.All(Char.IsDigit) || textBox_Gia.Text == "")
-            {
-                nhapDung = false;
-                MessageBox.Show("Nhập sai giá tiền, kí tự hợp lệ: 0-9");
-                return;
-            }
+        
 
             if (nhapDung)
             {
@@ -131,30 +117,25 @@ namespace QL_Sach.GUI
                 if (dialogResult == DialogResult.No)
                     return;
                 userPress = true;
-                maSach = textbox_MaSach.Text.ToUpper();
-                tenSach = textBox_TenSach.Text;
-                theLoai = comboBox_TheLoai.Text;
-                tenTacGia = textBox_TacGia.Text;
-                nhaXuatBan = comboBox_NhaXuatBan.Text;
-                ngayXuatBan = dateTimePicker_NgayXuatBan.Value;
-                ghiChu = textBox_GhiChu.Text;
-                gia = Convert.ToInt32(textBox_Gia.Text);
+                maNhaSach = textbox_MaNhaSach.Text.ToUpper();
+                tenNhaSach = textBox_TenNhaSach.Text;
+                DiaChi=textBox_DiaChi.Text;
+                tenQuanLi = textBox_TenQuanLi.Text;
+                soLuongNhanVien=Convert.ToInt32((textBox_SoLuongNhanVien.Text)); 
                 this.Close();
             }
 
         }
         private void button_NhapLai_Click(object sender, EventArgs e)
         {
-            textbox_MaSach.Text = "";
-            textBox_TenSach.Text = "";
-            comboBox_TheLoai.Text = "";
-            textBox_TacGia.Text = "";
-            comboBox_NhaXuatBan.Text = "";
-            dateTimePicker_NgayXuatBan.Value = dateTimePicker_NgayXuatBan.MinDate;
-            textBox_GhiChu.Text = "";
-            textBox_Gia.Text = "0";
+            textbox_MaNhaSach.Text = "";
+            textBox_TenNhaSach.Text = "";
+            textBox_TenQuanLi.Text = "";
+            textBox_DiaChi.Text = "";
+            textBox_SoLuongNhanVien.Text ="";
+            
 
-            textbox_MaSach.Select();
+            textbox_MaNhaSach.Select();
         }
         private void button_Huy_Click(object sender, EventArgs e)
         {
