@@ -18,6 +18,8 @@ namespace QL_Sach.GUI
     {
         Form_Sach f;
         SachBUS sachView;
+        Form_NhaSach b;
+        NhaSachBUS nhaView;
 
         public Form_QLChụng(string loaiDS)
         {
@@ -26,6 +28,8 @@ namespace QL_Sach.GUI
             this.Text = "Quản lý sách";
             sachView = new SachBUS(loaiDS);
             dsnv = new NhanVienBUS(loaiDS);
+            nhaView = new NhaSachBUS(loaiDS);
+             
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -213,6 +217,123 @@ namespace QL_Sach.GUI
             else
                 this.Close();
         }
+        private void LoadNhaSach()
+        {
+            dGVNS.DataSource = nhaView.NhaSachList.ToList();
+        }
+
+        private void button_T_Click(object sender, EventArgs e)
+        {
+            string bTitle = "Nhập thông tin quyển sách";
+            b = new Form_NhaSach(bTitle);
+            b.ShowDialog();
+            if (b.UserPress == true)
+            {
+                nhaView.themNhaSach(b.MaNhaSach, b.TenNhaSach, b.DiaChi, b.TenQuanLi, b.SoLuongNhanVien);
+            }
+
+            LoadNhaSach();
+        }
+
+        private void button_S_Click(object sender, EventArgs e)
+        {
+            if (dGVNS.SelectedCells.Count > 0)
+            {
+                string bTitle = "Sửa thông tin quyển sách";
+
+                int index = dGVNS.CurrentCell.RowIndex;
+                DataGridViewRow currentRow = dGVNS.Rows[index];
+                b = new Form_NhaSach(bTitle, currentRow);
+                b.ShowDialog();
+                if (b.UserPress == true)
+                {
+                    nhaView.suaNhaSach(index, b.MaNhaSach, b.TenNhaSach, b.DiaChi, b.TenQuanLi, b.SoLuongNhanVien);
+                }
+                LoadSach();
+            }
+            else
+                MessageBox.Show("Hãy chọn một quyển sách để sửa");
+        }
+
+        private void button_X_Click(object sender, EventArgs e)
+        {
+            if (dGVNS.SelectedCells.Count > 0)
+            {
+                //show message box de xac nhan xoa
+                DialogResult dialogResult = MessageBox.Show("Xóa sách đã chọn ?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+
+                //De chon row truoc cac row da xoa
+                int lastRow = dGVNS.SelectedCells[0].RowIndex;
+
+                int[] rowIndexes = (from sc in dGVNS.SelectedCells.Cast<DataGridViewCell>()
+                                    select sc.RowIndex).Distinct().ToArray();
+                foreach (int i in rowIndexes)
+                    nhaView.xoaNhaSach(i);
+
+                LoadNhaSach();
+
+                dGVNS.ClearSelection();
+
+                try { dGVNS.Rows[lastRow].Selected = true; } catch { }
+
+            }
+            else
+                MessageBox.Show("Hãy chọn nhà sách cần xóa");
+        }
+
+        private void button_XX_Click(object sender, EventArgs e)
+        {
+            if (nhaView.soLuongNhaSach() == 0)
+            {
+                MessageBox.Show("Danh sách rỗng, không thể xóa", "Thông báo");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Chú ý, TOÀN BỘ danh sách sẽ bị xóa", "Chú ý", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
+            nhaView.xoaTatCa();
+            LoadNhaSach();
+        }
+
+        private void button_DF_Click(object sender, EventArgs e)
+        {
+            if (nhaView.docFile() == false)
+            {
+                DialogResult rs = MessageBox.Show("File rỗng hoặc không tồn tại,\nbạn có muốn tự chọn file?", "Thông báo", MessageBoxButtons.YesNo);
+                if (rs == DialogResult.Yes)
+                {
+                    OpenFileDialog open = new OpenFileDialog();
+                    DialogResult openFileRS = open.ShowDialog();
+                    if (openFileRS == DialogResult.OK)
+                    {
+                        string location;
+                        try
+                        {
+                            location = System.IO.Path.GetFullPath(open.FileName);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
+                            return;
+                        }
+                        if (sachView.docFile(location) == false)
+                        {
+                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
+                            return;
+                        }
+                    }
+                }
+            }
+            LoadNhaSach();
+        }
+
+        private void button_LF_Click(object sender, EventArgs e)
+        {
+            nhaView.luuFile();
+        }
+    
         //--------------------------------------------------------------------------------
 
 
@@ -432,7 +553,11 @@ namespace QL_Sach.GUI
 
         }
 
-        
+      
+
+
+
+
 
 
 

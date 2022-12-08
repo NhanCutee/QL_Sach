@@ -503,6 +503,7 @@
             this.button_DF.TabIndex = 39;
             this.button_DF.Text = "Đọc File";
             this.button_DF.UseVisualStyleBackColor = false;
+            this.button_DF.Click += new System.EventHandler(this.button_DF_Click);
             // 
             // button_LF
             // 
@@ -515,6 +516,7 @@
             this.button_LF.TabIndex = 38;
             this.button_LF.Text = "Lưu File";
             this.button_LF.UseVisualStyleBackColor = false;
+            this.button_LF.Click += new System.EventHandler(this.button_LF_Click);
             // 
             // button_XX
             // 
@@ -527,6 +529,7 @@
             this.button_XX.TabIndex = 37;
             this.button_XX.Text = "Xóa tất cả";
             this.button_XX.UseVisualStyleBackColor = false;
+            this.button_XX.Click += new System.EventHandler(this.button_XX_Click);
             // 
             // button_Exit
             // 
@@ -552,6 +555,7 @@
             this.button_X.TabIndex = 35;
             this.button_X.Text = "Xóa";
             this.button_X.UseVisualStyleBackColor = false;
+            this.button_X.Click += new System.EventHandler(this.button_X_Click);
             // 
             // button_S
             // 
@@ -564,6 +568,7 @@
             this.button_S.TabIndex = 34;
             this.button_S.Text = "Chỉnh sửa";
             this.button_S.UseVisualStyleBackColor = false;
+            this.button_S.Click += new System.EventHandler(this.button_S_Click);
             // 
             // button_T
             // 
@@ -577,6 +582,7 @@
             this.button_T.Text = "Thêm";
             this.button_T.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_T.UseVisualStyleBackColor = false;
+            this.button_T.Click += new System.EventHandler(this.button_T_Click);
             // 
             // dGVNS
             // 
