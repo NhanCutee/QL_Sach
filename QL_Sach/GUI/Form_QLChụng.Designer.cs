@@ -68,7 +68,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVNS = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radNVDSLK = new System.Windows.Forms.RadioButton();
@@ -92,18 +97,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
@@ -409,7 +409,7 @@
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.button9);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.dGVNS);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -576,24 +576,56 @@
             this.button9.Text = "Thêm";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button9.UseVisualStyleBackColor = false;
-           
             // 
-            // dataGridView1
+            // dGVNS
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGVNS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVNS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
             this.Column9,
             this.Column10,
             this.Column11,
             this.Column12});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 53);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(788, 511);
-            this.dataGridView1.TabIndex = 32;
+            this.dGVNS.Location = new System.Drawing.Point(21, 53);
+            this.dGVNS.Margin = new System.Windows.Forms.Padding(2);
+            this.dGVNS.Name = "dGVNS";
+            this.dGVNS.RowHeadersWidth = 51;
+            this.dGVNS.RowTemplate.Height = 24;
+            this.dGVNS.Size = new System.Drawing.Size(788, 511);
+            this.dGVNS.TabIndex = 32;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "MaNhaSach";
+            this.Column8.HeaderText = "Mã nhà sách";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenNhaSach";
+            this.Column9.HeaderText = "Tên nhà sách";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "DiaChi";
+            this.Column10.HeaderText = "Địa chỉ";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 200;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenQuanLi";
+            this.Column11.HeaderText = "Tên quản lí";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 140;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "SoLuongNhanVien";
+            this.Column12.HeaderText = "Số lượng nhân viên";
+            this.Column12.Name = "Column12";
             // 
             // tabPage3
             // 
@@ -850,39 +882,6 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaNhaSach";
-            this.Column8.HeaderText = "Mã nhà sách";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TenNhaSach";
-            this.Column9.HeaderText = "Tên nhà sách";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "DiaChi";
-            this.Column10.HeaderText = "Địa chỉ";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 200;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenQuanLi";
-            this.Column11.HeaderText = "Tên quản lí";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 140;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "SoLuongNhanVien";
-            this.Column12.HeaderText = "Số lượng nhân viên";
-            this.Column12.Name = "Column12";
-            // 
             // Form_QLChụng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -905,7 +904,7 @@
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -949,7 +948,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVNS;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnHuyTimNV;
         private System.Windows.Forms.Button btnTimNV;
