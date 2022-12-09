@@ -100,6 +100,10 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSoNV = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSoQL = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -664,14 +668,19 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblSoQL);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.lblSoNV);
+            this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.lblSL);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(18, 484);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(788, 88);
+            this.groupBox4.Size = new System.Drawing.Size(203, 104);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin danh sách";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // lblSL
             // 
@@ -687,9 +696,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Số lượng nhân viên:";
+            this.label1.Text = "Số lượng:";
             // 
             // groupBox1
             // 
@@ -698,7 +707,7 @@
             this.groupBox1.Controls.Add(this.radNVListT);
             this.groupBox1.Location = new System.Drawing.Point(31, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 39);
+            this.groupBox1.Size = new System.Drawing.Size(239, 39);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cấu trúc dữ liệu";
@@ -741,9 +750,9 @@
             // btnHuyTimNV
             // 
             this.btnHuyTimNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnHuyTimNV.Location = new System.Drawing.Point(764, 6);
+            this.btnHuyTimNV.Location = new System.Drawing.Point(789, 12);
             this.btnHuyTimNV.Name = "btnHuyTimNV";
-            this.btnHuyTimNV.Size = new System.Drawing.Size(42, 39);
+            this.btnHuyTimNV.Size = new System.Drawing.Size(36, 36);
             this.btnHuyTimNV.TabIndex = 42;
             this.btnHuyTimNV.Text = "X";
             this.btnHuyTimNV.UseVisualStyleBackColor = true;
@@ -755,17 +764,17 @@
             this.btnTimNV.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
             this.btnTimNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnTimNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimNV.Location = new System.Drawing.Point(719, 4);
+            this.btnTimNV.Location = new System.Drawing.Point(748, 11);
             this.btnTimNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimNV.Name = "btnTimNV";
-            this.btnTimNV.Size = new System.Drawing.Size(40, 40);
+            this.btnTimNV.Size = new System.Drawing.Size(36, 37);
             this.btnTimNV.TabIndex = 41;
             this.btnTimNV.UseVisualStyleBackColor = false;
             this.btnTimNV.Click += new System.EventHandler(this.btnTimNV_Click);
             // 
             // txtTimNV
             // 
-            this.txtTimNV.Location = new System.Drawing.Point(372, 17);
+            this.txtTimNV.Location = new System.Drawing.Point(406, 19);
             this.txtTimNV.Name = "txtTimNV";
             this.txtTimNV.Size = new System.Drawing.Size(327, 20);
             this.txtTimNV.TabIndex = 40;
@@ -813,7 +822,7 @@
             // 
             this.btnThoat.BackColor = System.Drawing.Color.LightCoral;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(864, 460);
+            this.btnThoat.Location = new System.Drawing.Point(864, 440);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(89, 39);
@@ -839,7 +848,7 @@
             // 
             this.btnSuaNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaNV.Location = new System.Drawing.Point(864, 113);
+            this.btnSuaNV.Location = new System.Drawing.Point(864, 115);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(89, 39);
@@ -878,7 +887,7 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
             this.dgvNV.RowTemplate.Height = 24;
-            this.dgvNV.Size = new System.Drawing.Size(788, 429);
+            this.dgvNV.Size = new System.Drawing.Size(806, 429);
             this.dgvNV.TabIndex = 32;
             // 
             // Column1
@@ -922,6 +931,42 @@
             this.Column7.DataPropertyName = "ChucVu";
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
+            // 
+            // lblSoNV
+            // 
+            this.lblSoNV.AutoSize = true;
+            this.lblSoNV.Location = new System.Drawing.Point(121, 47);
+            this.lblSoNV.Name = "lblSoNV";
+            this.lblSoNV.Size = new System.Drawing.Size(13, 13);
+            this.lblSoNV.TabIndex = 3;
+            this.lblSoNV.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Số nhân viên:";
+            // 
+            // lblSoQL
+            // 
+            this.lblSoQL.AutoSize = true;
+            this.lblSoQL.Location = new System.Drawing.Point(121, 76);
+            this.lblSoQL.Name = "lblSoQL";
+            this.lblSoQL.Size = new System.Drawing.Size(13, 13);
+            this.lblSoQL.TabIndex = 5;
+            this.lblSoQL.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Số quản lí:";
             // 
             // Form_QLChụng
             // 
@@ -1031,5 +1076,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblSL;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSoQL;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSoNV;
+        private System.Windows.Forms.Label label3;
     }
 }

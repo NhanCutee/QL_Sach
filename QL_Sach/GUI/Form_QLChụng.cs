@@ -570,6 +570,11 @@ namespace QL_Sach.GUI
 
         }
 
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         //--------------------------------------------------------------------------------
 
 
