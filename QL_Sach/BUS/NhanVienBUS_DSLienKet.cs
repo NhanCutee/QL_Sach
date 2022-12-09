@@ -163,5 +163,35 @@ namespace QL_Sach.BUS
             }
         }
 
+        public List<NhanVienDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhanVienDTO> listKQ = new List<NhanVienDTO>();
+            NodeNhanVien node =this.m_firstNode;
+            while(node !=null )
+            {
+                if (node.Next == null)
+                    return listKQ.ToList();
+                if (node.NhanVien.MaNV.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhanVien);
+                else if (node.NhanVien.TenNV.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhanVien);
+                else if (tuKhoa.ToUpper() == "NAM" && node.NhanVien.GioiTinh == true)
+                    listKQ.Add(node.NhanVien);
+                else if (tuKhoa.ToUpper() == "NỮ" && node.NhanVien.GioiTinh == false)
+                    listKQ.Add(node.NhanVien);
+                else if (node.NhanVien.NgaySinh.ToString() == tuKhoa)
+                    listKQ.Add(node.NhanVien);
+                else if (node.NhanVien.DiaChi.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhanVien);
+                else if (node.NhanVien.NhaSachLamViec.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhanVien);
+                else if (node.NhanVien.ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhanVien);
+                node = node.Next;
+            }
+            return listKQ.ToList();
+        }
+
+
     }
 }

@@ -35,9 +35,9 @@
             this.radioButton_DSDac = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton_Sach = new System.Windows.Forms.RadioButton();
-            this.radioButton_NhanVien = new System.Windows.Forms.RadioButton();
             this.radioButton_NhaSach = new System.Windows.Forms.RadioButton();
+            this.radioButton_NhanVien = new System.Windows.Forms.RadioButton();
+            this.radioButton_Sach = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +83,7 @@
             // radioButton_DSLK
             // 
             this.radioButton_DSLK.AutoSize = true;
-            this.radioButton_DSLK.Location = new System.Drawing.Point(17, 42);
+            this.radioButton_DSLK.Location = new System.Drawing.Point(17, 65);
             this.radioButton_DSLK.Name = "radioButton_DSLK";
             this.radioButton_DSLK.Size = new System.Drawing.Size(81, 17);
             this.radioButton_DSLK.TabIndex = 3;
@@ -94,7 +94,7 @@
             // radioButton_DSDac
             // 
             this.radioButton_DSDac.AutoSize = true;
-            this.radioButton_DSDac.Location = new System.Drawing.Point(17, 65);
+            this.radioButton_DSDac.Location = new System.Drawing.Point(17, 42);
             this.radioButton_DSDac.Name = "radioButton_DSDac";
             this.radioButton_DSDac.Size = new System.Drawing.Size(63, 17);
             this.radioButton_DSDac.TabIndex = 4;
@@ -126,6 +126,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đối tượng quản lý";
             // 
+            // radioButton_NhaSach
+            // 
+            this.radioButton_NhaSach.AutoSize = true;
+            this.radioButton_NhaSach.Location = new System.Drawing.Point(7, 42);
+            this.radioButton_NhaSach.Name = "radioButton_NhaSach";
+            this.radioButton_NhaSach.Size = new System.Drawing.Size(71, 17);
+            this.radioButton_NhaSach.TabIndex = 2;
+            this.radioButton_NhaSach.Text = "Nhà sách";
+            this.radioButton_NhaSach.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_NhanVien
+            // 
+            this.radioButton_NhanVien.AutoSize = true;
+            this.radioButton_NhanVien.Location = new System.Drawing.Point(7, 65);
+            this.radioButton_NhanVien.Name = "radioButton_NhanVien";
+            this.radioButton_NhanVien.Size = new System.Drawing.Size(75, 17);
+            this.radioButton_NhanVien.TabIndex = 1;
+            this.radioButton_NhanVien.Text = "Nhân Viên";
+            this.radioButton_NhanVien.UseVisualStyleBackColor = true;
+            // 
             // radioButton_Sach
             // 
             this.radioButton_Sach.AutoSize = true;
@@ -138,27 +158,7 @@
             this.radioButton_Sach.Text = "Sách";
             this.radioButton_Sach.UseVisualStyleBackColor = true;
             // 
-            // radioButton_NhanVien
-            // 
-            this.radioButton_NhanVien.AutoSize = true;
-            this.radioButton_NhanVien.Location = new System.Drawing.Point(6, 43);
-            this.radioButton_NhanVien.Name = "radioButton_NhanVien";
-            this.radioButton_NhanVien.Size = new System.Drawing.Size(75, 17);
-            this.radioButton_NhanVien.TabIndex = 1;
-            this.radioButton_NhanVien.Text = "Nhân Viên";
-            this.radioButton_NhanVien.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_NhaSach
-            // 
-            this.radioButton_NhaSach.AutoSize = true;
-            this.radioButton_NhaSach.Location = new System.Drawing.Point(7, 66);
-            this.radioButton_NhaSach.Name = "radioButton_NhaSach";
-            this.radioButton_NhaSach.Size = new System.Drawing.Size(71, 17);
-            this.radioButton_NhaSach.TabIndex = 2;
-            this.radioButton_NhaSach.Text = "Nhà sách";
-            this.radioButton_NhaSach.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // Form_BatDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,10 +167,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Thoat);
             this.Controls.Add(this.button_BatDau);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Form_BatDau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn cấu trúc dữ liệu";
             this.groupBox1.ResumeLayout(false);

@@ -319,5 +319,17 @@ namespace QL_Sach.BUS
             else
                 return false;
         }
+
+        public List<NhanVienDTO> timTuKhoa(string tuKhoa)
+        {
+            if (loaiDS == "LibListT")
+                return nhanVienListT.timTuKhoa(tuKhoa);
+            else if (loaiDS == "DSDac")
+                return nhanVienDSDac.timTuKhoa(tuKhoa);
+            else if (loaiDS == "DSLK")
+                return nhanVienDSLK.timTuKhoa(tuKhoa);
+            else
+            return new List<NhanVienDTO>();
+        }
     }
 }

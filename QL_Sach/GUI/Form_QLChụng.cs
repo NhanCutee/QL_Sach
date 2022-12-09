@@ -21,26 +21,30 @@ namespace QL_Sach.GUI
         Form_NhaSach b;
         NhaSachBUS nhaView;
 
-        public Form_QLChụng(string loaiDS)
+        public Form_QLChụng(string loaiDS,int tab)
         {
-            
+
             InitializeComponent();
-            this.Text = "Quản lý sách";
+
             sachView = new SachBUS(loaiDS);
-            dsnv = new NhanVienBUS(loaiDS);
             nhaView = new NhaSachBUS(loaiDS);
-             
+            dsnv = new NhanVienBUS(loaiDS);
+
+            if (tab == 1)
+                tabControl.SelectedTab = tabSach;
+            else if(tab==2)
+                tabControl.SelectedTab = tabNhaSach;
+            else
+                tabControl.SelectedTab = tabNhanVien;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             LoadSach();
-
-
-
-            if (dsnv.docFile() == false)
-                MessageBox.Show("Đọc file nhân viên thất bại");
+            LoadNhaSach();
             loadNV();
+
+
         }
         private void LoadSach()
         {
@@ -219,6 +223,14 @@ namespace QL_Sach.GUI
         }
         private void LoadNhaSach()
         {
+            if (dsnv.LoaiDS == "LibListT")
+                radNSListT.Checked = true;
+            else if (dsnv.LoaiDS == "DSDac")
+                radNSDSD.Checked = true;
+
+            else
+                radNSDSLK.Checked = true;
+
             dGVNS.DataSource = nhaView.NhaSachList.ToList();
         }
 
@@ -333,7 +345,55 @@ namespace QL_Sach.GUI
         {
             nhaView.luuFile();
         }
-    
+
+        private void radNSListT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNSListT.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (nhaView.chuyenCauTrucDL("LibListT") == false || nhaView.LoaiDS != "LibListT")
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
+        private void radNSDSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNSDSD.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang DS đặc?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (nhaView.chuyenCauTrucDL("DSDac") == false || nhaView.LoaiDS != "DSDac")
+                {
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                    radNVDSD.Checked = false;
+                }
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
+        private void radNSDSLK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNSDSLK.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang DS Liên kết?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (nhaView.chuyenCauTrucDL("DSLK") == false || nhaView.LoaiDS != "DSLK")
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
         //--------------------------------------------------------------------------------
 
 
@@ -351,29 +411,27 @@ namespace QL_Sach.GUI
 
         private void loadNV()
         {
-            dgvNV.DataSource = dsnv.NhanVienList;
-
             if (dsnv.LoaiDS == "LibListT")
                 radNVListT.Checked = true;
             else if (dsnv.LoaiDS == "DSDac")
                 radNVDSD.Checked = true;
+
             else
                 radNVDSLK.Checked = true;
 
+            dgvNV.DataSource = dsnv.NhanVienList;
+
             lblSL.Text = dsnv.soLuongNV().ToString();
+            lblSoQL.Text=dsnv.timTuKhoa("Quản lí").Count().ToString();
+            lblSoNV.Text = dsnv.timTuKhoa("Nhân viên").Count().ToString();
+            lblKhac.Text = (dsnv.soLuongNV() - (dsnv.timTuKhoa("Quản lí").Count() + dsnv.timTuKhoa("Nhân viên").Count())).ToString();
+
+            lblNam.Text = dsnv.timTuKhoa("Nam").Count().ToString();
+            lblNu.Text = dsnv.timTuKhoa("Nữ").Count().ToString();
         }
         private void loadNV(List<NhanVienDTO> nvList)
         {
             dgvNV.DataSource =nvList.ToList();
-
-            if (dsnv.LoaiDS == "LibListT")
-                radNVListT.Checked = true;
-            else if (dsnv.LoaiDS == "DSDac")
-                radNVDSD.Checked = true;
-            else
-                radNVDSLK.Checked = true;
-
-            lblSL.Text = dsnv.soLuongNV().ToString();
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -384,7 +442,7 @@ namespace QL_Sach.GUI
                 dsnv.themNV(fNV.Nv);
                 loadNV();
             }
-            else
+            else if(fNV.UserEnter == true)
                 MessageBox.Show("Nhân viên " + fNV.Nv.MaNV + " Đã tồn tại.");
 
         }
@@ -571,6 +629,29 @@ namespace QL_Sach.GUI
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.ColumnIndex==2)
+            {
+                bool value =(bool) e.Value;
+                if (value)
+                    e.Value = "Nam";
+                else
+                    e.Value = "Nữ";
+                e.FormattingApplied = true;
+            }
+        }
+
+        private void lblSL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

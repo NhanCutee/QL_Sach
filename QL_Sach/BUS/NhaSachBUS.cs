@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QL_nhanVien.BUS;
 using QL_Sach.DTO;
 
 namespace QL_Sach.BUS
@@ -18,6 +19,7 @@ namespace QL_Sach.BUS
         private NhaSachBUS_DSDac nhasachDSD;
         private NhaSachBUS_DSLienKet nhasachDSLK;
         public List<NhaSachDTO> NhaSachList { get => nhasachList; }
+        public string LoaiDS { get => loaiDS;}
 
         public NhaSachBUS(string enter_loaiDS)
         {
@@ -173,30 +175,37 @@ namespace QL_Sach.BUS
             return true;
         }
 
-        private void chuyenDoiDuLieu()
+        private bool chuyenDoiDuLieu()
         {
-            if (loaiDS == "LibListT")
+            try
             {
-                foreach (NhaSachDTO ns in nhasachList)
+                if (loaiDS == "LibListT")
                 {
-                    nhasachListT.themNhaSach(ns);
+                    foreach (NhaSachDTO nv in nhasachList)
+                    {
+                        nhasachListT.themNhaSach(nv);
+                    }
                 }
+                else if (loaiDS == "DSDac")
+                {
+                    foreach (NhaSachDTO nv in nhasachList)
+                    {
+                        nhasachDSD.themNhaSach(nv);
+                    }
+                }
+                else if (loaiDS == "DSLK")
+                {
+                    foreach (NhaSachDTO nv in nhasachList)
+                    {
+                        nhasachDSLK.themNhaSach(nv);
+                    }
+                }
+                return true;
             }
-            else if (loaiDS == "DSDac")
+            catch
             {
-                foreach (NhaSachDTO ns in nhasachList)
-                {
-                    nhasachDSD.themNhaSach(ns);
-                }
+                return false;
             }
-            else if (loaiDS == "DSLK")
-            {
-                foreach (NhaSachDTO ns in nhasachList)
-                {
-                    nhasachDSLK.themNhaSach(ns);
-                }
-            }
-
         }
 
         public List<NhaSachDTO> timKiem(string tuKhoa)
@@ -247,6 +256,39 @@ namespace QL_Sach.BUS
     
 
             return dsKetQua;
+        }
+
+        public bool chuyenCauTrucDL(string ctdl)
+        {
+            if (ctdl == "LibListT")
+            {
+                nhasachListT = new NhaSachBUS_ListT();
+                loaiDS = "LibListT";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhasachList = nhasachListT.NhaSachList;
+                return true;
+            }
+            else if (ctdl == "DSDac")
+            {
+                nhasachDSD = new NhaSachBUS_DSDac();
+                loaiDS = "DSDac";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhasachList = nhasachDSD.NhaSachList;
+                return true;
+            }
+            else if (ctdl == "DSLK")
+            {
+                nhasachDSLK = new NhaSachBUS_DSLienKet();
+                loaiDS = "DSLK";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhasachList = nhasachDSLK.NhaSachList;
+                return true;
+            }
+            else
+                return false;
         }
     }
 

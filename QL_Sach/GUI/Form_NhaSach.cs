@@ -56,10 +56,10 @@ namespace QL_Sach.GUI
             textbox_MaNhaSach.Text = currentRow.Cells[0].Value.ToString();
             textBox_TenNhaSach.Text = currentRow.Cells[1].Value.ToString();
             
-            textBox_DiaChi.Text = currentRow.Cells[3].Value.ToString();
+            textBox_DiaChi.Text = currentRow.Cells[2].Value.ToString();
 
-            textBox_TenQuanLi.Text= currentRow.Cells[4].Value.ToString();
-            textBox_SoLuongNhanVien.Text = currentRow.Cells[5].Value.ToString();
+            textBox_TenQuanLi.Text= currentRow.Cells[3].Value.ToString();
+            textBox_SoLuongNhanVien.Text = currentRow.Cells[4].Value.ToString();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -117,9 +117,9 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult;
                 if (iTitle == "Nhập thông tin quyển sách")
-                    dialogResult = MessageBox.Show("Nhập quyển sách?", "Chú ý", MessageBoxButtons.YesNo);
+                    dialogResult = MessageBox.Show("Nhập nhà sách?", "Chú ý", MessageBoxButtons.YesNo);
                 else
-                    dialogResult = MessageBox.Show("Xác nhận sửa sách?", "Chú ý", MessageBoxButtons.YesNo);
+                    dialogResult = MessageBox.Show("Xác nhận sửa nhà sách?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                     return;
                 userPress = true;

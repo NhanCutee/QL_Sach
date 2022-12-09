@@ -83,6 +83,54 @@ namespace QL_nhanVien.BUS
         {
             nhanVienList.Clear();
         }
-        
+
+        public List<NhanVienDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhanVienDTO> listKQ= new List<NhanVienDTO>();
+            foreach(NhanVienDTO nv in nhanVienList)
+            {
+                if(nv.MaNV.ToString().ToUpper()==tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (nv.TenNV.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (tuKhoa.ToUpper()=="NAM" && nv.GioiTinh==true)
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (tuKhoa.ToUpper() == "NỮ" && nv.GioiTinh == false)
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (nv.NgaySinh.ToString()==tuKhoa)
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (nv.DiaChi.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (nv.NhaSachLamViec.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+                else if (nv.ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nv);
+                    continue;
+                }
+            }
+            return listKQ.ToList();
+        }
     }
 }

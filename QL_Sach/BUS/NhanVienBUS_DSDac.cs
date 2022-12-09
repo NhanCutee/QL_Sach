@@ -130,6 +130,57 @@ namespace QL_Sach.BUS
             this.n = 0;
         }
 
+        public List<NhanVienDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhanVienDTO> listKQ = new List<NhanVienDTO>();
+            for (int i = 0; i < this.n; i++)
+            {
+                if (dSNhanVien[i].MaNV.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (dSNhanVien[i].TenNV.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (tuKhoa.ToUpper() == "NAM" && dSNhanVien[i].GioiTinh == true)
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (tuKhoa.ToUpper() == "NỮ" && dSNhanVien[i].GioiTinh == false)
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (dSNhanVien[i].NgaySinh.ToString() == tuKhoa)
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (dSNhanVien[i].DiaChi.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (dSNhanVien[i].NhaSachLamViec.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+                else if (dSNhanVien[i].ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(dSNhanVien[i]);
+                    continue;
+                }
+            }
+            return listKQ.ToList();
+        }
+
+       
+
     }
 }
 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QL_Sach.GUI
 {
@@ -60,7 +61,8 @@ namespace QL_Sach.GUI
 
                 btnNhap.Text = "Sửa";
                 txtMaNV.ReadOnly = true;
-                txtTenNV.Focus();
+
+                txtTenNV.Select();
             }
         }
 
@@ -139,7 +141,7 @@ namespace QL_Sach.GUI
         {
             txtMaNV.Text = "";
             txtTenNV.Text = "";
-            dtpNgaySinh.Value = default;
+            dtpNgaySinh.Value =DateTime.Today;
             txtDC.Text = "";
             cmbNoiLamViec.Text = "Fahasa quận 8";
             cmbChucVu.Text = "Nhân viên";
