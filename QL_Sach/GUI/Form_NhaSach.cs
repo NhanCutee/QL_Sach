@@ -54,12 +54,10 @@ namespace QL_Sach.GUI
             //phuong thuc khoi tao form chinh sua
             this.iTitle = title;
             textbox_MaNhaSach.Text = currentRow.Cells[0].Value.ToString();
-            textBox_TenNhaSach.Text = currentRow.Cells[1].Value.ToString();
-            
-            textBox_DiaChi.Text = currentRow.Cells[3].Value.ToString();
-
-            textBox_TenQuanLi.Text= currentRow.Cells[4].Value.ToString();
-            textBox_SoLuongNhanVien.Text = currentRow.Cells[5].Value.ToString();
+            textBox_TenNhaSach.Text = currentRow.Cells[1].Value.ToString();         
+            textBox_DiaChi.Text = currentRow.Cells[2].Value.ToString();
+            textBox_TenQuanLi.Text= currentRow.Cells[3].Value.ToString();
+            textBox_SoLuongNhanVien.Text = currentRow.Cells[4].Value.ToString();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -119,7 +117,7 @@ namespace QL_Sach.GUI
                 if (iTitle == "Nhập thông tin quyển sách")
                     dialogResult = MessageBox.Show("Nhập quyển sách?", "Chú ý", MessageBoxButtons.YesNo);
                 else
-                    dialogResult = MessageBox.Show("Xác nhận sửa sách?", "Chú ý", MessageBoxButtons.YesNo);
+                    dialogResult = MessageBox.Show("Xác nhận nhập  sách?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                     return;
                 userPress = true;
@@ -127,7 +125,7 @@ namespace QL_Sach.GUI
                 tenNhaSach = textBox_TenNhaSach.Text;
                 DiaChi=textBox_DiaChi.Text;
                 tenQuanLi = textBox_TenQuanLi.Text;
-                soLuongNhanVien=Convert.ToInt32((textBox_SoLuongNhanVien.Text)); 
+                soLuongNhanVien=Convert.ToInt32(textBox_SoLuongNhanVien.Text); 
                 this.Close();
             }
 

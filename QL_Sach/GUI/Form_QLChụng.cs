@@ -249,7 +249,7 @@ namespace QL_Sach.GUI
                 {
                     nhaView.suaNhaSach(index, b.MaNhaSach, b.TenNhaSach, b.DiaChi, b.TenQuanLi, b.SoLuongNhanVien);
                 }
-                LoadSach();
+                LoadNhaSach();
             }
             else
                 MessageBox.Show("Hãy chọn một nhà sách để sửa");
