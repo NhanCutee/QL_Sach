@@ -17,9 +17,9 @@ namespace QL_Sach.BUS
             get 
             {
                 List<NhanVienDTO> nvList = new List<NhanVienDTO>() ;
-                foreach (NhanVienDTO nv in dSNhanVien)
+                for (int i = 0; i < this.n; i++)
                 {
-                    nvList.Add(nv);
+                    nvList.Add(dSNhanVien[i]);
                 }
                 return nvList;
             }
@@ -45,12 +45,22 @@ namespace QL_Sach.BUS
 
         public NhanVienDTO timNV(string ma)
         {
-            foreach (NhanVienDTO nv in dSNhanVien)
+            for(int i=0;i<this.n;i++)
             {
-                if (ma == nv.MaNV)
-                    return nv;
+                if (this.dSNhanVien[i].MaNV == ma)
+                    return this.dSNhanVien[i];
             }
             return null;
+        }
+
+        public int timIndex(string ma)
+        {
+            for (int i = 0; i < this.n; i++)
+            {
+                if (this.dSNhanVien[i].MaNV == ma)
+                    return i;
+            }
+            return -1;
         }
 
 
@@ -62,7 +72,7 @@ namespace QL_Sach.BUS
 
         public bool themNV(NhanVienDTO nhanVien)
         {
-            if (timNV(nhanVien.MaNV) == null)
+            if (this.timNV(nhanVien.MaNV) == null)
             {
                 this.dSNhanVien[n] = nhanVien;
                 n++;
@@ -74,21 +84,22 @@ namespace QL_Sach.BUS
 
         public bool xoaNV(string ma)
         {
-            for (int i = 0; i < this.n && i < MAX - 1; i++)
-            {
-                if (this.dSNhanVien[i].MaNV == ma)
-                {
-                    this.dSNhanVien[i] = this.dSNhanVien[i + 1];
-                    this.n--;
-                    return true;
-                }
-            }
-            if (this.dSNhanVien[MAX - 1].MaNV == ma && this.n == MAX)
+            if (this.dSNhanVien[n - 1].MaNV == ma)
             {
                 this.n--;
                 return true;
             }
-
+            else
+            {
+                int i = timIndex(ma);
+                if (i == -1)
+                    return false;
+                for (int j = i; j < n; j++)
+                    this.dSNhanVien[j] = this.dSNhanVien[j + 1];
+                this.n--;
+                return true;
+            }
+            
             return false;
         }
 

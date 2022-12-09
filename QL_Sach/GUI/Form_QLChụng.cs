@@ -352,6 +352,7 @@ namespace QL_Sach.GUI
         private void loadNV()
         {
             dgvNV.DataSource = dsnv.NhanVienList;
+            lblSL.Text=dsnv.soLuongNV().ToString(); 
         }
         private void loadNV(List<NhanVienDTO> nvList)
         {

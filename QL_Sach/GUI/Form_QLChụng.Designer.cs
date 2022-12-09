@@ -97,6 +97,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblSL = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +110,7 @@
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -223,7 +227,7 @@
             // 
             this.button_Doc.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Doc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Doc.Location = new System.Drawing.Point(865, 336);
+            this.button_Doc.Location = new System.Drawing.Point(863, 331);
             this.button_Doc.Margin = new System.Windows.Forms.Padding(2);
             this.button_Doc.Name = "button_Doc";
             this.button_Doc.Size = new System.Drawing.Size(89, 39);
@@ -236,7 +240,7 @@
             // 
             this.button_Luu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Luu.Location = new System.Drawing.Point(865, 417);
+            this.button_Luu.Location = new System.Drawing.Point(863, 412);
             this.button_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.button_Luu.Name = "button_Luu";
             this.button_Luu.Size = new System.Drawing.Size(89, 39);
@@ -249,7 +253,7 @@
             // 
             this.button_XoaTatCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_XoaTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaTatCa.Location = new System.Drawing.Point(865, 264);
+            this.button_XoaTatCa.Location = new System.Drawing.Point(863, 256);
             this.button_XoaTatCa.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaTatCa.Name = "button_XoaTatCa";
             this.button_XoaTatCa.Size = new System.Drawing.Size(89, 39);
@@ -262,7 +266,7 @@
             // 
             this.button_Thoát.BackColor = System.Drawing.Color.LightCoral;
             this.button_Thoát.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Thoát.Location = new System.Drawing.Point(865, 498);
+            this.button_Thoát.Location = new System.Drawing.Point(863, 483);
             this.button_Thoát.Margin = new System.Windows.Forms.Padding(2);
             this.button_Thoát.Name = "button_Thoát";
             this.button_Thoát.Size = new System.Drawing.Size(89, 39);
@@ -275,7 +279,7 @@
             // 
             this.button_Xoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Xoa.Location = new System.Drawing.Point(865, 189);
+            this.button_Xoa.Location = new System.Drawing.Point(863, 190);
             this.button_Xoa.Margin = new System.Windows.Forms.Padding(2);
             this.button_Xoa.Name = "button_Xoa";
             this.button_Xoa.Size = new System.Drawing.Size(89, 39);
@@ -288,7 +292,7 @@
             // 
             this.button_ChinhSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_ChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ChinhSua.Location = new System.Drawing.Point(865, 118);
+            this.button_ChinhSua.Location = new System.Drawing.Point(863, 117);
             this.button_ChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.button_ChinhSua.Name = "button_ChinhSua";
             this.button_ChinhSua.Size = new System.Drawing.Size(89, 39);
@@ -301,7 +305,7 @@
             // 
             this.button_Them.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Them.Location = new System.Drawing.Point(865, 47);
+            this.button_Them.Location = new System.Drawing.Point(863, 47);
             this.button_Them.Margin = new System.Windows.Forms.Padding(2);
             this.button_Them.Name = "button_Them";
             this.button_Them.Size = new System.Drawing.Size(89, 39);
@@ -328,7 +332,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(788, 511);
+            this.dataGridView.Size = new System.Drawing.Size(802, 436);
             this.dataGridView.TabIndex = 21;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
@@ -636,6 +640,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.btnHuyTimNV);
             this.tabPage3.Controls.Add(this.btnTimNV);
@@ -740,7 +745,7 @@
             // 
             this.btnDocNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDocNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocNV.Location = new System.Drawing.Point(864, 339);
+            this.btnDocNV.Location = new System.Drawing.Point(864, 308);
             this.btnDocNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnDocNV.Name = "btnDocNV";
             this.btnDocNV.Size = new System.Drawing.Size(89, 39);
@@ -753,7 +758,7 @@
             // 
             this.btnLuuNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLuuNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuNV.Location = new System.Drawing.Point(864, 420);
+            this.btnLuuNV.Location = new System.Drawing.Point(864, 378);
             this.btnLuuNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuuNV.Name = "btnLuuNV";
             this.btnLuuNV.Size = new System.Drawing.Size(89, 39);
@@ -766,7 +771,7 @@
             // 
             this.btnXoaTatCaNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoaTatCaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaTatCaNV.Location = new System.Drawing.Point(864, 267);
+            this.btnXoaTatCaNV.Location = new System.Drawing.Point(864, 244);
             this.btnXoaTatCaNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaTatCaNV.Name = "btnXoaTatCaNV";
             this.btnXoaTatCaNV.Size = new System.Drawing.Size(89, 39);
@@ -779,7 +784,7 @@
             // 
             this.btnThoat.BackColor = System.Drawing.Color.LightCoral;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(864, 501);
+            this.btnThoat.Location = new System.Drawing.Point(864, 460);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(89, 39);
@@ -792,7 +797,7 @@
             // 
             this.btnXoaNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNV.Location = new System.Drawing.Point(864, 192);
+            this.btnXoaNV.Location = new System.Drawing.Point(864, 178);
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(89, 39);
@@ -805,7 +810,7 @@
             // 
             this.btnSuaNV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaNV.Location = new System.Drawing.Point(864, 121);
+            this.btnSuaNV.Location = new System.Drawing.Point(864, 113);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(89, 39);
@@ -844,7 +849,7 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
             this.dgvNV.RowTemplate.Height = 24;
-            this.dgvNV.Size = new System.Drawing.Size(788, 511);
+            this.dgvNV.Size = new System.Drawing.Size(788, 429);
             this.dgvNV.TabIndex = 32;
             // 
             // Column1
@@ -889,6 +894,35 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblSL);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Location = new System.Drawing.Point(18, 484);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(788, 88);
+            this.groupBox4.TabIndex = 46;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Thông tin danh sách";
+            // 
+            // lblSL
+            // 
+            this.lblSL.AutoSize = true;
+            this.lblSL.Location = new System.Drawing.Point(121, 20);
+            this.lblSL.Name = "lblSL";
+            this.lblSL.Size = new System.Drawing.Size(13, 13);
+            this.lblSL.TabIndex = 1;
+            this.lblSL.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số lượng nhân viên:";
+            // 
             // Form_QLChụng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -917,6 +951,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -992,5 +1028,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblSL;
+        private System.Windows.Forms.Label label1;
     }
 }

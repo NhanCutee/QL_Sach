@@ -18,7 +18,12 @@ namespace QL_Sach.BUS
         private NhanVienBUS_ListT nhanVienListT;
         private NhanVienBUS_DSDac nhanVienDSDac;
         private NhanVienBUS_DSLienKet nhanVienDSLK;
-        public List<NhanVienDTO> NhanVienList { get => nhanVienList; }
+        public List<NhanVienDTO> NhanVienList { 
+            get
+            {
+                return nhanVienList.ToList();
+            }
+        }
         public string LoaiDS {
             get => loaiDS; 
         }
@@ -26,19 +31,20 @@ namespace QL_Sach.BUS
         public NhanVienBUS(string enter_loaiDS)
         {
             loaiDS = enter_loaiDS;
+            nhanVienListT = new NhanVienBUS_ListT();
+            nhanVienDSDac = new NhanVienBUS_DSDac();
+            nhanVienDSLK = new NhanVienBUS_DSLienKet();
+
             if (loaiDS == "LibListT")
             {
-                nhanVienListT = new NhanVienBUS_ListT();
                 nhanVienList =nhanVienListT.NhanVienList;
             }
             else if (loaiDS == "DSDac")
             {
-                nhanVienDSDac = new NhanVienBUS_DSDac();
                 nhanVienList = nhanVienDSDac.NhanVienList;
             }
             else if (loaiDS == "DSLK")
             {
-                nhanVienDSLK = new NhanVienBUS_DSLienKet();
                 nhanVienList = nhanVienDSLK.NhanVienList;
             }
         }
@@ -55,7 +61,7 @@ namespace QL_Sach.BUS
             }
             else
             {
-                return nhanVienDSLK.timNV(ma)==null?null: nhanVienDSLK.timNV(ma).NhanVien; //tim tra ve node 
+                return nhanVienDSLK.timNV(ma)==null?null: nhanVienDSLK.timNV(ma).NhanVien; //tim tra ve node nen chuyen lai
             }
         }
 
@@ -134,7 +140,7 @@ namespace QL_Sach.BUS
             }
         }
 
-        public int soLuongSach()
+        public int soLuongNV()
         {
             int soLuong = 0;
             if (loaiDS == "LibListT")
@@ -287,19 +293,28 @@ namespace QL_Sach.BUS
             {
                 nhanVienListT = new NhanVienBUS_ListT();
                 loaiDS = "LibListT";
-                return chuyenDoiDuLieu();
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhanVienList = nhanVienListT.NhanVienList;
+                return true;
             }
             else if (ctdl == "DSDac")
             {
                 nhanVienDSDac = new NhanVienBUS_DSDac();
                 loaiDS = "DSDac";
-                return chuyenDoiDuLieu();
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhanVienList = nhanVienDSDac.NhanVienList;
+                return true;
             }
             else if (ctdl == "DSLK")
             {
                 nhanVienDSLK = new NhanVienBUS_DSLienKet();
                 loaiDS = "DSLK";
-                return chuyenDoiDuLieu();
+                if (!chuyenDoiDuLieu())
+                    return false;
+                nhanVienList = nhanVienDSLK.NhanVienList;
+                return true;
             }
             else
                 return false;

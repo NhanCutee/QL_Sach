@@ -37,11 +37,11 @@ namespace QL_nhanVien.BUS
 
         public bool themNV(NhanVienDTO nhanVien)
         {
-            if(timNV(nhanVien.MaNV)==null)
-            {
+           if(timNV(nhanVien.MaNV)==null)
+           {
                 this.nhanVienList.Add(nhanVien);
                 return true;
-            }
+           }
             return false;
         }
 
