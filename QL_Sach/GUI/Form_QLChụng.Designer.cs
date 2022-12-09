@@ -75,6 +75,9 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblSL = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radNVDSLK = new System.Windows.Forms.RadioButton();
             this.radNVDSD = new System.Windows.Forms.RadioButton();
@@ -97,9 +100,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblSL = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,9 +108,9 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -332,7 +332,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(802, 436);
+            this.dataGridView.Size = new System.Drawing.Size(788, 494);
             this.dataGridView.TabIndex = 21;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
@@ -662,6 +662,35 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblSL);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Location = new System.Drawing.Point(18, 484);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(788, 88);
+            this.groupBox4.TabIndex = 46;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Thông tin danh sách";
+            // 
+            // lblSL
+            // 
+            this.lblSL.AutoSize = true;
+            this.lblSL.Location = new System.Drawing.Point(121, 20);
+            this.lblSL.Name = "lblSL";
+            this.lblSL.Size = new System.Drawing.Size(13, 13);
+            this.lblSL.TabIndex = 1;
+            this.lblSL.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số lượng nhân viên:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radNVDSLK);
@@ -894,35 +923,6 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.lblSL);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(18, 484);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(788, 88);
-            this.groupBox4.TabIndex = 46;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông tin danh sách";
-            // 
-            // lblSL
-            // 
-            this.lblSL.AutoSize = true;
-            this.lblSL.Location = new System.Drawing.Point(121, 20);
-            this.lblSL.Name = "lblSL";
-            this.lblSL.Size = new System.Drawing.Size(13, 13);
-            this.lblSL.TabIndex = 1;
-            this.lblSL.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số lượng nhân viên:";
-            // 
             // Form_QLChụng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -948,11 +948,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }

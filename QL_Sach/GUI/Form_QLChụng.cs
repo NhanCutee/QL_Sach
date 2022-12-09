@@ -352,11 +352,28 @@ namespace QL_Sach.GUI
         private void loadNV()
         {
             dgvNV.DataSource = dsnv.NhanVienList;
-            lblSL.Text=dsnv.soLuongNV().ToString(); 
+
+            if (dsnv.LoaiDS == "LibListT")
+                radNVListT.Checked = true;
+            else if (dsnv.LoaiDS == "DSDac")
+                radNVDSD.Checked = true;
+            else
+                radNVDSLK.Checked = true;
+
+            lblSL.Text = dsnv.soLuongNV().ToString();
         }
         private void loadNV(List<NhanVienDTO> nvList)
         {
             dgvNV.DataSource =nvList.ToList();
+
+            if (dsnv.LoaiDS == "LibListT")
+                radNVListT.Checked = true;
+            else if (dsnv.LoaiDS == "DSDac")
+                radNVDSD.Checked = true;
+            else
+                radNVDSLK.Checked = true;
+
+            lblSL.Text = dsnv.soLuongNV().ToString();
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -545,7 +562,6 @@ namespace QL_Sach.GUI
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
                 loadNV();
-               
             }
         }
 
@@ -553,20 +569,6 @@ namespace QL_Sach.GUI
         {
 
         }
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
 
         //--------------------------------------------------------------------------------
 
