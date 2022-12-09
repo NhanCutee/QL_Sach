@@ -105,7 +105,13 @@ namespace QL_Sach.GUI
                 MessageBox.Show("Số lượng nhân viên không được để trống");
                 return;
             }
-        
+            if (!textBox_SoLuongNhanVien.Text.All(Char.IsDigit))
+            {
+                nhapDung = false;
+                MessageBox.Show("Số lượng nhân viên phải là số.");
+                return;
+            }
+
 
             if (nhapDung)
             {
