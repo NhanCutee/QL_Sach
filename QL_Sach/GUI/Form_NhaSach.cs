@@ -125,7 +125,7 @@ namespace QL_Sach.GUI
                 tenNhaSach = textBox_TenNhaSach.Text;
                 DiaChi=textBox_DiaChi.Text;
                 tenQuanLi = textBox_TenQuanLi.Text;
-                soLuongNhanVien=Convert.ToInt32((textBox_SoLuongNhanVien.Text)); 
+                soLuongNhanVien=Convert.ToInt32(textBox_SoLuongNhanVien.Text); 
                 this.Close();
             }
 
