@@ -224,7 +224,7 @@ namespace QL_Sach.GUI
 
         private void button_T_Click(object sender, EventArgs e)
         {
-            string bTitle = "Nhập thông tin quyển sách";
+            string bTitle = "Nhập thông tin nhà sách";
             b = new Form_NhaSach(bTitle);
             b.ShowDialog();
             if (b.UserPress == true)
@@ -239,7 +239,7 @@ namespace QL_Sach.GUI
         {
             if (dGVNS.SelectedCells.Count > 0)
             {
-                string bTitle = "Sửa thông tin quyển sách";
+                string bTitle = "Sửa thông tin nhà sách";
 
                 int index = dGVNS.CurrentCell.RowIndex;
                 DataGridViewRow currentRow = dGVNS.Rows[index];
@@ -252,7 +252,7 @@ namespace QL_Sach.GUI
                 LoadSach();
             }
             else
-                MessageBox.Show("Hãy chọn một quyển sách để sửa");
+                MessageBox.Show("Hãy chọn một nhà sách để sửa");
         }
 
         private void button_X_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace QL_Sach.GUI
             if (dGVNS.SelectedCells.Count > 0)
             {
                 //show message box de xac nhan xoa
-                DialogResult dialogResult = MessageBox.Show("Xóa sách đã chọn ?", "Chú ý", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Xóa nhà sách đã chọn ?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                     return;
 
