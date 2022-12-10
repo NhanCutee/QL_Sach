@@ -34,7 +34,7 @@ namespace QL_Sach.BUS
         }
         public nodeLienKet2(string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
         {
-            nhasachDTO = new NhaSachDTO(enter_maNhaSach,  enter_tenNhaSach, enter_diaChi, enter_tenQuanLi, enter_soLuongNhanVien);
+            nhasachDTO = new NhaSachDTO(enter_maNhaSach, enter_tenNhaSach, enter_diaChi, enter_tenQuanLi, enter_soLuongNhanVien);
             next = null;
             prev = null;
         }
@@ -93,8 +93,8 @@ namespace QL_Sach.BUS
             node.NhaSachDTO.DiaChi = enter_diaChi;
             node.NhaSachDTO.TenQuanLi = enter_tenQuanLi;
             node.NhaSachDTO.SoLuongNhanVien = enter_soLuongNhanVien;
-            
-     
+
+
         }
         //check
         public void suaNhaSach(string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
@@ -107,10 +107,10 @@ namespace QL_Sach.BUS
                 node = node.Next;
             }
             node.NhaSachDTO.TenNhaSach = enter_tenNhaSach;
-            node.NhaSachDTO.DiaChi =enter_diaChi;
-            node.NhaSachDTO.TenQuanLi= enter_tenQuanLi;
-            node.NhaSachDTO.SoLuongNhanVien= enter_soLuongNhanVien;
-           
+            node.NhaSachDTO.DiaChi = enter_diaChi;
+            node.NhaSachDTO.TenQuanLi = enter_tenQuanLi;
+            node.NhaSachDTO.SoLuongNhanVien = enter_soLuongNhanVien;
+
         }
         //check
         public void xoaNhaSach(int index)
@@ -129,7 +129,7 @@ namespace QL_Sach.BUS
             nodeLienKet2 nodeTemp;
             while (node != null)
             {
-                if (node.NhaSachDTO.MaNhaSach== enter_maNhaSach)
+                if (node.NhaSachDTO.MaNhaSach == enter_maNhaSach)
                 {
                     nodeTemp = node;
                     node = node.Prev;
@@ -157,7 +157,54 @@ namespace QL_Sach.BUS
         {
             return count;
         }
+        public List<NhaSachDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhaSachDTO> listKQ = new List<NhaSachDTO>();
+            nodeLienKet2 node = this.firstNode;
+            while (node != null)
+            {
+                if (node.Next == null)
+                    return listKQ.ToList();
+                if (node.NhaSachDTO.MaNhaSach.ToString().ToUpper() == tuKhoa.ToUpper())
+                    listKQ.Add(node.NhaSachDTO);
+
+            }
+            return listKQ.ToList();
+        }
 
 
+
+        public List<NhaSachDTO> sort(bool isUp, string thuocTinh)
+        {
+            List<NhaSachDTO> listKQ = NhaSachList ;
+            if (isUp == true)
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    listKQ.Sort(
+                        delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                        {
+                            return ns1.MaNhaSach.CompareTo(ns2.MaNhaSach);
+                        }
+                        );
+                }                 
+            }
+            else
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    listKQ.Sort(
+                        delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                        {
+                            return -(ns1.MaNhaSach.CompareTo(ns2.MaNhaSach));
+                        }
+                        );
+                }               
+            }
+            return listKQ.ToList();
+        }
     }
-}
+    }
+
+
+

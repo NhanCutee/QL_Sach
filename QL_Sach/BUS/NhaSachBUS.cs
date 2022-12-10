@@ -290,7 +290,29 @@ namespace QL_Sach.BUS
             else
                 return false;
         }
-     
+        public List<NhaSachDTO> timTuKhoa(string tuKhoa)
+        {
+            if (loaiDS == "LibListT")
+                return nhasachListT.timTuKhoa(tuKhoa);
+            else if (loaiDS == "DSDac")
+                return nhasachDSD.timTuKhoa(tuKhoa);
+            else if (loaiDS == "DSLK")
+                return nhasachDSLK.timTuKhoa(tuKhoa);
+            else
+                return new List<NhaSachDTO>();
+        }
+
+        public List<NhaSachDTO> sort(bool isUp, string thuocTinh)
+        {
+            if (loaiDS == "LibListT")
+                return nhasachListT.sort(isUp, thuocTinh);
+            else if (loaiDS == "DSDac")
+                return nhasachDSD.sort(isUp, thuocTinh);
+            else if (loaiDS == "DSLK")
+                return nhasachDSLK.sort(isUp, thuocTinh);
+
+            return new List<NhaSachDTO>();
+        }
     }
     }
 

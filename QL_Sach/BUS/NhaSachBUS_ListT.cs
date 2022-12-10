@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace QL_Sach.BUS
 {
-     class NhaSachBUS_ListT
+    class NhaSachBUS_ListT
     {
         private List<NhaSachDTO> nhasachList;
 
@@ -44,10 +44,10 @@ namespace QL_Sach.BUS
         {
             nhasachList[index].MaNhaSach = enter_maNhaSach;
             nhasachList[index].TenNhaSach = enter_tenNhaSach;
-            nhasachList[index].DiaChi= enter_diaChi;
-            nhasachList[index].TenQuanLi= enter_tenQuanLi;
+            nhasachList[index].DiaChi = enter_diaChi;
+            nhasachList[index].TenQuanLi = enter_tenQuanLi;
             nhasachList[index].SoLuongNhanVien = enter_soLuongNhanVien;
-            
+
         }
         public void xoaNhaSach(int index)
         {
@@ -64,8 +64,50 @@ namespace QL_Sach.BUS
         {
             NhaSachList.Clear();
         }
+        public List<NhaSachDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhaSachDTO> listKQ = new List<NhaSachDTO>();
+            foreach (NhaSachDTO ns in nhasachList)
+            {
+                if (ns.MaNhaSach.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(ns);
+                    continue;
+                }
+            }
+            return listKQ.ToList();
+        }
 
-
+        public List<NhaSachDTO> sort(bool isUp, string thuocTinh)
+        {
+            List<NhaSachDTO> listKQ = nhasachList;
+            if (isUp == true)
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    listKQ.Sort( delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                        {
+                            return ns1.MaNhaSach.CompareTo(ns2.MaNhaSach);
+                        }
+                        );
+                }
+                           
+            }
+            else
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    listKQ.Sort( delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                        {
+                            return -(ns1.MaNhaSach.CompareTo(ns2.MaNhaSach));
+                        }
+                        );
+                }
+            }
+            return listKQ.ToList();
+        }
     }
-
 }
+
+    
+

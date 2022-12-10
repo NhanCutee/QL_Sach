@@ -76,7 +76,61 @@ namespace QL_Sach.BUS
         {
             return this.n;
         }
+        public List<NhaSachDTO> timTuKhoa(string tuKhoa)
+        {
+            List<NhaSachDTO> listKQ = new List<NhaSachDTO>();
+            for (int i = 0; i < this.n; i++)
+            {
+                if (nhasachDTO[i].MaNhaSach.ToString().ToUpper() == tuKhoa.ToUpper())
+                {
+                    listKQ.Add(nhasachDTO[i]);
+                    continue;
+                }               
+            }
+            return listKQ.ToList();
+        }
+        public List<NhaSachDTO> sort(bool isUp, string thuocTinh)
+        {
+            NhaSachDTO[] listKQ = this.nhasachDTO;
+            int nKQ = this.n;
+            if (isUp == true)
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].MaNhaSach.CompareTo(listKQ[j].MaNhaSach) >= 0)
+                            {
+                                NhaSachDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
 
+            }
+            else
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].MaNhaSach.CompareTo(listKQ[j].MaNhaSach) <= 0)
+                            {
+                                NhaSachDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+            }
+
+            List<NhaSachDTO> list = new List<NhaSachDTO>();
+
+            for (int i = 0; i < nKQ; i++)
+            {
+                list.Add(listKQ[i]);
+            }
+            return list.ToList();
+        }
     }
 }
 

@@ -417,18 +417,31 @@ namespace QL_Sach.GUI
         }
         private void rb_M_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rb_M.Checked)
+                rb_M.Checked = true;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            if (rb_M.Checked)
+            {
+                if (rb_M.Checked)
+                    nhaView.sort(false, "MA");
+                LoadNhaSach();
 
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (rb_M.Checked)
+            {
+                if (rb_M.Checked)
+                nhaView.sort(true, "MA");
+                LoadNhaSach();
+                
+            }
         }
         //--------------------------------------------------------------------------------
 

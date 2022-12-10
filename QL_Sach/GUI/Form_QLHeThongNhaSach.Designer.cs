@@ -35,6 +35,7 @@
             this.radSachDSD = new System.Windows.Forms.RadioButton();
             this.radSachListT = new System.Windows.Forms.RadioButton();
             this.button_Huy = new System.Windows.Forms.Button();
+            this.button_TimKiem = new System.Windows.Forms.Button();
             this.textBox_TimKiem = new System.Windows.Forms.TextBox();
             this.button_Doc = new System.Windows.Forms.Button();
             this.button_Luu = new System.Windows.Forms.Button();
@@ -53,11 +54,16 @@
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNhaSach = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.rb_M = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radNSDSLK = new System.Windows.Forms.RadioButton();
             this.radNSDSD = new System.Windows.Forms.RadioButton();
             this.radNSListT = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_DF = new System.Windows.Forms.Button();
             this.button_LF = new System.Windows.Forms.Button();
@@ -67,11 +73,6 @@
             this.button_S = new System.Windows.Forms.Button();
             this.button_T = new System.Windows.Forms.Button();
             this.dGVNS = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.radNVGiam = new System.Windows.Forms.RadioButton();
@@ -120,13 +121,12 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rb_M = new System.Windows.Forms.RadioButton();
-            this.button_TimKiem = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnTimNV = new System.Windows.Forms.Button();
+            this.MA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabSach.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -235,6 +235,20 @@
             this.button_Huy.Text = "X";
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
+            // 
+            // button_TimKiem
+            // 
+            this.button_TimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_TimKiem.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.button_TimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_TimKiem.Location = new System.Drawing.Point(720, 1);
+            this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.button_TimKiem.Name = "button_TimKiem";
+            this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
+            this.button_TimKiem.TabIndex = 30;
+            this.button_TimKiem.UseVisualStyleBackColor = false;
+            this.button_TimKiem.Click += new System.EventHandler(this.button_TimKiem_Click);
             // 
             // textBox_TimKiem
             // 
@@ -446,6 +460,48 @@
             this.tabNhaSach.Text = "Nhà sách";
             this.tabNhaSach.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Image = global::QL_Sach.Properties.Resources.angle_arrow_down_icon_icons_com_73683;
+            this.button4.Location = new System.Drawing.Point(908, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 26);
+            this.button4.TabIndex = 48;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = global::QL_Sach.Properties.Resources.up_arrow_icon_icons_com_73351;
+            this.button3.Location = new System.Drawing.Point(875, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 26);
+            this.button3.TabIndex = 47;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // rb_M
+            // 
+            this.rb_M.AutoSize = true;
+            this.rb_M.Checked = true;
+            this.rb_M.Location = new System.Drawing.Point(829, 25);
+            this.rb_M.Name = "rb_M";
+            this.rb_M.Size = new System.Drawing.Size(40, 17);
+            this.rb_M.TabIndex = 46;
+            this.rb_M.TabStop = true;
+            this.rb_M.Text = "Mã";
+            this.rb_M.UseVisualStyleBackColor = true;
+            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(773, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Sắp xếp:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radNSDSLK);
@@ -503,6 +559,20 @@
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(675, 8);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 38);
+            this.button2.TabIndex = 41;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -608,7 +678,7 @@
             // 
             this.dGVNS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVNS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
+            this.MA,
             this.Column9,
             this.Column10,
             this.Column11,
@@ -620,39 +690,6 @@
             this.dGVNS.RowTemplate.Height = 24;
             this.dGVNS.Size = new System.Drawing.Size(788, 517);
             this.dGVNS.TabIndex = 32;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "MaNhaSach";
-            this.Column8.HeaderText = "Mã nhà sách";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TenNhaSach";
-            this.Column9.HeaderText = "Tên nhà sách";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "DiaChi";
-            this.Column10.HeaderText = "Địa chỉ";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 200;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenQuanLi";
-            this.Column11.HeaderText = "Tên quản lí";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 140;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "SoLuongNhanVien";
-            this.Column12.HeaderText = "Số lượng nhân viên";
-            this.Column12.Name = "Column12";
             // 
             // tabNhanVien
             // 
@@ -1199,76 +1236,6 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(773, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Sắp xếp:";
-            // 
-            // rb_M
-            // 
-            this.rb_M.AutoSize = true;
-            this.rb_M.Checked = true;
-            this.rb_M.Location = new System.Drawing.Point(829, 25);
-            this.rb_M.Name = "rb_M";
-            this.rb_M.Size = new System.Drawing.Size(40, 17);
-            this.rb_M.TabIndex = 46;
-            this.rb_M.TabStop = true;
-            this.rb_M.Text = "Mã";
-            this.rb_M.UseVisualStyleBackColor = true;
-            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
-            // 
-            // button_TimKiem
-            // 
-            this.button_TimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_TimKiem.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.button_TimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_TimKiem.Location = new System.Drawing.Point(720, 1);
-            this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.button_TimKiem.Name = "button_TimKiem";
-            this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
-            this.button_TimKiem.TabIndex = 30;
-            this.button_TimKiem.UseVisualStyleBackColor = false;
-            this.button_TimKiem.Click += new System.EventHandler(this.button_TimKiem_Click);
-            // 
-            // button4
-            // 
-            this.button4.Image = global::QL_Sach.Properties.Resources.angle_arrow_down_icon_icons_com_73683;
-            this.button4.Location = new System.Drawing.Point(908, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 26);
-            this.button4.TabIndex = 48;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::QL_Sach.Properties.Resources.up_arrow_icon_icons_com_73351;
-            this.button3.Location = new System.Drawing.Point(875, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 26);
-            this.button3.TabIndex = 47;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(675, 8);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(36, 38);
-            this.button2.TabIndex = 41;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // btnTimNV
             // 
             this.btnTimNV.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1282,6 +1249,39 @@
             this.btnTimNV.TabIndex = 41;
             this.btnTimNV.UseVisualStyleBackColor = false;
             this.btnTimNV.Click += new System.EventHandler(this.btnTimNV_Click);
+            // 
+            // MA
+            // 
+            this.MA.DataPropertyName = "MaNhaSach";
+            this.MA.HeaderText = "Mã nhà sách";
+            this.MA.Name = "MA";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenNhaSach";
+            this.Column9.HeaderText = "Tên nhà sách";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "DiaChi";
+            this.Column10.HeaderText = "Địa chỉ";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 200;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenQuanLi";
+            this.Column11.HeaderText = "Tên quản lí";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 140;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "SoLuongNhanVien";
+            this.Column12.HeaderText = "Số lượng nhân viên";
+            this.Column12.Name = "Column12";
             // 
             // Form_QLHeThongNhaSach
             // 
@@ -1382,11 +1382,6 @@
         private System.Windows.Forms.RadioButton radNSDSLK;
         private System.Windows.Forms.RadioButton radNSDSD;
         private System.Windows.Forms.RadioButton radNSListT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblSL;
         private System.Windows.Forms.Label label1;
@@ -1424,5 +1419,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RadioButton rb_M;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }
