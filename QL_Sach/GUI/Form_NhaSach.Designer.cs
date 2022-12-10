@@ -70,6 +70,7 @@ namespace QL_Sach.GUI
             this.textBox_TenNhaSach.Name = "textBox_TenNhaSach";
             this.textBox_TenNhaSach.Size = new System.Drawing.Size(305, 20);
             this.textBox_TenNhaSach.TabIndex = 1;
+            this.textBox_TenNhaSach.Text = "Fahasha quận 8";
             // 
             // label_TenSach
             // 
@@ -114,6 +115,7 @@ namespace QL_Sach.GUI
             this.textBox_DiaChi.Name = "textBox_DiaChi";
             this.textBox_DiaChi.Size = new System.Drawing.Size(305, 20);
             this.textBox_DiaChi.TabIndex = 2;
+            this.textBox_DiaChi.Text = "123 Cao Lỗ";
             // 
             // label_Title
             // 
@@ -169,6 +171,7 @@ namespace QL_Sach.GUI
             this.textBox_TenQuanLi.Name = "textBox_TenQuanLi";
             this.textBox_TenQuanLi.Size = new System.Drawing.Size(305, 20);
             this.textBox_TenQuanLi.TabIndex = 1000;
+            this.textBox_TenQuanLi.Text = "Quản lí 1";
             // 
             // textBox_SoLuongNhanVien
             // 
@@ -177,6 +180,7 @@ namespace QL_Sach.GUI
             this.textBox_SoLuongNhanVien.Name = "textBox_SoLuongNhanVien";
             this.textBox_SoLuongNhanVien.Size = new System.Drawing.Size(285, 20);
             this.textBox_SoLuongNhanVien.TabIndex = 1001;
+            this.textBox_SoLuongNhanVien.Text = "7";
             // 
             // Form_NhaSach
             // 
