@@ -31,9 +31,9 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabSach = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radSachDSLK = new System.Windows.Forms.RadioButton();
+            this.radSachDSD = new System.Windows.Forms.RadioButton();
+            this.radSachListT = new System.Windows.Forms.RadioButton();
             this.button_Huy = new System.Windows.Forms.Button();
             this.button_TimKiem = new System.Windows.Forms.Button();
             this.textBox_TimKiem = new System.Windows.Forms.TextBox();
@@ -162,9 +162,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton7);
-            this.groupBox3.Controls.Add(this.radioButton8);
-            this.groupBox3.Controls.Add(this.radioButton9);
+            this.groupBox3.Controls.Add(this.radSachDSLK);
+            this.groupBox3.Controls.Add(this.radSachDSD);
+            this.groupBox3.Controls.Add(this.radSachListT);
             this.groupBox3.Location = new System.Drawing.Point(32, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(279, 39);
@@ -172,37 +172,40 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cấu trúc dữ liệu";
             // 
-            // radioButton7
+            // radSachDSLK
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(180, 16);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(53, 17);
-            this.radioButton7.TabIndex = 2;
-            this.radioButton7.Text = "DSLK";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radSachDSLK.AutoSize = true;
+            this.radSachDSLK.Location = new System.Drawing.Point(180, 16);
+            this.radSachDSLK.Name = "radSachDSLK";
+            this.radSachDSLK.Size = new System.Drawing.Size(53, 17);
+            this.radSachDSLK.TabIndex = 2;
+            this.radSachDSLK.Text = "DSLK";
+            this.radSachDSLK.UseVisualStyleBackColor = true;
+            this.radSachDSLK.Click += new System.EventHandler(this.radSachDSLK_CheckedChanged);
             // 
-            // radioButton8
+            // radSachDSD
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(88, 16);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(63, 17);
-            this.radioButton8.TabIndex = 1;
-            this.radioButton8.Text = "DS Đặc";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.radSachDSD.AutoSize = true;
+            this.radSachDSD.Location = new System.Drawing.Point(88, 16);
+            this.radSachDSD.Name = "radSachDSD";
+            this.radSachDSD.Size = new System.Drawing.Size(63, 17);
+            this.radSachDSD.TabIndex = 1;
+            this.radSachDSD.Text = "DS Đặc";
+            this.radSachDSD.UseVisualStyleBackColor = true;
+            this.radSachDSD.Click += new System.EventHandler(this.radSachDSD_CheckedChanged);
             // 
-            // radioButton9
+            // radSachListT
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Checked = true;
-            this.radioButton9.Location = new System.Drawing.Point(10, 16);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(48, 17);
-            this.radioButton9.TabIndex = 0;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "ListT";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.radSachListT.AutoSize = true;
+            this.radSachListT.Checked = true;
+            this.radSachListT.Location = new System.Drawing.Point(10, 16);
+            this.radSachListT.Name = "radSachListT";
+            this.radSachListT.Size = new System.Drawing.Size(48, 17);
+            this.radSachListT.TabIndex = 0;
+            this.radSachListT.TabStop = true;
+            this.radSachListT.Text = "ListT";
+            this.radSachListT.UseVisualStyleBackColor = true;
+            this.radSachListT.Click += new System.EventHandler(this.radSachListT_CheckedChanged);
             // 
             // button_Huy
             // 
@@ -1151,9 +1154,9 @@
         private System.Windows.Forms.RadioButton radNVDSD;
         private System.Windows.Forms.RadioButton radNVListT;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radSachDSLK;
+        private System.Windows.Forms.RadioButton radSachDSD;
+        private System.Windows.Forms.RadioButton radSachListT;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radNSDSLK;
         private System.Windows.Forms.RadioButton radNSDSD;

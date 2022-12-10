@@ -145,12 +145,12 @@ namespace QL_Sach.BUS
                     listKQ.Add(dSNhanVien[i]);
                     continue;
                 }
-                else if (tuKhoa.ToUpper() == "NAM" && dSNhanVien[i].GioiTinh == true)
+                else if (tuKhoa.ToUpper() == "GT:NAM" && dSNhanVien[i].GioiTinh == true)
                 {
                     listKQ.Add(dSNhanVien[i]);
                     continue;
                 }
-                else if (tuKhoa.ToUpper() == "NỮ" && dSNhanVien[i].GioiTinh == false)
+                else if (tuKhoa.ToUpper() == "GT:NỮ" && dSNhanVien[i].GioiTinh == false)
                 {
                     listKQ.Add(dSNhanVien[i]);
                     continue;
@@ -170,7 +170,7 @@ namespace QL_Sach.BUS
                     listKQ.Add(dSNhanVien[i]);
                     continue;
                 }
-                else if (dSNhanVien[i].ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                else if ("CV:" + dSNhanVien[i].ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
                 {
                     listKQ.Add(dSNhanVien[i]);
                     continue;

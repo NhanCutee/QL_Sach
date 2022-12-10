@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QL_nhanVien.BUS;
 using QL_Sach.DTO;
 
 namespace QL_Sach.BUS
@@ -18,7 +19,7 @@ namespace QL_Sach.BUS
         private SachBUS_DSD sachDSD;
         private SachBUS_DSLienKet sachDSLK;
         public List<SachDTO> SachList { get => sachList; }
-
+        public string LoaiDS { get => loaiDS; }
 
         public SachBUS(string enter_loaiDS)
         {
@@ -179,32 +180,39 @@ namespace QL_Sach.BUS
             return true;
         }
 
-        private void chuyenDoiDuLieu()
+        private bool chuyenDoiDuLieu()
         {
-            if (loaiDS == "LibListT")
+            try
             {
-               foreach(SachDTO sach in sachList)
-               {
-                    sachListT.themSach(sach);
-               }
-            }
-            else if (loaiDS == "DSDac")
-            {
-                foreach (SachDTO sach in sachList)
+                if (loaiDS == "LibListT")
                 {
-                    sachDSD.themSach(sach);
+                    foreach (SachDTO nv in sachList)
+                    {
+                        sachListT.themSach(nv);
+                    }
                 }
-            }
-            else if (loaiDS == "DSLK")
-            {
-                foreach (SachDTO sach in sachList)
+                else if (loaiDS == "DSDac")
                 {
-                    sachDSLK.themSach(sach);
+                    foreach (SachDTO nv in sachList)
+                    {
+                        sachDSD.themSach(nv);
+                    }
                 }
+                else if (loaiDS == "DSLK")
+                {
+                    foreach (SachDTO nv in sachList)
+                    {
+                        sachDSLK.themSach(nv);
+                    }
+                }
+                return true;
             }
-
+            catch
+            {
+                return false;
+            }
         }
-    
+
         public List<SachDTO> timKiem(string tuKhoa)
         {
             List<SachDTO> dsKetQua = new List<SachDTO>();
@@ -271,6 +279,39 @@ namespace QL_Sach.BUS
             dsKetQua = dsKetQua.Concat(dsKetQua_GhiChu).ToList();
 
             return dsKetQua;
+        }
+
+        public bool chuyenCauTrucDL(string ctdl)
+        {
+            if (ctdl == "LibListT")
+            {
+                sachListT = new SachBUS_ListT();
+                loaiDS = "LibListT";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                sachList = sachListT.SachList;
+                return true;
+            }
+            else if (ctdl == "DSDac")
+            {
+                sachDSD = new SachBUS_DSD();
+                loaiDS = "DSDac";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                sachList = sachDSD.SachList;
+                return true;
+            }
+            else if (ctdl == "DSLK")
+            {
+                sachDSLK = new SachBUS_DSLienKet();
+                loaiDS = "DSLK";
+                if (!chuyenDoiDuLieu())
+                    return false;
+                sachList = sachDSLK.SachList;
+                return true;
+            }
+            else
+                return false;
         }
 
     }

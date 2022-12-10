@@ -234,19 +234,20 @@ namespace QL_Sach.BUS
             List<NhanVienDTO> dsKetQua_NgaySinh = new List<NhanVienDTO>();
             List<NhanVienDTO> dsKetQua_NhaSachLamViec = new List<NhanVienDTO>();
             List<NhanVienDTO> dsKetQua_DiaChi = new List<NhanVienDTO>();
+            List<NhanVienDTO> dsKetQua_ChucVu = new List<NhanVienDTO>();
 
             //Co the sua lai thanh .contain de tim linh hoat hon
 
             foreach (NhanVienDTO nv in nhanVienList)
             {
-                if (nv.MaNV == tuKhoa.ToUpper())
+                if (nv.MaNV.ToUpper() == tuKhoa.ToUpper())
                 {
                     dsKetQua_MaNV.Add(nv);
                     continue;
                 }
-                else if (nv.TenNV == tuKhoa)
+                else if (nv.ChucVu.ToUpper().Contains(tuKhoa.ToUpper()) )
                 {
-                    dsKetQua_TenNV.Add(nv);
+                    dsKetQua_ChucVu.Add(nv);
                     continue;
                 }
                 else if (tuKhoa.ToUpper() == "NAM" && nv.GioiTinh == true)
@@ -254,36 +255,41 @@ namespace QL_Sach.BUS
                     dsKetQua_GioiTinh.Add(nv);
                     continue;
                 }
-                else if (tuKhoa.ToUpper() == "NU" && nv.GioiTinh == false)
+                else if (tuKhoa.ToUpper() == "NỮ" && nv.GioiTinh == false)
                 {
                     dsKetQua_GioiTinh.Add(nv);
                     continue;
                 }
-                else if (nv.NgaySinh.ToShortDateString()==tuKhoa)
+                else if (nv.TenNV.ToUpper().Contains(tuKhoa.ToUpper()) )
+                {
+                    dsKetQua_TenNV.Add(nv);
+                    continue;
+                }
+                else if (nv.NgaySinh.ToShortDateString().Contains(tuKhoa))
                 {
                     dsKetQua_NgaySinh.Add(nv);
                     continue;
                 }
-                else if (nv.NhaSachLamViec == tuKhoa)
+                else if (nv.NhaSachLamViec.ToUpper().Contains(tuKhoa.ToUpper()))
                 {
                     dsKetQua_NhaSachLamViec.Add(nv);
                     continue;
                 }
-                else if (nv.DiaChi == tuKhoa)
+                else if (nv.DiaChi.ToUpper().Contains(tuKhoa.ToUpper()))
                 {
                     dsKetQua_DiaChi.Add(nv);
                     continue;
                 }
-
             }
 
             dsKetQua = dsKetQua.Concat(dsKetQua_MaNV).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TenNV).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_ChucVu).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_GioiTinh).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_TenNV).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_NgaySinh).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_NhaSachLamViec).ToList();
             dsKetQua = dsKetQua.Concat(dsKetQua_DiaChi).ToList();
-            //Thêm lọc chức vụ
+
             return dsKetQua;
         }
 

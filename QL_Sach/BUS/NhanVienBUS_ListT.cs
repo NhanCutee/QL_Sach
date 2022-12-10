@@ -99,12 +99,12 @@ namespace QL_nhanVien.BUS
                     listKQ.Add(nv);
                     continue;
                 }
-                else if (tuKhoa.ToUpper()=="NAM" && nv.GioiTinh==true)
+                else if (tuKhoa.ToUpper()=="GT:NAM" && nv.GioiTinh==true)
                 {
                     listKQ.Add(nv);
                     continue;
                 }
-                else if (tuKhoa.ToUpper() == "NỮ" && nv.GioiTinh == false)
+                else if (tuKhoa.ToUpper() == "GT:NỮ" && nv.GioiTinh == false)
                 {
                     listKQ.Add(nv);
                     continue;
@@ -124,7 +124,7 @@ namespace QL_nhanVien.BUS
                     listKQ.Add(nv);
                     continue;
                 }
-                else if (nv.ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                else if ("CV:" + nv.ChucVu.ToString().ToUpper() ==tuKhoa.ToUpper())
                 {
                     listKQ.Add(nv);
                     continue;

@@ -175,9 +175,9 @@ namespace QL_Sach.BUS
                     listKQ.Add(node.NhanVien);
                 else if (node.NhanVien.TenNV.ToString().ToUpper() == tuKhoa.ToUpper())
                     listKQ.Add(node.NhanVien);
-                else if (tuKhoa.ToUpper() == "NAM" && node.NhanVien.GioiTinh == true)
+                else if (tuKhoa.ToUpper() == "GT:NAM" && node.NhanVien.GioiTinh == true)
                     listKQ.Add(node.NhanVien);
-                else if (tuKhoa.ToUpper() == "NỮ" && node.NhanVien.GioiTinh == false)
+                else if (tuKhoa.ToUpper() == "GT:NỮ" && node.NhanVien.GioiTinh == false)
                     listKQ.Add(node.NhanVien);
                 else if (node.NhanVien.NgaySinh.ToString() == tuKhoa)
                     listKQ.Add(node.NhanVien);
@@ -185,7 +185,7 @@ namespace QL_Sach.BUS
                     listKQ.Add(node.NhanVien);
                 else if (node.NhanVien.NhaSachLamViec.ToString().ToUpper() == tuKhoa.ToUpper())
                     listKQ.Add(node.NhanVien);
-                else if (node.NhanVien.ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
+                else if ("CV:" + node.NhanVien.ChucVu.ToString().ToUpper() == tuKhoa.ToUpper())
                     listKQ.Add(node.NhanVien);
                 node = node.Next;
             }

@@ -48,6 +48,14 @@ namespace QL_Sach.GUI
         }
         private void LoadSach()
         {
+            if (sachView.LoaiDS == "LibListT")
+                radSachListT.Checked = true;
+            else if (sachView.LoaiDS == "DSDac")
+                radSachDSD.Checked = true;
+
+            else
+                radSachDSLK.Checked = true;
+
             dataGridView.DataSource = sachView.SachList.ToList();
         }
 
@@ -205,6 +213,54 @@ namespace QL_Sach.GUI
         }
 
 
+        private void radSachListT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSachListT.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (sachView.chuyenCauTrucDL("LibListT") == false || sachView.LoaiDS != "LibListT")
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
+        private void radSachDSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSachDSD.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang DS đặc?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (sachView.chuyenCauTrucDL("DSDac") == false || sachView.LoaiDS != "DSDac")
+                {
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                    radNVDSD.Checked = false;
+                }
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
+        private void radSachDSLK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSachDSLK.Checked)
+            {
+                DialogResult dialogResult = MessageBox.Show("Chuyển sang DS Liên kết?", "Chú ý", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                    return;
+                if (sachView.chuyenCauTrucDL("DSLK") == false || sachView.LoaiDS != "DSLK")
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
+                else
+                    MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
+                loadNV();
+            }
+        }
+
 
 
 
@@ -212,7 +268,7 @@ namespace QL_Sach.GUI
 
 
         //----------------- NHA SACH--------------------------------------------------------
-      
+
         private void button_Exit_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Thoát chương trình?", "Chú ý", MessageBoxButtons.YesNo);
@@ -422,12 +478,12 @@ namespace QL_Sach.GUI
             dgvNV.DataSource = dsnv.NhanVienList;
 
             lblSL.Text = dsnv.soLuongNV().ToString();
-            lblSoQL.Text=dsnv.timTuKhoa("Quản lí").Count().ToString();
-            lblSoNV.Text = dsnv.timTuKhoa("Nhân viên").Count().ToString();
-            lblKhac.Text = (dsnv.soLuongNV() - (dsnv.timTuKhoa("Quản lí").Count() + dsnv.timTuKhoa("Nhân viên").Count())).ToString();
+            lblSoQL.Text=dsnv.timTuKhoa("cv:Quản lí").Count().ToString();
+            lblSoNV.Text = dsnv.timTuKhoa("cv:Nhân viên").Count().ToString();
+            lblKhac.Text = (dsnv.soLuongNV() - (dsnv.timTuKhoa("cv:Quản lí").Count() + dsnv.timTuKhoa("cv:Nhân viên").Count())).ToString();
 
-            lblNam.Text = dsnv.timTuKhoa("Nam").Count().ToString();
-            lblNu.Text = dsnv.timTuKhoa("Nữ").Count().ToString();
+            lblNam.Text = dsnv.timTuKhoa("gt:Nam").Count().ToString();
+            lblNu.Text = dsnv.timTuKhoa("gt:Nữ").Count().ToString();
         }
         private void loadNV(List<NhanVienDTO> nvList)
         {
