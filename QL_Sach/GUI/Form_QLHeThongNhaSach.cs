@@ -415,9 +415,20 @@ namespace QL_Sach.GUI
             textBox1.Text = "";
             LoadNhaSach();
         }
+        private void rb_M_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
         //--------------------------------------------------------------------------------
 
@@ -796,6 +807,12 @@ namespace QL_Sach.GUI
                 }
             }
         }
+
+        
+
+
+
+
 
 
 

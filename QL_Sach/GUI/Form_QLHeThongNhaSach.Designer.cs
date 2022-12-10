@@ -35,7 +35,6 @@
             this.radSachDSD = new System.Windows.Forms.RadioButton();
             this.radSachListT = new System.Windows.Forms.RadioButton();
             this.button_Huy = new System.Windows.Forms.Button();
-            this.button_TimKiem = new System.Windows.Forms.Button();
             this.textBox_TimKiem = new System.Windows.Forms.TextBox();
             this.button_Doc = new System.Windows.Forms.Button();
             this.button_Luu = new System.Windows.Forms.Button();
@@ -59,7 +58,6 @@
             this.radNSDSD = new System.Windows.Forms.RadioButton();
             this.radNSListT = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_DF = new System.Windows.Forms.Button();
             this.button_LF = new System.Windows.Forms.Button();
@@ -104,7 +102,6 @@
             this.radNVDSD = new System.Windows.Forms.RadioButton();
             this.radNVListT = new System.Windows.Forms.RadioButton();
             this.btnHuyTimNV = new System.Windows.Forms.Button();
-            this.btnTimNV = new System.Windows.Forms.Button();
             this.txtTimNV = new System.Windows.Forms.TextBox();
             this.btnDocNV = new System.Windows.Forms.Button();
             this.lblSL = new System.Windows.Forms.Label();
@@ -123,6 +120,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rb_M = new System.Windows.Forms.RadioButton();
+            this.button_TimKiem = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnTimNV = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabSach.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -231,20 +235,6 @@
             this.button_Huy.Text = "X";
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
-            // 
-            // button_TimKiem
-            // 
-            this.button_TimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_TimKiem.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.button_TimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_TimKiem.Location = new System.Drawing.Point(720, 1);
-            this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.button_TimKiem.Name = "button_TimKiem";
-            this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
-            this.button_TimKiem.TabIndex = 30;
-            this.button_TimKiem.UseVisualStyleBackColor = false;
-            this.button_TimKiem.Click += new System.EventHandler(this.button_TimKiem_Click);
             // 
             // textBox_TimKiem
             // 
@@ -432,6 +422,10 @@
             // 
             // tabNhaSach
             // 
+            this.tabNhaSach.Controls.Add(this.button4);
+            this.tabNhaSach.Controls.Add(this.button3);
+            this.tabNhaSach.Controls.Add(this.rb_M);
+            this.tabNhaSach.Controls.Add(this.label2);
             this.tabNhaSach.Controls.Add(this.groupBox2);
             this.tabNhaSach.Controls.Add(this.button1);
             this.tabNhaSach.Controls.Add(this.button2);
@@ -449,7 +443,6 @@
             this.tabNhaSach.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhaSach.Size = new System.Drawing.Size(986, 596);
             this.tabNhaSach.TabIndex = 1;
-            this.tabNhaSach.Text = "Nhà sách";
             this.tabNhaSach.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -502,31 +495,17 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(763, 9);
+            this.button1.Location = new System.Drawing.Point(716, 8);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 39);
+            this.button1.Size = new System.Drawing.Size(36, 38);
             this.button1.TabIndex = 42;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(718, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 41;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 20);
+            this.textBox1.Location = new System.Drawing.Point(332, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(327, 20);
             this.textBox1.TabIndex = 40;
@@ -536,7 +515,7 @@
             // 
             this.button_DF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_DF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_DF.Location = new System.Drawing.Point(867, 342);
+            this.button_DF.Location = new System.Drawing.Point(849, 386);
             this.button_DF.Margin = new System.Windows.Forms.Padding(2);
             this.button_DF.Name = "button_DF";
             this.button_DF.Size = new System.Drawing.Size(89, 39);
@@ -549,7 +528,7 @@
             // 
             this.button_LF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_LF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LF.Location = new System.Drawing.Point(867, 423);
+            this.button_LF.Location = new System.Drawing.Point(849, 462);
             this.button_LF.Margin = new System.Windows.Forms.Padding(2);
             this.button_LF.Name = "button_LF";
             this.button_LF.Size = new System.Drawing.Size(89, 39);
@@ -562,7 +541,7 @@
             // 
             this.button_XX.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_XX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XX.Location = new System.Drawing.Point(867, 270);
+            this.button_XX.Location = new System.Drawing.Point(849, 309);
             this.button_XX.Margin = new System.Windows.Forms.Padding(2);
             this.button_XX.Name = "button_XX";
             this.button_XX.Size = new System.Drawing.Size(89, 39);
@@ -575,7 +554,7 @@
             // 
             this.button_Exit.BackColor = System.Drawing.Color.LightCoral;
             this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Exit.Location = new System.Drawing.Point(867, 504);
+            this.button_Exit.Location = new System.Drawing.Point(849, 531);
             this.button_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(89, 39);
@@ -588,7 +567,7 @@
             // 
             this.button_X.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_X.Location = new System.Drawing.Point(867, 195);
+            this.button_X.Location = new System.Drawing.Point(849, 232);
             this.button_X.Margin = new System.Windows.Forms.Padding(2);
             this.button_X.Name = "button_X";
             this.button_X.Size = new System.Drawing.Size(89, 39);
@@ -601,7 +580,7 @@
             // 
             this.button_S.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_S.Location = new System.Drawing.Point(867, 124);
+            this.button_S.Location = new System.Drawing.Point(849, 156);
             this.button_S.Margin = new System.Windows.Forms.Padding(2);
             this.button_S.Name = "button_S";
             this.button_S.Size = new System.Drawing.Size(89, 39);
@@ -614,7 +593,7 @@
             // 
             this.button_T.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_T.Location = new System.Drawing.Point(867, 53);
+            this.button_T.Location = new System.Drawing.Point(849, 82);
             this.button_T.Margin = new System.Windows.Forms.Padding(2);
             this.button_T.Name = "button_T";
             this.button_T.Size = new System.Drawing.Size(89, 39);
@@ -638,7 +617,7 @@
             this.dGVNS.Name = "dGVNS";
             this.dGVNS.RowHeadersWidth = 51;
             this.dGVNS.RowTemplate.Height = 24;
-            this.dGVNS.Size = new System.Drawing.Size(788, 511);
+            this.dGVNS.Size = new System.Drawing.Size(788, 517);
             this.dGVNS.TabIndex = 32;
             // 
             // Column8
@@ -682,7 +661,6 @@
             this.tabNhanVien.Controls.Add(this.groupBox4);
             this.tabNhanVien.Controls.Add(this.groupBox1);
             this.tabNhanVien.Controls.Add(this.btnHuyTimNV);
-            this.tabNhanVien.Controls.Add(this.btnTimNV);
             this.tabNhanVien.Controls.Add(this.txtTimNV);
             this.tabNhanVien.Controls.Add(this.btnDocNV);
             this.tabNhanVien.Controls.Add(this.lblSL);
@@ -694,6 +672,7 @@
             this.tabNhanVien.Controls.Add(this.btnSuaNV);
             this.tabNhanVien.Controls.Add(this.btnThemNV);
             this.tabNhanVien.Controls.Add(this.dgvNV);
+            this.tabNhanVien.Controls.Add(this.btnTimNV);
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
@@ -1030,20 +1009,6 @@
             this.btnHuyTimNV.UseVisualStyleBackColor = true;
             this.btnHuyTimNV.Click += new System.EventHandler(this.btnHuyTimNV_Click);
             // 
-            // btnTimNV
-            // 
-            this.btnTimNV.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTimNV.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.btnTimNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnTimNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimNV.Location = new System.Drawing.Point(748, 11);
-            this.btnTimNV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTimNV.Name = "btnTimNV";
-            this.btnTimNV.Size = new System.Drawing.Size(36, 37);
-            this.btnTimNV.TabIndex = 41;
-            this.btnTimNV.UseVisualStyleBackColor = false;
-            this.btnTimNV.Click += new System.EventHandler(this.btnTimNV_Click);
-            // 
             // txtTimNV
             // 
             this.txtTimNV.Location = new System.Drawing.Point(406, 19);
@@ -1233,6 +1198,90 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(773, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Sắp xếp:";
+            // 
+            // rb_M
+            // 
+            this.rb_M.AutoSize = true;
+            this.rb_M.Checked = true;
+            this.rb_M.Location = new System.Drawing.Point(829, 25);
+            this.rb_M.Name = "rb_M";
+            this.rb_M.Size = new System.Drawing.Size(40, 17);
+            this.rb_M.TabIndex = 46;
+            this.rb_M.TabStop = true;
+            this.rb_M.Text = "Mã";
+            this.rb_M.UseVisualStyleBackColor = true;
+            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
+            // 
+            // button_TimKiem
+            // 
+            this.button_TimKiem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_TimKiem.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.button_TimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_TimKiem.Location = new System.Drawing.Point(720, 1);
+            this.button_TimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.button_TimKiem.Name = "button_TimKiem";
+            this.button_TimKiem.Size = new System.Drawing.Size(40, 40);
+            this.button_TimKiem.TabIndex = 30;
+            this.button_TimKiem.UseVisualStyleBackColor = false;
+            this.button_TimKiem.Click += new System.EventHandler(this.button_TimKiem_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = global::QL_Sach.Properties.Resources.angle_arrow_down_icon_icons_com_73683;
+            this.button4.Location = new System.Drawing.Point(908, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 26);
+            this.button4.TabIndex = 48;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = global::QL_Sach.Properties.Resources.up_arrow_icon_icons_com_73351;
+            this.button3.Location = new System.Drawing.Point(875, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 26);
+            this.button3.TabIndex = 47;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(675, 8);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 38);
+            this.button2.TabIndex = 41;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnTimNV
+            // 
+            this.btnTimNV.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTimNV.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.btnTimNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnTimNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimNV.Location = new System.Drawing.Point(748, 11);
+            this.btnTimNV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimNV.Name = "btnTimNV";
+            this.btnTimNV.Size = new System.Drawing.Size(36, 37);
+            this.btnTimNV.TabIndex = 41;
+            this.btnTimNV.UseVisualStyleBackColor = false;
+            this.btnTimNV.Click += new System.EventHandler(this.btnTimNV_Click);
+            // 
             // Form_QLHeThongNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1370,5 +1419,9 @@
         private System.Windows.Forms.RadioButton radNVGiam;
         private System.Windows.Forms.RadioButton radNVTang;
         private System.Windows.Forms.RadioButton radNVMacDinh;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RadioButton rb_M;
+        private System.Windows.Forms.Label label2;
     }
 }

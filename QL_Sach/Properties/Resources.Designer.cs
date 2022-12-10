@@ -73,6 +73,16 @@ namespace QL_Sach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angle_arrow_down_icon_icons_com_73683 {
+            get {
+                object obj = ResourceManager.GetObject("angle-arrow-down_icon-icons.com_73683", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnifying_glass_search_icon_208685 {
             get {
                 object obj = ResourceManager.GetObject("magnifying_glass_search_icon_208685", resourceCulture);
@@ -86,6 +96,16 @@ namespace QL_Sach.Properties {
         internal static System.Drawing.Bitmap magnifyingglasssearchbutton_99742 {
             get {
                 object obj = ResourceManager.GetObject("magnifyingglasssearchbutton_99742", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap up_arrow_icon_icons_com_73351 {
+            get {
+                object obj = ResourceManager.GetObject("up-arrow_icon-icons.com_73351", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

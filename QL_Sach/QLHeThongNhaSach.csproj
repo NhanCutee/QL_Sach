@@ -144,5 +144,11 @@
   <ItemGroup>
     <None Include="Resources\magnifying_glass_search_icon_208685.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up-arrow_icon-icons.com_73351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle-arrow-down_icon-icons.com_73683.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
