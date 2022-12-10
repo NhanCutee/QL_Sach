@@ -688,7 +688,24 @@ namespace QL_Sach.GUI
 
         }
 
+        private void chkTest_CheckedChanged(object sender, EventArgs e)
+        {
+        }
 
+        private void updateState(CheckBox chk)
+        {
+            if (chk.CheckState == CheckState.Checked)
+                chk.Text = "Tăng";
+            else if (chk.CheckState == CheckState.Indeterminate)
+                chk.Text = "Giảm";
+            else
+            {
+                chk.Text = "Mặc định";
+                loadNV();
+            }
+        }
+
+        
 
 
 
