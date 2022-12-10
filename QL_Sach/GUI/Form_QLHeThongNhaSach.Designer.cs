@@ -1179,12 +1179,13 @@
             // radioButton1
             // 
             this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.Location = new System.Drawing.Point(6, 14);
+            this.radioButton1.Location = new System.Drawing.Point(6, 12);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(62, 24);
             this.radioButton1.TabIndex = 50;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Mặc định";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // groupBox7
@@ -1194,7 +1195,7 @@
             this.groupBox7.Controls.Add(this.radioButton1);
             this.groupBox7.Location = new System.Drawing.Point(756, 484);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(77, 104);
+            this.groupBox7.Size = new System.Drawing.Size(77, 100);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             // 
@@ -1207,6 +1208,7 @@
             this.radioButton2.TabIndex = 51;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tăng";
+            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -1218,6 +1220,7 @@
             this.radioButton3.TabIndex = 52;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Giảm";
+            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // Form_QLHeThongNhaSach
