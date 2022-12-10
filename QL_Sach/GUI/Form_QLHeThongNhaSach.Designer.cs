@@ -1,6 +1,6 @@
 ﻿namespace QL_Sach.GUI
 {
-    partial class Form_QLChụng
+    partial class Form_QLHeThongNhaSach
     {
         /// <summary>
         /// Required designer variable.
@@ -494,6 +494,7 @@
             this.button1.TabIndex = 42;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -507,6 +508,7 @@
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 41;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -692,7 +694,7 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Location = new System.Drawing.Point(239, 484);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(195, 104);
+            this.groupBox5.Size = new System.Drawing.Size(163, 81);
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Giới tính";
@@ -881,6 +883,7 @@
             this.txtTimNV.Name = "txtTimNV";
             this.txtTimNV.Size = new System.Drawing.Size(327, 20);
             this.txtTimNV.TabIndex = 40;
+            this.txtTimNV.TextChanged += new System.EventHandler(this.btnTimNV_Click);
             // 
             // btnDocNV
             // 
@@ -898,10 +901,10 @@
             // lblSL
             // 
             this.lblSL.AutoSize = true;
-            this.lblSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSL.Location = new System.Drawing.Point(544, 568);
+            this.lblSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSL.Location = new System.Drawing.Point(352, 568);
             this.lblSL.Name = "lblSL";
-            this.lblSL.Size = new System.Drawing.Size(18, 20);
+            this.lblSL.Size = new System.Drawing.Size(19, 20);
             this.lblSL.TabIndex = 1;
             this.lblSL.Text = "0";
             this.lblSL.Click += new System.EventHandler(this.lblSL_Click);
@@ -922,10 +925,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(468, 568);
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(248, 568);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng số:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -1026,7 +1030,9 @@
             // 
             this.Column2.DataPropertyName = "TenNV";
             this.Column2.HeaderText = "Tên NV";
+            this.Column2.MinimumWidth = 7;
             this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
             // 
             // Column3
             // 
@@ -1045,12 +1051,14 @@
             this.Column5.DataPropertyName = "DiaChi";
             this.Column5.HeaderText = "Địa Chỉ";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 120;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "NhaSachLamViec";
             this.Column6.HeaderText = "Nơi Làm Việc";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 110;
             // 
             // Column7
             // 
@@ -1058,7 +1066,7 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
-            // Form_QLChụng
+            // Form_QLHeThongNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1067,7 +1075,7 @@
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form_QLChụng";
+            this.Name = "Form_QLHeThongNhaSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hệ thống nhà sách";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -1142,13 +1150,6 @@
         private System.Windows.Forms.Button btnSuaNV;
         private System.Windows.Forms.Button btnThemNV;
         private System.Windows.Forms.DataGridView dgvNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radNVDSLK;
         private System.Windows.Forms.RadioButton radNVDSD;
@@ -1180,5 +1181,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblNam;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

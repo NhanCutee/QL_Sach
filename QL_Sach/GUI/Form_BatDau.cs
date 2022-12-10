@@ -37,7 +37,7 @@ namespace QL_Sach.GUI
                 loaiDS = "DSLK";
 
             this.Hide();
-            Form_QLChụng f = new Form_QLChụng(loaiDS,tab);
+            Form_QLHeThongNhaSach f = new Form_QLHeThongNhaSach(loaiDS,tab);
             f.ShowDialog();
             this.Close();
         }

@@ -161,6 +161,9 @@ namespace QL_Sach.BUS
                 m_firstNode = m_firstNode.Next;
                 nodeTemp = null;
             }
+            //khoi tao lai danh sach tranh loi
+            m_firstNode = new NodeNhanVien();
+            m_n = 0;
         }
 
         public List<NhanVienDTO> timTuKhoa(string tuKhoa)

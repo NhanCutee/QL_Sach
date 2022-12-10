@@ -14,14 +14,14 @@ using QL_Sach.DTO;
 
 namespace QL_Sach.GUI
 {
-    public partial class Form_QLChụng : Form
+    public partial class Form_QLHeThongNhaSach : Form
     {
         Form_Sach f;
         SachBUS sachView;
         Form_NhaSach b;
         NhaSachBUS nhaView;
 
-        public Form_QLChụng(string loaiDS,int tab)
+        public Form_QLHeThongNhaSach(string loaiDS,int tab)
         {
 
             InitializeComponent();
@@ -412,6 +412,17 @@ namespace QL_Sach.GUI
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dGVNS.DataSource = nhaView.timKiem(txtTimNV.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtTimNV.Text = "";
+            LoadNhaSach();
+        }
+
         //--------------------------------------------------------------------------------
 
 
@@ -547,6 +558,11 @@ namespace QL_Sach.GUI
 
         private void btnXoaTatCaNV_Click(object sender, EventArgs e)
         {
+            if (dsnv.soLuongNV() == 0)
+            {
+                MessageBox.Show("Danh sách rỗng, không thể xóa", "Thông báo");
+                return;
+            }
             DialogResult dialogResult = MessageBox.Show("Xoá tất cả nhân viên trong danh sách?", "Chú ý", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.No)
                 return;
@@ -674,6 +690,8 @@ namespace QL_Sach.GUI
         {
 
         }
+
+
 
         //--------------------------------------------------------------------------------
 

@@ -82,11 +82,11 @@
     <Compile Include="GUI\Form_BatDau.Designer.cs">
       <DependentUpon>Form_BatDau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_QLChụng.cs">
+    <Compile Include="GUI\Form_QLHeThongNhaSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_QLChụng.Designer.cs">
-      <DependentUpon>Form_QLChụng.cs</DependentUpon>
+    <Compile Include="GUI\Form_QLHeThongNhaSach.Designer.cs">
+      <DependentUpon>Form_QLHeThongNhaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form_Sach.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <EmbeddedResource Include="GUI\Form_BatDau.resx">
       <DependentUpon>Form_BatDau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_QLChụng.resx">
-      <DependentUpon>Form_QLChụng.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_QLHeThongNhaSach.resx">
+      <DependentUpon>Form_QLHeThongNhaSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_Sach.resx">
       <DependentUpon>Form_Sach.cs</DependentUpon>
