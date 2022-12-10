@@ -1,16 +1,10 @@
 ﻿using QL_Sach.BUS;
+using QL_Sach.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using QL_Sach.DTO;
 
 namespace QL_Sach.GUI
 {
@@ -21,7 +15,7 @@ namespace QL_Sach.GUI
         Form_NhaSach b;
         NhaSachBUS nhaView;
 
-        public Form_QLHeThongNhaSach(string loaiDS,int tab)
+        public Form_QLHeThongNhaSach(string loaiDS, int tab)
         {
 
             InitializeComponent();
@@ -32,7 +26,7 @@ namespace QL_Sach.GUI
 
             if (tab == 1)
                 tabControl.SelectedTab = tabSach;
-            else if(tab==2)
+            else if (tab == 2)
                 tabControl.SelectedTab = tabNhaSach;
             else
                 tabControl.SelectedTab = tabNhanVien;
@@ -61,31 +55,31 @@ namespace QL_Sach.GUI
         {
             //dung de test
             //sachView.themSachRong();
-           // LoadSach();
-           // return;
+            // LoadSach();
+            // return;
 
             string fTitle = "Nhập thông tin quyển sách";
             f = new Form_Sach(fTitle);
             f.ShowDialog();
-            if(f.UserPress==true)
+            if (f.UserPress == true)
             {
                 sachView.themSach(f.MaSach, f.TenSach, f.TheLoai, f.TenTacGia, f.NhaXuatBan, (DateTime)f.NgayXuatBan, f.GhiChu, f.Gia);
-            }    
+            }
 
             LoadSach();
         }
 
         private void button_Xoa_Click(object sender, EventArgs e)
-        {         
+        {
             if (dataGridView.SelectedCells.Count > 0)
             {
                 //show message box de xac nhan xoa
-                DialogResult dialogResult = MessageBox.Show("Xóa sách đã chọn ?","Chú ý", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Xóa sách đã chọn ?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                     return;
 
                 //De chon row truoc cac row da xoa
-                int lastRow = dataGridView.SelectedCells[0].RowIndex ;
+                int lastRow = dataGridView.SelectedCells[0].RowIndex;
 
                 int[] rowIndexes = (from sc in dataGridView.SelectedCells.Cast<DataGridViewCell>()
                                     select sc.RowIndex).Distinct().ToArray();
@@ -97,8 +91,8 @@ namespace QL_Sach.GUI
                 dataGridView.ClearSelection();
 
                 try { dataGridView.Rows[lastRow].Selected = true; } catch { }
-   
-                }
+
+            }
             else
                 MessageBox.Show("Hãy chọn sách cần xóa");
         }
@@ -176,7 +170,7 @@ namespace QL_Sach.GUI
 
         private void button_TimKiem_Click(object sender, EventArgs e)
         {
-            if(textBox_TimKiem.Text=="")
+            if (textBox_TimKiem.Text == "")
                 MessageBox.Show("Vui lòng nhập từ khoá để tìm kiếm.");
             else if (sachView.timKiem(textBox_TimKiem.Text).Count == 0)
             {
@@ -426,6 +420,7 @@ namespace QL_Sach.GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+
         }
         //--------------------------------------------------------------------------------
 
@@ -455,7 +450,7 @@ namespace QL_Sach.GUI
             dgvNV.DataSource = dsnv.NhanVienList;
 
             lblSL.Text = dsnv.soLuongNV().ToString();
-            lblSoQL.Text=dsnv.timTuKhoa("cv:Quản lí").Count().ToString();
+            lblSoQL.Text = dsnv.timTuKhoa("cv:Quản lí").Count().ToString();
             lblSoNV.Text = dsnv.timTuKhoa("cv:Nhân viên").Count().ToString();
             lblKhac.Text = (dsnv.soLuongNV() - (dsnv.timTuKhoa("cv:Quản lí").Count() + dsnv.timTuKhoa("cv:Nhân viên").Count())).ToString();
 
@@ -464,7 +459,7 @@ namespace QL_Sach.GUI
         }
         private void loadNV(List<NhanVienDTO> nvList)
         {
-            dgvNV.DataSource =nvList.ToList();
+            dgvNV.DataSource = nvList.ToList();
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -475,19 +470,19 @@ namespace QL_Sach.GUI
                 dsnv.themNV(fNV.Nv);
                 loadNV();
             }
-            else if(fNV.UserEnter == true)
+            else if (fNV.UserEnter == true)
                 MessageBox.Show("Nhân viên " + fNV.Nv.MaNV + " Đã tồn tại.");
 
         }
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            if(txtTimNV.Text!="")
+            if (txtTimNV.Text != "")
             {
                 NhanVienDTO nv = dsnv.timNV(txtTimNV.Text);
-                if (nv!=null)
+                if (nv != null)
                 {
-                    Form_NhanVien fNV = new Form_NhanVien("Sửa Nhân Viên",nv.MaNV,nv.TenNV,nv.GioiTinh,nv.NgaySinh,nv.DiaChi,nv.NhaSachLamViec,nv.ChucVu);
+                    Form_NhanVien fNV = new Form_NhanVien("Sửa Nhân Viên", nv.MaNV, nv.TenNV, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.NhaSachLamViec, nv.ChucVu);
                     fNV.Nv = new NhanVienDTO(nv);
                     fNV.ShowDialog();
                     if (fNV.UserEnter == true)
@@ -499,7 +494,7 @@ namespace QL_Sach.GUI
                 else
                     MessageBox.Show("Nhân viên " + txtTimNV.Text + " không tồn tại.");
             }
-            else if(dgvNV.SelectedCells.Count>0)
+            else if (dgvNV.SelectedCells.Count > 0)
             {
                 NhanVienDTO nv = dsnv.timNV(dgvNV.SelectedCells[0].OwningRow.Cells[0].Value.ToString());
                 if (nv != null)
@@ -616,7 +611,7 @@ namespace QL_Sach.GUI
 
         private void radNVListT_CheckedChanged(object sender, EventArgs e)
         {
-            if(radNVListT.Checked)
+            if (radNVListT.Checked)
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
@@ -674,9 +669,9 @@ namespace QL_Sach.GUI
 
         private void dgvNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(e.ColumnIndex==2)
+            if (e.ColumnIndex == 2)
             {
-                bool value =(bool) e.Value;
+                bool value = (bool)e.Value;
                 if (value)
                     e.Value = "Nam";
                 else
@@ -695,7 +690,7 @@ namespace QL_Sach.GUI
 
         }
 
-    
+
 
 
 

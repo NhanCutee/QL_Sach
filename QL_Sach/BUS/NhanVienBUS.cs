@@ -172,7 +172,6 @@ namespace QL_Sach.BUS
             {
                 return false;
             }
-
         }
 
         public bool docFile()
