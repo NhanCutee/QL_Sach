@@ -443,6 +443,7 @@
             this.tabNhaSach.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhaSach.Size = new System.Drawing.Size(986, 596);
             this.tabNhaSach.TabIndex = 1;
+            this.tabNhaSach.Text = "Nhà sách";
             this.tabNhaSach.UseVisualStyleBackColor = true;
             // 
             // groupBox2
