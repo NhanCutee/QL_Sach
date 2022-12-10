@@ -43,8 +43,6 @@ namespace QL_Sach.GUI
             LoadSach();
             LoadNhaSach();
             loadNV();
-
-
         }
         private void LoadSach()
         {
@@ -150,37 +148,19 @@ namespace QL_Sach.GUI
 
         private void button_Luu_Click(object sender, EventArgs e)
         {
-            sachView.luuFile();
+            if (sachView.luuFile() == false)
+            {
+                MessageBox.Show("Lưu file thất bại");
+                return;
+            }
         }
 
         private void button_Doc_Click(object sender, EventArgs e)
         {
-            if(sachView.docFile()==false)
+            if (sachView.docFile() == false)
             {
-                DialogResult rs = MessageBox.Show("File rỗng hoặc không tồn tại,\nbạn có muốn tự chọn file?","Thông báo",MessageBoxButtons.YesNo);
-                if(rs==DialogResult.Yes)
-                {
-                    OpenFileDialog open = new OpenFileDialog();
-                    DialogResult openFileRS = open.ShowDialog();
-                    if (openFileRS == DialogResult.OK)
-                    {
-                        string location;
-                        try
-                        {
-                            location = System.IO.Path.GetFullPath(open.FileName);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
-                            return;
-                        }
-                        if(sachView.docFile(location)==false)
-                        {
-                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
-                            return;
-                        }
-                    }
-                }
+                MessageBox.Show("Đọc file thất bại");
+                return;
             }
             LoadSach();
         }
@@ -369,37 +349,19 @@ namespace QL_Sach.GUI
         {
             if (nhaView.docFile() == false)
             {
-                DialogResult rs = MessageBox.Show("File rỗng hoặc không tồn tại,\nbạn có muốn tự chọn file?", "Thông báo", MessageBoxButtons.YesNo);
-                if (rs == DialogResult.Yes)
-                {
-                    OpenFileDialog open = new OpenFileDialog();
-                    DialogResult openFileRS = open.ShowDialog();
-                    if (openFileRS == DialogResult.OK)
-                    {
-                        string location;
-                        try
-                        {
-                            location = System.IO.Path.GetFullPath(open.FileName);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
-                            return;
-                        }
-                        if (sachView.docFile(location) == false)
-                        {
-                            MessageBox.Show("Không đọc được file, hãy thử lại.", "Thông báo");
-                            return;
-                        }
-                    }
-                }
+                MessageBox.Show("Đọc file thất bại");
+                return;
             }
             LoadNhaSach();
         }
 
         private void button_LF_Click(object sender, EventArgs e)
         {
-            nhaView.luuFile();
+            if (nhaView.luuFile() == false)
+            {
+                MessageBox.Show("Lưu file thất bại");
+                return;
+            }
         }
 
         private void radNSListT_CheckedChanged(object sender, EventArgs e)
@@ -623,6 +585,7 @@ namespace QL_Sach.GUI
 
         private void btnHuyTimNV_Click(object sender, EventArgs e)
         {
+            txtTimNV.Text = "";
             loadNV();
         }
 

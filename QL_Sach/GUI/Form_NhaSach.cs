@@ -117,7 +117,7 @@ namespace QL_Sach.GUI
                 if (iTitle == "Nhập thông tin quyển sách")
                     dialogResult = MessageBox.Show("Nhập nhà sách?", "Chú ý", MessageBoxButtons.YesNo);
                 else
-                    dialogResult = MessageBox.Show("Xác nhận nhập  sách?", "Chú ý", MessageBoxButtons.YesNo);
+                    dialogResult = MessageBox.Show("Xác nhận nhập nhà sách?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                     return;
                 userPress = true;
@@ -128,7 +128,6 @@ namespace QL_Sach.GUI
                 soLuongNhanVien=Convert.ToInt32(textBox_SoLuongNhanVien.Text); 
                 this.Close();
             }
-
         }
         private void button_NhapLai_Click(object sender, EventArgs e)
         {
