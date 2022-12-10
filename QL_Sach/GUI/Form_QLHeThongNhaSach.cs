@@ -414,15 +414,19 @@ namespace QL_Sach.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dGVNS.DataSource = nhaView.timKiem(txtTimNV.Text);
+            dGVNS.DataSource = nhaView.timKiem(textBox1.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtTimNV.Text = "";
+            textBox1.Text = "";
             LoadNhaSach();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         //--------------------------------------------------------------------------------
 
 
@@ -690,6 +694,8 @@ namespace QL_Sach.GUI
         {
 
         }
+
+    
 
 
 
