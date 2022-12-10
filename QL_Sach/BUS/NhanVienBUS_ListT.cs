@@ -132,5 +132,145 @@ namespace QL_nhanVien.BUS
             }
             return listKQ.ToList();
         }
+
+        public List<NhanVienDTO> sort(bool isUp,string thuocTinh)
+        {
+            List<NhanVienDTO> listKQ=nhanVienList; 
+            if(isUp==true)
+            {
+                if(thuocTinh.ToUpper()=="MA")
+                {
+                    listKQ.Sort(
+                        delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                        {
+                            return nv1.MaNV.CompareTo(nv2.MaNV);
+                        }
+                        );
+                }
+                else if(thuocTinh.ToUpper() == "TEN")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return nv1.TenNV.CompareTo(nv2.TenNV);
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "DC")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return nv1.DiaChi.CompareTo(nv2.DiaChi);
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "GT")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return nv1.GioiTinh==true?1:-1;
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "NS")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return nv1.NgaySinh.CompareTo(nv2.NgaySinh);
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "NOILV")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return nv1.NhaSachLamViec.CompareTo(nv2.NhaSachLamViec);
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "CV")
+                {
+                        listKQ.Sort(
+                      delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                      {
+                          return nv1.ChucVu.CompareTo(nv2.ChucVu);
+                      }
+                      );
+                }
+            }
+            else
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    listKQ.Sort(
+                        delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                        {
+                            return -(nv1.MaNV.CompareTo(nv2.MaNV));
+                        }
+                        );
+                }
+                else if (thuocTinh.ToUpper() == "TEN")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return -(nv1.TenNV.CompareTo(nv2.TenNV));
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "DC")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return -(nv1.DiaChi.CompareTo(nv2.DiaChi));
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "GT")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return - (nv1.GioiTinh == true ? 1 : -1);
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "NS")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return -(nv1.NgaySinh.CompareTo(nv2.NgaySinh));
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "NOILV")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return -(nv1.NhaSachLamViec.CompareTo(nv2.NhaSachLamViec));
+                  }
+                  );
+                }
+                else if (thuocTinh.ToUpper() == "CV")
+                {
+                    listKQ.Sort(
+                  delegate (NhanVienDTO nv1, NhanVienDTO nv2)
+                  {
+                      return -(nv1.ChucVu.CompareTo(nv2.ChucVu));
+                  }
+                  );
+                }
+            }
+            return listKQ;
+        }
+
+
     }
 }

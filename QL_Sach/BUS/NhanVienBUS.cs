@@ -336,5 +336,17 @@ namespace QL_Sach.BUS
             else
             return new List<NhanVienDTO>();
         }
+
+        public List<NhanVienDTO> sort(bool isUp,string thuocTinh)
+        {
+            if (loaiDS == "LibListT")
+                return nhanVienListT.sort(isUp,thuocTinh);
+            else if (loaiDS == "DSDac")
+                return nhanVienDSDac.sort(isUp, thuocTinh);
+            else if (loaiDS == "DSLK")
+                return nhanVienDSLK.sort(isUp, thuocTinh);
+
+            return new List<NhanVienDTO>();
+        }
     }
 }

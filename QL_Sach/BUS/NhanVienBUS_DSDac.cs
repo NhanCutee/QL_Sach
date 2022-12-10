@@ -179,7 +179,181 @@ namespace QL_Sach.BUS
             return listKQ.ToList();
         }
 
-       
+
+
+        public List<NhanVienDTO> sort(bool isUp, string thuocTinh)
+        {
+            NhanVienDTO[] listKQ = this.dSNhanVien;
+            int nKQ = this.n;
+            if (isUp == true)
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    for (int i = 0; i < nKQ-1; i++)
+                        for (int j = i+1; j < nKQ; j++)
+                            if (listKQ[i].MaNV.CompareTo(listKQ[j].MaNV)>=0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }    
+                }
+                else if (thuocTinh.ToUpper() == "TEN")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].TenNV.CompareTo(listKQ[j].TenNV) >= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "DC")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].DiaChi.CompareTo(listKQ[j].DiaChi) >= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "GT")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].GioiTinh==true)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "NS")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].NgaySinh.CompareTo(listKQ[j].NgaySinh) >= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "NOILV")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].NhaSachLamViec.CompareTo(listKQ[j].NhaSachLamViec) >= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "CV")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].ChucVu.CompareTo(listKQ[j].ChucVu) >= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+            }
+            else
+            {
+                if (thuocTinh.ToUpper() == "MA")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].MaNV.CompareTo(listKQ[j].MaNV) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "TEN")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].TenNV.CompareTo(listKQ[j].TenNV) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "DC")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].DiaChi.CompareTo(listKQ[j].DiaChi) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "GT")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].GioiTinh == false)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "NS")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].NgaySinh.CompareTo(listKQ[j].NgaySinh) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "NOILV")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].NhaSachLamViec.CompareTo(listKQ[j].NhaSachLamViec) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+                else if (thuocTinh.ToUpper() == "CV")
+                {
+                    for (int i = 0; i < nKQ - 1; i++)
+                        for (int j = i + 1; j < nKQ; j++)
+                            if (listKQ[i].ChucVu.CompareTo(listKQ[j].ChucVu) <= 0)
+                            {
+                                NhanVienDTO temp = listKQ[i];
+                                listKQ[i] = listKQ[j];
+                                listKQ[j] = temp;
+                            }
+                }
+            }
+
+            List<NhanVienDTO> list = new List<NhanVienDTO>();
+
+            for (int i = 0; i < nKQ; i++)
+            {
+                list.Add(listKQ[i]);
+            }
+            return list.ToList() ;
+        }
 
     }
 }

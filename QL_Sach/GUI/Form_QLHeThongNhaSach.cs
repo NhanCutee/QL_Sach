@@ -44,7 +44,6 @@ namespace QL_Sach.GUI
                 radSachListT.Checked = true;
             else if (sachView.LoaiDS == "DSDac")
                 radSachDSD.Checked = true;
-
             else
                 radSachDSLK.Checked = true;
 
@@ -441,11 +440,11 @@ namespace QL_Sach.GUI
                 radNVListT.Checked = true;
             else if (dsnv.LoaiDS == "DSDac")
                 radNVDSD.Checked = true;
-
             else
                 radNVDSLK.Checked = true;
 
             dgvNV.DataSource = dsnv.NhanVienList;
+            radNVMacDinh.Checked = true;
 
             lblSL.Text = dsnv.soLuongNV().ToString();
             lblSoQL.Text = dsnv.timTuKhoa("cv:Quản lí").Count().ToString();
@@ -688,24 +687,115 @@ namespace QL_Sach.GUI
 
         }
 
-        private void chkTest_CheckedChanged(object sender, EventArgs e)
+        //thuoc tinh sort: ma,ten,gt,ns,dc,noilv,cv
+        private void radSort_Ma_CheckedChanged(object sender, EventArgs e)
         {
+            if(radSort_Ma.Checked)
+                radNVMacDinh.Checked = true;
         }
 
-        private void updateState(CheckBox chk)
+        private void radSort_Ten_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk.CheckState == CheckState.Checked)
-                chk.Text = "Tăng";
-            else if (chk.CheckState == CheckState.Indeterminate)
-                chk.Text = "Giảm";
-            else
+            if (radSort_Ten.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radSort_GioiTinh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSort_GioiTinh.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radSort_NgaySinh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSort_NgaySinh.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radSort_DiaChi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSort_DiaChi.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radSort_ChucVu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSort_ChucVu.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radSort_NoiLV_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSort_NoiLV.Checked)
+                radNVMacDinh.Checked = true;
+        }
+
+        private void radNVMacDinh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNVMacDinh.Checked)
             {
-                chk.Text = "Mặc định";
                 loadNV();
+                radSort_Ma.Checked = false;
+                radSort_Ten.Checked = false;
+                radSort_GioiTinh.Checked = false;
+                radSort_NgaySinh.Checked = false;
+                radSort_DiaChi.Checked = false;
+                radSort_NoiLV.Checked = false;
+                radSort_ChucVu.Checked = false;
             }
         }
 
-        
+        private void radNVTang_CheckedChanged(object sender, EventArgs e)
+        {
+           if(radNVTang.Checked)
+            {
+                if (radSort_Ma.Checked)
+                    loadNV(dsnv.sort(true, "ma"));
+                else if (radSort_Ten.Checked)
+                    loadNV(dsnv.sort(true, "ten"));
+                else if (radSort_GioiTinh.Checked)
+                    loadNV(dsnv.sort(true, "gt"));
+                else if (radSort_NgaySinh.Checked)
+                    loadNV(dsnv.sort(true, "ns"));
+                else if (radSort_DiaChi.Checked)
+                    loadNV(dsnv.sort(true, "dc"));
+                else if (radSort_NoiLV.Checked)
+                    loadNV(dsnv.sort(true, "noilv"));
+                else if (radSort_ChucVu.Checked)
+                    loadNV(dsnv.sort(true, "cv"));
+                else
+                {
+                    MessageBox.Show("Hãy chọn thuộc tính để sort", "Thông báo");
+                    radNVMacDinh.Checked = true;
+                }
+            }
+        }
+
+        private void radNVGiam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radNVGiam.Checked)
+            {
+                if (radSort_Ma.Checked)
+                    loadNV(dsnv.sort(false, "ma"));
+                else if (radSort_Ten.Checked)
+                    loadNV(dsnv.sort(false, "ten"));
+                else if (radSort_GioiTinh.Checked)
+                    loadNV(dsnv.sort(false, "gt"));
+                else if (radSort_NgaySinh.Checked)
+                    loadNV(dsnv.sort(false, "ns"));
+                else if (radSort_DiaChi.Checked)
+                    loadNV(dsnv.sort(false, "dc"));
+                else if (radSort_NoiLV.Checked)
+                    loadNV(dsnv.sort(false, "noilv"));
+                else if (radSort_ChucVu.Checked)
+                    loadNV(dsnv.sort(false, "cv"));
+                else
+                {
+                    MessageBox.Show("Hãy chọn thuộc tính để sort", "Thông báo");
+                    radNVMacDinh.Checked = true;
+                }
+            }
+        }
 
 
 

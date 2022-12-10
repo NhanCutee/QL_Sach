@@ -75,6 +75,10 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.radNVGiam = new System.Windows.Forms.RadioButton();
+            this.radNVTang = new System.Windows.Forms.RadioButton();
+            this.radNVMacDinh = new System.Windows.Forms.RadioButton();
             this.grbSort = new System.Windows.Forms.GroupBox();
             this.radSort_GioiTinh = new System.Windows.Forms.RadioButton();
             this.radSort_NgaySinh = new System.Windows.Forms.RadioButton();
@@ -119,10 +123,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.tabControl.SuspendLayout();
             this.tabSach.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -131,12 +131,12 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).BeginInit();
             this.tabNhanVien.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.grbSort.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -703,6 +703,56 @@
             this.tabNhanVien.UseVisualStyleBackColor = true;
             this.tabNhanVien.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.radNVGiam);
+            this.groupBox7.Controls.Add(this.radNVTang);
+            this.groupBox7.Controls.Add(this.radNVMacDinh);
+            this.groupBox7.Location = new System.Drawing.Point(756, 484);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(77, 100);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            // 
+            // radNVGiam
+            // 
+            this.radNVGiam.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNVGiam.Location = new System.Drawing.Point(6, 72);
+            this.radNVGiam.Name = "radNVGiam";
+            this.radNVGiam.Size = new System.Drawing.Size(65, 26);
+            this.radNVGiam.TabIndex = 52;
+            this.radNVGiam.TabStop = true;
+            this.radNVGiam.Text = "Giảm";
+            this.radNVGiam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radNVGiam.UseVisualStyleBackColor = true;
+            this.radNVGiam.CheckedChanged += new System.EventHandler(this.radNVGiam_CheckedChanged);
+            // 
+            // radNVTang
+            // 
+            this.radNVTang.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNVTang.Location = new System.Drawing.Point(6, 43);
+            this.radNVTang.Name = "radNVTang";
+            this.radNVTang.Size = new System.Drawing.Size(63, 23);
+            this.radNVTang.TabIndex = 51;
+            this.radNVTang.TabStop = true;
+            this.radNVTang.Text = "Tăng";
+            this.radNVTang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radNVTang.UseVisualStyleBackColor = true;
+            this.radNVTang.CheckedChanged += new System.EventHandler(this.radNVTang_CheckedChanged);
+            // 
+            // radNVMacDinh
+            // 
+            this.radNVMacDinh.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNVMacDinh.Location = new System.Drawing.Point(6, 12);
+            this.radNVMacDinh.Name = "radNVMacDinh";
+            this.radNVMacDinh.Size = new System.Drawing.Size(62, 24);
+            this.radNVMacDinh.TabIndex = 50;
+            this.radNVMacDinh.TabStop = true;
+            this.radNVMacDinh.Text = "Mặc định";
+            this.radNVMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radNVMacDinh.UseVisualStyleBackColor = true;
+            this.radNVMacDinh.CheckedChanged += new System.EventHandler(this.radNVMacDinh_CheckedChanged);
+            // 
             // grbSort
             // 
             this.grbSort.Controls.Add(this.radSort_GioiTinh);
@@ -729,6 +779,7 @@
             this.radSort_GioiTinh.TabStop = true;
             this.radSort_GioiTinh.Text = "Giới Tính";
             this.radSort_GioiTinh.UseVisualStyleBackColor = true;
+            this.radSort_GioiTinh.CheckedChanged += new System.EventHandler(this.radSort_GioiTinh_CheckedChanged);
             // 
             // radSort_NgaySinh
             // 
@@ -740,6 +791,7 @@
             this.radSort_NgaySinh.TabStop = true;
             this.radSort_NgaySinh.Text = "Ngày sinh";
             this.radSort_NgaySinh.UseVisualStyleBackColor = true;
+            this.radSort_NgaySinh.CheckedChanged += new System.EventHandler(this.radSort_NgaySinh_CheckedChanged);
             // 
             // radSort_NoiLV
             // 
@@ -751,6 +803,7 @@
             this.radSort_NoiLV.TabStop = true;
             this.radSort_NoiLV.Text = "Nơi làm việc";
             this.radSort_NoiLV.UseVisualStyleBackColor = true;
+            this.radSort_NoiLV.CheckedChanged += new System.EventHandler(this.radSort_NoiLV_CheckedChanged);
             // 
             // radSort_Ten
             // 
@@ -762,6 +815,7 @@
             this.radSort_Ten.TabStop = true;
             this.radSort_Ten.Text = "Tên";
             this.radSort_Ten.UseVisualStyleBackColor = true;
+            this.radSort_Ten.CheckedChanged += new System.EventHandler(this.radSort_Ten_CheckedChanged);
             // 
             // radSort_DiaChi
             // 
@@ -773,6 +827,7 @@
             this.radSort_DiaChi.TabStop = true;
             this.radSort_DiaChi.Text = "Địa Chỉ";
             this.radSort_DiaChi.UseVisualStyleBackColor = true;
+            this.radSort_DiaChi.CheckedChanged += new System.EventHandler(this.radSort_DiaChi_CheckedChanged);
             // 
             // radSort_ChucVu
             // 
@@ -784,6 +839,7 @@
             this.radSort_ChucVu.TabStop = true;
             this.radSort_ChucVu.Text = "Chức vụ";
             this.radSort_ChucVu.UseVisualStyleBackColor = true;
+            this.radSort_ChucVu.CheckedChanged += new System.EventHandler(this.radSort_ChucVu_CheckedChanged);
             // 
             // radSort_Ma
             // 
@@ -795,6 +851,7 @@
             this.radSort_Ma.TabStop = true;
             this.radSort_Ma.Text = "Mã";
             this.radSort_Ma.UseVisualStyleBackColor = true;
+            this.radSort_Ma.CheckedChanged += new System.EventHandler(this.radSort_Ma_CheckedChanged);
             // 
             // groupBox5
             // 
@@ -1176,53 +1233,6 @@
             this.Column7.HeaderText = "Chức Vụ";
             this.Column7.Name = "Column7";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.Location = new System.Drawing.Point(6, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 24);
-            this.radioButton1.TabIndex = 50;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Mặc định";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.radioButton2);
-            this.groupBox7.Controls.Add(this.radioButton1);
-            this.groupBox7.Location = new System.Drawing.Point(756, 484);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(77, 100);
-            this.groupBox7.TabIndex = 7;
-            this.groupBox7.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.Location = new System.Drawing.Point(6, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(63, 23);
-            this.radioButton2.TabIndex = 51;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Tăng";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.Location = new System.Drawing.Point(6, 72);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(65, 26);
-            this.radioButton3.TabIndex = 52;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Giảm";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // Form_QLHeThongNhaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1249,6 +1259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).EndInit();
             this.tabNhanVien.ResumeLayout(false);
             this.tabNhanVien.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.grbSort.ResumeLayout(false);
             this.grbSort.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1258,7 +1269,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
-            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1357,8 +1367,8 @@
         private System.Windows.Forms.RadioButton radSort_ChucVu;
         private System.Windows.Forms.RadioButton radSort_Ma;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radNVGiam;
+        private System.Windows.Forms.RadioButton radNVTang;
+        private System.Windows.Forms.RadioButton radNVMacDinh;
     }
 }
