@@ -625,7 +625,10 @@ namespace QL_Sach.GUI
                 for (int i = 0; i < rowIndexes.Length; i++)
                     MaNVCanXoa.Add(dgvNV.Rows[rowIndexes[i]].Cells[0].Value.ToString());
                 foreach (string manv in MaNVCanXoa)
+                {
                     dsnv.xoaNV(manv);
+                    loadNV();
+                }
 
                 loadNV();
             }

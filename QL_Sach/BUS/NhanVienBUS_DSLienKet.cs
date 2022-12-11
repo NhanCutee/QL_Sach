@@ -54,8 +54,8 @@ namespace QL_Sach.BUS
                 NodeNhanVien node = this.m_firstNode;
                 while(node!=null)
                 {
-                    if (node.Next == null)
-                        break;
+                   // if (node.Next == null)
+                     //   break;
                     nvList.Add(node.NhanVien);
                     node = node.Next;
                 }
@@ -118,9 +118,7 @@ namespace QL_Sach.BUS
         {
 
             NodeNhanVien node = this.FirstNode;
-            if (ma == "")
-                return false;
-            else if (node.Prev == null && node.NhanVien.MaNV == ma)
+            if (node.Prev == null && node.NhanVien.MaNV == ma)
             {
                 m_firstNode = m_firstNode.Next;
                 m_firstNode.Prev = null;
@@ -129,23 +127,15 @@ namespace QL_Sach.BUS
             }
             else
             {
-                while (node.Next != null)
+                while (node.Next !=null)
                 {
-                    if (node.NhanVien.MaNV == ma)
+                    if (node.Next.NhanVien.MaNV == ma)
                     {
-                        NodeNhanVien nodeTemp = node;
-                        node = node.Prev;
-                        node.Next = nodeTemp.Next;
-                        nodeTemp = null;
+                        node.Next=node.Next.Next;
                         m_n--;
                         return true;
                     }
                     node = node.Next;
-                }
-                if(node.Next==null && node.NhanVien.MaNV == ma)
-                {
-                    node = node.Prev;
-                    node.Next = null;
                 }
             }
             return false;
