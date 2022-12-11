@@ -7,6 +7,7 @@ using QL_Sach.DTO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
 using System.IO;
+using System.Windows.Forms;
 
 namespace QL_Sach.BUS
 {
@@ -30,15 +31,34 @@ namespace QL_Sach.BUS
         {
             this.nhasachList.Add(ns);
         }
+        public NhaSachDTO timNS(string ma)
+        {
+            foreach (NhaSachDTO ns in nhasachList)
+            {
+                if (ma == ns.MaNhaSach)
+                    return ns;
+            }
+            return null;
+        }
         public void themNhaSach(string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
         {
+            
             NhaSachDTO ns = new NhaSachDTO();
-            ns.MaNhaSach = enter_maNhaSach;
-            ns.TenNhaSach = enter_tenNhaSach;
-            ns.DiaChi = enter_diaChi;
-            ns.TenQuanLi = enter_tenQuanLi;
-            ns.SoLuongNhanVien = enter_soLuongNhanVien;
-            this.nhasachList.Add(ns);
+           
+                ns.MaNhaSach = enter_maNhaSach;
+                ns.TenNhaSach = enter_tenNhaSach;
+                ns.DiaChi = enter_diaChi;
+                ns.TenQuanLi = enter_tenQuanLi;
+                ns.SoLuongNhanVien = enter_soLuongNhanVien;
+
+            if (timNS(ns.MaNhaSach) == null)
+            {
+                this.nhasachList.Add(ns);
+            }
+            else
+            {
+                MessageBox.Show("Mã nhà sách " + ns.MaNhaSach + " đã có! Vui lòng nhập lại");
+            }
         }
 
         public void suaNhaSach(int index, string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
