@@ -345,8 +345,8 @@ namespace QL_Sach.BUS
                 return nhanVienDSDac.sort(isUp, thuocTinh);
             else if (loaiDS == "DSLK")
                 return nhanVienDSLK.sort(isUp, thuocTinh);
-
-            return new List<NhanVienDTO>();
+            else
+                return new List<NhanVienDTO>();
         }
     }
 }

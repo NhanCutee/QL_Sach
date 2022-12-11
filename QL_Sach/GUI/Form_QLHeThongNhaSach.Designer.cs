@@ -53,26 +53,6 @@
             this.NhaXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabNhaSach = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.rb_M = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radNSDSLK = new System.Windows.Forms.RadioButton();
-            this.radNSDSD = new System.Windows.Forms.RadioButton();
-            this.radNSListT = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button_DF = new System.Windows.Forms.Button();
-            this.button_LF = new System.Windows.Forms.Button();
-            this.button_XX = new System.Windows.Forms.Button();
-            this.button_Exit = new System.Windows.Forms.Button();
-            this.button_X = new System.Windows.Forms.Button();
-            this.button_S = new System.Windows.Forms.Button();
-            this.button_T = new System.Windows.Forms.Button();
-            this.dGVNS = new System.Windows.Forms.DataGridView();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.radNVGiam = new System.Windows.Forms.RadioButton();
@@ -122,18 +102,37 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimNV = new System.Windows.Forms.Button();
-            this.MA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGVNS = new System.Windows.Forms.DataGridView();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_T = new System.Windows.Forms.Button();
+            this.button_S = new System.Windows.Forms.Button();
+            this.button_X = new System.Windows.Forms.Button();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_XX = new System.Windows.Forms.Button();
+            this.button_LF = new System.Windows.Forms.Button();
+            this.button_DF = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radNSListT = new System.Windows.Forms.RadioButton();
+            this.radNSDSD = new System.Windows.Forms.RadioButton();
+            this.radNSDSLK = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rb_M = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radNSTang = new System.Windows.Forms.RadioButton();
+            this.radNSGiam = new System.Windows.Forms.RadioButton();
+            this.radNSMacDinh = new System.Windows.Forms.RadioButton();
+            this.tabNhaSach = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabSach.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.tabNhaSach.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).BeginInit();
             this.tabNhanVien.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.grbSort.SuspendLayout();
@@ -141,6 +140,10 @@
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.tabNhaSach.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -434,263 +437,6 @@
             this.Gia.Name = "Gia";
             this.Gia.Width = 125;
             // 
-            // tabNhaSach
-            // 
-            this.tabNhaSach.Controls.Add(this.button4);
-            this.tabNhaSach.Controls.Add(this.button3);
-            this.tabNhaSach.Controls.Add(this.rb_M);
-            this.tabNhaSach.Controls.Add(this.label2);
-            this.tabNhaSach.Controls.Add(this.groupBox2);
-            this.tabNhaSach.Controls.Add(this.button1);
-            this.tabNhaSach.Controls.Add(this.button2);
-            this.tabNhaSach.Controls.Add(this.textBox1);
-            this.tabNhaSach.Controls.Add(this.button_DF);
-            this.tabNhaSach.Controls.Add(this.button_LF);
-            this.tabNhaSach.Controls.Add(this.button_XX);
-            this.tabNhaSach.Controls.Add(this.button_Exit);
-            this.tabNhaSach.Controls.Add(this.button_X);
-            this.tabNhaSach.Controls.Add(this.button_S);
-            this.tabNhaSach.Controls.Add(this.button_T);
-            this.tabNhaSach.Controls.Add(this.dGVNS);
-            this.tabNhaSach.Location = new System.Drawing.Point(4, 22);
-            this.tabNhaSach.Name = "tabNhaSach";
-            this.tabNhaSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhaSach.Size = new System.Drawing.Size(986, 596);
-            this.tabNhaSach.TabIndex = 1;
-            this.tabNhaSach.Text = "Nhà sách";
-            this.tabNhaSach.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::QL_Sach.Properties.Resources.angle_arrow_down_icon_icons_com_73683;
-            this.button4.Location = new System.Drawing.Point(908, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 26);
-            this.button4.TabIndex = 48;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::QL_Sach.Properties.Resources.up_arrow_icon_icons_com_73351;
-            this.button3.Location = new System.Drawing.Point(875, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 26);
-            this.button3.TabIndex = 47;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // rb_M
-            // 
-            this.rb_M.AutoSize = true;
-            this.rb_M.Checked = true;
-            this.rb_M.Location = new System.Drawing.Point(829, 25);
-            this.rb_M.Name = "rb_M";
-            this.rb_M.Size = new System.Drawing.Size(40, 17);
-            this.rb_M.TabIndex = 46;
-            this.rb_M.TabStop = true;
-            this.rb_M.Text = "Mã";
-            this.rb_M.UseVisualStyleBackColor = true;
-            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(773, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Sắp xếp:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radNSDSLK);
-            this.groupBox2.Controls.Add(this.radNSDSD);
-            this.groupBox2.Controls.Add(this.radNSListT);
-            this.groupBox2.Location = new System.Drawing.Point(32, 9);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(279, 39);
-            this.groupBox2.TabIndex = 44;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cấu trúc dữ liệu";
-            // 
-            // radNSDSLK
-            // 
-            this.radNSDSLK.AutoSize = true;
-            this.radNSDSLK.Location = new System.Drawing.Point(180, 16);
-            this.radNSDSLK.Name = "radNSDSLK";
-            this.radNSDSLK.Size = new System.Drawing.Size(53, 17);
-            this.radNSDSLK.TabIndex = 2;
-            this.radNSDSLK.Text = "DSLK";
-            this.radNSDSLK.UseVisualStyleBackColor = true;
-            this.radNSDSLK.Click += new System.EventHandler(this.radNSDSLK_CheckedChanged);
-            // 
-            // radNSDSD
-            // 
-            this.radNSDSD.AutoSize = true;
-            this.radNSDSD.Location = new System.Drawing.Point(88, 16);
-            this.radNSDSD.Name = "radNSDSD";
-            this.radNSDSD.Size = new System.Drawing.Size(63, 17);
-            this.radNSDSD.TabIndex = 1;
-            this.radNSDSD.Text = "DS Đặc";
-            this.radNSDSD.UseVisualStyleBackColor = true;
-            this.radNSDSD.Click += new System.EventHandler(this.radNSDSD_CheckedChanged);
-            // 
-            // radNSListT
-            // 
-            this.radNSListT.AutoSize = true;
-            this.radNSListT.Checked = true;
-            this.radNSListT.Location = new System.Drawing.Point(10, 16);
-            this.radNSListT.Name = "radNSListT";
-            this.radNSListT.Size = new System.Drawing.Size(48, 17);
-            this.radNSListT.TabIndex = 0;
-            this.radNSListT.TabStop = true;
-            this.radNSListT.Text = "ListT";
-            this.radNSListT.UseVisualStyleBackColor = true;
-            this.radNSListT.Click += new System.EventHandler(this.radNSListT_CheckedChanged);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(716, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 38);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(675, 8);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(36, 38);
-            this.button2.TabIndex = 41;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(332, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 20);
-            this.textBox1.TabIndex = 40;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button_DF
-            // 
-            this.button_DF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_DF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_DF.Location = new System.Drawing.Point(849, 386);
-            this.button_DF.Margin = new System.Windows.Forms.Padding(2);
-            this.button_DF.Name = "button_DF";
-            this.button_DF.Size = new System.Drawing.Size(89, 39);
-            this.button_DF.TabIndex = 39;
-            this.button_DF.Text = "Đọc File";
-            this.button_DF.UseVisualStyleBackColor = false;
-            this.button_DF.Click += new System.EventHandler(this.button_DF_Click);
-            // 
-            // button_LF
-            // 
-            this.button_LF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_LF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LF.Location = new System.Drawing.Point(849, 462);
-            this.button_LF.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LF.Name = "button_LF";
-            this.button_LF.Size = new System.Drawing.Size(89, 39);
-            this.button_LF.TabIndex = 38;
-            this.button_LF.Text = "Lưu File";
-            this.button_LF.UseVisualStyleBackColor = false;
-            this.button_LF.Click += new System.EventHandler(this.button_LF_Click);
-            // 
-            // button_XX
-            // 
-            this.button_XX.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_XX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XX.Location = new System.Drawing.Point(849, 309);
-            this.button_XX.Margin = new System.Windows.Forms.Padding(2);
-            this.button_XX.Name = "button_XX";
-            this.button_XX.Size = new System.Drawing.Size(89, 39);
-            this.button_XX.TabIndex = 37;
-            this.button_XX.Text = "Xóa tất cả";
-            this.button_XX.UseVisualStyleBackColor = false;
-            this.button_XX.Click += new System.EventHandler(this.button_XX_Click);
-            // 
-            // button_Exit
-            // 
-            this.button_Exit.BackColor = System.Drawing.Color.LightCoral;
-            this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Exit.Location = new System.Drawing.Point(849, 531);
-            this.button_Exit.Margin = new System.Windows.Forms.Padding(2);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(89, 39);
-            this.button_Exit.TabIndex = 36;
-            this.button_Exit.Text = "Thoát";
-            this.button_Exit.UseVisualStyleBackColor = false;
-            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click_1);
-            // 
-            // button_X
-            // 
-            this.button_X.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_X.Location = new System.Drawing.Point(849, 232);
-            this.button_X.Margin = new System.Windows.Forms.Padding(2);
-            this.button_X.Name = "button_X";
-            this.button_X.Size = new System.Drawing.Size(89, 39);
-            this.button_X.TabIndex = 35;
-            this.button_X.Text = "Xóa";
-            this.button_X.UseVisualStyleBackColor = false;
-            this.button_X.Click += new System.EventHandler(this.button_X_Click);
-            // 
-            // button_S
-            // 
-            this.button_S.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_S.Location = new System.Drawing.Point(849, 156);
-            this.button_S.Margin = new System.Windows.Forms.Padding(2);
-            this.button_S.Name = "button_S";
-            this.button_S.Size = new System.Drawing.Size(89, 39);
-            this.button_S.TabIndex = 34;
-            this.button_S.Text = "Chỉnh sửa";
-            this.button_S.UseVisualStyleBackColor = false;
-            this.button_S.Click += new System.EventHandler(this.button_S_Click);
-            // 
-            // button_T
-            // 
-            this.button_T.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_T.Location = new System.Drawing.Point(849, 82);
-            this.button_T.Margin = new System.Windows.Forms.Padding(2);
-            this.button_T.Name = "button_T";
-            this.button_T.Size = new System.Drawing.Size(89, 39);
-            this.button_T.TabIndex = 33;
-            this.button_T.Text = "Thêm";
-            this.button_T.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_T.UseVisualStyleBackColor = false;
-            this.button_T.Click += new System.EventHandler(this.button_T_Click);
-            // 
-            // dGVNS
-            // 
-            this.dGVNS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVNS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MA,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
-            this.dGVNS.Location = new System.Drawing.Point(17, 53);
-            this.dGVNS.Margin = new System.Windows.Forms.Padding(2);
-            this.dGVNS.Name = "dGVNS";
-            this.dGVNS.RowHeadersWidth = 51;
-            this.dGVNS.RowTemplate.Height = 24;
-            this.dGVNS.Size = new System.Drawing.Size(788, 517);
-            this.dGVNS.TabIndex = 32;
-            // 
             // tabNhanVien
             // 
             this.tabNhanVien.Controls.Add(this.groupBox7);
@@ -769,6 +515,7 @@
             this.radNVMacDinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radNVMacDinh.UseVisualStyleBackColor = true;
             this.radNVMacDinh.CheckedChanged += new System.EventHandler(this.radNVMacDinh_CheckedChanged);
+            this.radNVMacDinh.Click += new System.EventHandler(this.radNVMacDinh_Click);
             // 
             // grbSort
             // 
@@ -1250,25 +997,28 @@
             this.btnTimNV.UseVisualStyleBackColor = false;
             this.btnTimNV.Click += new System.EventHandler(this.btnTimNV_Click);
             // 
-            // MA
+            // dGVNS
             // 
-            this.MA.DataPropertyName = "MaNhaSach";
-            this.MA.HeaderText = "Mã nhà sách";
-            this.MA.Name = "MA";
+            this.dGVNS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVNS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MA,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12});
+            this.dGVNS.Location = new System.Drawing.Point(17, 53);
+            this.dGVNS.Margin = new System.Windows.Forms.Padding(2);
+            this.dGVNS.Name = "dGVNS";
+            this.dGVNS.RowHeadersWidth = 51;
+            this.dGVNS.RowTemplate.Height = 24;
+            this.dGVNS.Size = new System.Drawing.Size(788, 517);
+            this.dGVNS.TabIndex = 32;
             // 
-            // Column9
+            // Column12
             // 
-            this.Column9.DataPropertyName = "TenNhaSach";
-            this.Column9.HeaderText = "Tên nhà sách";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 200;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "DiaChi";
-            this.Column10.HeaderText = "Địa chỉ";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 200;
+            this.Column12.DataPropertyName = "SoLuongNhanVien";
+            this.Column12.HeaderText = "Số lượng nhân viên";
+            this.Column12.Name = "Column12";
             // 
             // Column11
             // 
@@ -1277,11 +1027,294 @@
             this.Column11.Name = "Column11";
             this.Column11.Width = 140;
             // 
-            // Column12
+            // Column10
             // 
-            this.Column12.DataPropertyName = "SoLuongNhanVien";
-            this.Column12.HeaderText = "Số lượng nhân viên";
-            this.Column12.Name = "Column12";
+            this.Column10.DataPropertyName = "DiaChi";
+            this.Column10.HeaderText = "Địa chỉ";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 200;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TenNhaSach";
+            this.Column9.HeaderText = "Tên nhà sách";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 200;
+            // 
+            // MA
+            // 
+            this.MA.DataPropertyName = "MaNhaSach";
+            this.MA.HeaderText = "Mã nhà sách";
+            this.MA.Name = "MA";
+            // 
+            // button_T
+            // 
+            this.button_T.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_T.Location = new System.Drawing.Point(849, 82);
+            this.button_T.Margin = new System.Windows.Forms.Padding(2);
+            this.button_T.Name = "button_T";
+            this.button_T.Size = new System.Drawing.Size(89, 39);
+            this.button_T.TabIndex = 33;
+            this.button_T.Text = "Thêm";
+            this.button_T.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_T.UseVisualStyleBackColor = false;
+            this.button_T.Click += new System.EventHandler(this.button_T_Click);
+            // 
+            // button_S
+            // 
+            this.button_S.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_S.Location = new System.Drawing.Point(849, 156);
+            this.button_S.Margin = new System.Windows.Forms.Padding(2);
+            this.button_S.Name = "button_S";
+            this.button_S.Size = new System.Drawing.Size(89, 39);
+            this.button_S.TabIndex = 34;
+            this.button_S.Text = "Chỉnh sửa";
+            this.button_S.UseVisualStyleBackColor = false;
+            this.button_S.Click += new System.EventHandler(this.button_S_Click);
+            // 
+            // button_X
+            // 
+            this.button_X.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_X.Location = new System.Drawing.Point(849, 232);
+            this.button_X.Margin = new System.Windows.Forms.Padding(2);
+            this.button_X.Name = "button_X";
+            this.button_X.Size = new System.Drawing.Size(89, 39);
+            this.button_X.TabIndex = 35;
+            this.button_X.Text = "Xóa";
+            this.button_X.UseVisualStyleBackColor = false;
+            this.button_X.Click += new System.EventHandler(this.button_X_Click);
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.BackColor = System.Drawing.Color.LightCoral;
+            this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Exit.Location = new System.Drawing.Point(849, 531);
+            this.button_Exit.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(89, 39);
+            this.button_Exit.TabIndex = 36;
+            this.button_Exit.Text = "Thoát";
+            this.button_Exit.UseVisualStyleBackColor = false;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click_1);
+            // 
+            // button_XX
+            // 
+            this.button_XX.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_XX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_XX.Location = new System.Drawing.Point(849, 309);
+            this.button_XX.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XX.Name = "button_XX";
+            this.button_XX.Size = new System.Drawing.Size(89, 39);
+            this.button_XX.TabIndex = 37;
+            this.button_XX.Text = "Xóa tất cả";
+            this.button_XX.UseVisualStyleBackColor = false;
+            this.button_XX.Click += new System.EventHandler(this.button_XX_Click);
+            // 
+            // button_LF
+            // 
+            this.button_LF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_LF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LF.Location = new System.Drawing.Point(849, 462);
+            this.button_LF.Margin = new System.Windows.Forms.Padding(2);
+            this.button_LF.Name = "button_LF";
+            this.button_LF.Size = new System.Drawing.Size(89, 39);
+            this.button_LF.TabIndex = 38;
+            this.button_LF.Text = "Lưu File";
+            this.button_LF.UseVisualStyleBackColor = false;
+            this.button_LF.Click += new System.EventHandler(this.button_LF_Click);
+            // 
+            // button_DF
+            // 
+            this.button_DF.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button_DF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_DF.Location = new System.Drawing.Point(849, 386);
+            this.button_DF.Margin = new System.Windows.Forms.Padding(2);
+            this.button_DF.Name = "button_DF";
+            this.button_DF.Size = new System.Drawing.Size(89, 39);
+            this.button_DF.TabIndex = 39;
+            this.button_DF.Text = "Đọc File";
+            this.button_DF.UseVisualStyleBackColor = false;
+            this.button_DF.Click += new System.EventHandler(this.button_DF_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(314, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(327, 20);
+            this.textBox1.TabIndex = 40;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackgroundImage = global::QL_Sach.Properties.Resources.magnifying_glass_search_icon_208685;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(657, 8);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 38);
+            this.button2.TabIndex = 41;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(698, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 38);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radNSDSLK);
+            this.groupBox2.Controls.Add(this.radNSDSD);
+            this.groupBox2.Controls.Add(this.radNSListT);
+            this.groupBox2.Location = new System.Drawing.Point(32, 9);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(279, 39);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cấu trúc dữ liệu";
+            // 
+            // radNSListT
+            // 
+            this.radNSListT.AutoSize = true;
+            this.radNSListT.Checked = true;
+            this.radNSListT.Location = new System.Drawing.Point(10, 16);
+            this.radNSListT.Name = "radNSListT";
+            this.radNSListT.Size = new System.Drawing.Size(48, 17);
+            this.radNSListT.TabIndex = 0;
+            this.radNSListT.TabStop = true;
+            this.radNSListT.Text = "ListT";
+            this.radNSListT.UseVisualStyleBackColor = true;
+            this.radNSListT.Click += new System.EventHandler(this.radNSListT_CheckedChanged);
+            // 
+            // radNSDSD
+            // 
+            this.radNSDSD.AutoSize = true;
+            this.radNSDSD.Location = new System.Drawing.Point(88, 16);
+            this.radNSDSD.Name = "radNSDSD";
+            this.radNSDSD.Size = new System.Drawing.Size(63, 17);
+            this.radNSDSD.TabIndex = 1;
+            this.radNSDSD.Text = "DS Đặc";
+            this.radNSDSD.UseVisualStyleBackColor = true;
+            this.radNSDSD.Click += new System.EventHandler(this.radNSDSD_CheckedChanged);
+            // 
+            // radNSDSLK
+            // 
+            this.radNSDSLK.AutoSize = true;
+            this.radNSDSLK.Location = new System.Drawing.Point(180, 16);
+            this.radNSDSLK.Name = "radNSDSLK";
+            this.radNSDSLK.Size = new System.Drawing.Size(53, 17);
+            this.radNSDSLK.TabIndex = 2;
+            this.radNSDSLK.Text = "DSLK";
+            this.radNSDSLK.UseVisualStyleBackColor = true;
+            this.radNSDSLK.Click += new System.EventHandler(this.radNSDSLK_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(746, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Sắp xếp:";
+            // 
+            // rb_M
+            // 
+            this.rb_M.AutoSize = true;
+            this.rb_M.Checked = true;
+            this.rb_M.Location = new System.Drawing.Point(749, 29);
+            this.rb_M.Name = "rb_M";
+            this.rb_M.Size = new System.Drawing.Size(40, 17);
+            this.rb_M.TabIndex = 46;
+            this.rb_M.TabStop = true;
+            this.rb_M.Text = "Mã";
+            this.rb_M.UseVisualStyleBackColor = true;
+            this.rb_M.CheckedChanged += new System.EventHandler(this.rb_M_CheckedChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radNSMacDinh);
+            this.groupBox6.Controls.Add(this.radNSGiam);
+            this.groupBox6.Controls.Add(this.radNSTang);
+            this.groupBox6.Location = new System.Drawing.Point(827, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(151, 69);
+            this.groupBox6.TabIndex = 51;
+            this.groupBox6.TabStop = false;
+            // 
+            // radNSTang
+            // 
+            this.radNSTang.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNSTang.Image = global::QL_Sach.Properties.Resources.up_arrow_icon_icons_com_73351;
+            this.radNSTang.Location = new System.Drawing.Point(6, 19);
+            this.radNSTang.Name = "radNSTang";
+            this.radNSTang.Size = new System.Drawing.Size(43, 38);
+            this.radNSTang.TabIndex = 50;
+            this.radNSTang.TabStop = true;
+            this.radNSTang.UseVisualStyleBackColor = true;
+            this.radNSTang.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // radNSGiam
+            // 
+            this.radNSGiam.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNSGiam.Image = global::QL_Sach.Properties.Resources.angle_arrow_down_icon_icons_com_73683;
+            this.radNSGiam.Location = new System.Drawing.Point(55, 19);
+            this.radNSGiam.Name = "radNSGiam";
+            this.radNSGiam.Size = new System.Drawing.Size(42, 38);
+            this.radNSGiam.TabIndex = 51;
+            this.radNSGiam.TabStop = true;
+            this.radNSGiam.UseVisualStyleBackColor = true;
+            this.radNSGiam.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // radNSMacDinh
+            // 
+            this.radNSMacDinh.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radNSMacDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radNSMacDinh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.radNSMacDinh.Location = new System.Drawing.Point(103, 19);
+            this.radNSMacDinh.Name = "radNSMacDinh";
+            this.radNSMacDinh.Size = new System.Drawing.Size(40, 38);
+            this.radNSMacDinh.TabIndex = 52;
+            this.radNSMacDinh.TabStop = true;
+            this.radNSMacDinh.Text = "_";
+            this.radNSMacDinh.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.radNSMacDinh.UseVisualStyleBackColor = true;
+            this.radNSMacDinh.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // tabNhaSach
+            // 
+            this.tabNhaSach.Controls.Add(this.groupBox6);
+            this.tabNhaSach.Controls.Add(this.rb_M);
+            this.tabNhaSach.Controls.Add(this.label2);
+            this.tabNhaSach.Controls.Add(this.groupBox2);
+            this.tabNhaSach.Controls.Add(this.button1);
+            this.tabNhaSach.Controls.Add(this.button2);
+            this.tabNhaSach.Controls.Add(this.textBox1);
+            this.tabNhaSach.Controls.Add(this.button_DF);
+            this.tabNhaSach.Controls.Add(this.button_LF);
+            this.tabNhaSach.Controls.Add(this.button_XX);
+            this.tabNhaSach.Controls.Add(this.button_Exit);
+            this.tabNhaSach.Controls.Add(this.button_X);
+            this.tabNhaSach.Controls.Add(this.button_S);
+            this.tabNhaSach.Controls.Add(this.button_T);
+            this.tabNhaSach.Controls.Add(this.dGVNS);
+            this.tabNhaSach.Location = new System.Drawing.Point(4, 22);
+            this.tabNhaSach.Name = "tabNhaSach";
+            this.tabNhaSach.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNhaSach.Size = new System.Drawing.Size(986, 596);
+            this.tabNhaSach.TabIndex = 1;
+            this.tabNhaSach.Text = "Nhà sách";
+            this.tabNhaSach.UseVisualStyleBackColor = true;
             // 
             // Form_QLHeThongNhaSach
             // 
@@ -1302,11 +1335,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.tabNhaSach.ResumeLayout(false);
-            this.tabNhaSach.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).EndInit();
             this.tabNhanVien.ResumeLayout(false);
             this.tabNhanVien.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1319,6 +1347,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVNS)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.tabNhaSach.ResumeLayout(false);
+            this.tabNhaSach.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1346,18 +1380,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NhaXuatBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
-        private System.Windows.Forms.TabPage tabNhaSach;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button_DF;
-        private System.Windows.Forms.Button button_LF;
-        private System.Windows.Forms.Button button_XX;
-        private System.Windows.Forms.Button button_Exit;
-        private System.Windows.Forms.Button button_X;
-        private System.Windows.Forms.Button button_S;
-        private System.Windows.Forms.Button button_T;
-        private System.Windows.Forms.DataGridView dGVNS;
         private System.Windows.Forms.TabPage tabNhanVien;
         private System.Windows.Forms.Button btnHuyTimNV;
         private System.Windows.Forms.Button btnTimNV;
@@ -1378,10 +1400,6 @@
         private System.Windows.Forms.RadioButton radSachDSLK;
         private System.Windows.Forms.RadioButton radSachDSD;
         private System.Windows.Forms.RadioButton radSachListT;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radNSDSLK;
-        private System.Windows.Forms.RadioButton radNSDSD;
-        private System.Windows.Forms.RadioButton radNSListT;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblSL;
         private System.Windows.Forms.Label label1;
@@ -1415,10 +1433,28 @@
         private System.Windows.Forms.RadioButton radNVGiam;
         private System.Windows.Forms.RadioButton radNVTang;
         private System.Windows.Forms.RadioButton radNVMacDinh;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabPage tabNhaSach;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton radNSMacDinh;
+        private System.Windows.Forms.RadioButton radNSGiam;
+        private System.Windows.Forms.RadioButton radNSTang;
         private System.Windows.Forms.RadioButton rb_M;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radNSDSLK;
+        private System.Windows.Forms.RadioButton radNSDSD;
+        private System.Windows.Forms.RadioButton radNSListT;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_DF;
+        private System.Windows.Forms.Button button_LF;
+        private System.Windows.Forms.Button button_XX;
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_X;
+        private System.Windows.Forms.Button button_S;
+        private System.Windows.Forms.Button button_T;
+        private System.Windows.Forms.DataGridView dGVNS;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;

@@ -197,7 +197,7 @@ namespace QL_Sach.GUI
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
-                loadNV();
+                LoadSach();
             }
         }
 
@@ -215,7 +215,8 @@ namespace QL_Sach.GUI
                 }
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
-                loadNV();
+                LoadSach();
+
             }
         }
 
@@ -252,19 +253,31 @@ namespace QL_Sach.GUI
         }
         private void LoadNhaSach()
         {
-            if (dsnv.LoaiDS == "LibListT")
+            if (nhaView.LoaiDS == "LibListT")
                 radNSListT.Checked = true;
-            else if (dsnv.LoaiDS == "DSDac")
+            else if (nhaView.LoaiDS == "DSDac")
                 radNSDSD.Checked = true;
-
-            else
+            else if(nhaView.LoaiDS == "DSLK")
                 radNSDSLK.Checked = true;
+            else
+            {
+                radNSListT.Checked = false;
+                radNSDSD.Checked = false;
+                radNSDSLK.Checked = false;
+            }    
 
+
+            radNSMacDinh.Checked = true;
             dGVNS.DataSource = nhaView.NhaSachList.ToList();
         }
 
         private void button_T_Click(object sender, EventArgs e)
         {
+            if (radNSMacDinh.Checked==false)
+            {
+                MessageBox.Show("Vui lòng chọn về sắp xếp mặc định trước \nkhi thực hiện chức năng này.", "Thông báo");
+                return;
+            }
             string bTitle = "Nhập thông tin nhà sách";
             b = new Form_NhaSach(bTitle);
             b.ShowDialog();
@@ -278,6 +291,11 @@ namespace QL_Sach.GUI
 
         private void button_S_Click(object sender, EventArgs e)
         {
+            if (radNSMacDinh.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn về sắp xếp mặc định trước \nkhi thực hiện chức năng này.", "Thông báo");
+                return;
+            }
             if (dGVNS.SelectedCells.Count > 0)
             {
                 string bTitle = "Sửa thông tin nhà sách";
@@ -298,6 +316,11 @@ namespace QL_Sach.GUI
 
         private void button_X_Click(object sender, EventArgs e)
         {
+            if (radNSMacDinh.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn về sắp xếp mặc định trước \nkhi thực hiện chức năng này.", "Thông báo");
+                return;
+            }
             if (dGVNS.SelectedCells.Count > 0)
             {
                 //show message box de xac nhan xoa
@@ -326,6 +349,11 @@ namespace QL_Sach.GUI
 
         private void button_XX_Click(object sender, EventArgs e)
         {
+            if (radNSMacDinh.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn về sắp xếp mặc định trước \nkhi thực hiện chức năng này.", "Thông báo");
+                return;
+            }
             if (nhaView.soLuongNhaSach() == 0)
             {
                 MessageBox.Show("Danh sách rỗng, không thể xóa", "Thông báo");
@@ -350,6 +378,11 @@ namespace QL_Sach.GUI
 
         private void button_LF_Click(object sender, EventArgs e)
         {
+            if (radNSMacDinh.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn về sắp xếp mặc định trước \nkhi thực hiện chức năng này.", "Thông báo");
+                return;
+            }
             if (nhaView.luuFile() == false)
             {
                 MessageBox.Show("Lưu file thất bại");
@@ -368,7 +401,8 @@ namespace QL_Sach.GUI
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
-                loadNV();
+                LoadNhaSach();
+
             }
         }
 
@@ -386,7 +420,8 @@ namespace QL_Sach.GUI
                 }
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
-                loadNV();
+                LoadNhaSach();
+
             }
         }
 
@@ -401,7 +436,8 @@ namespace QL_Sach.GUI
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thành công", "Thông báo");
-                loadNV();
+                LoadNhaSach();
+
             }
         }
 
@@ -427,21 +463,24 @@ namespace QL_Sach.GUI
         {
             if (rb_M.Checked)
             {
-                if (rb_M.Checked)
-                    nhaView.sort(false, "MA");
-                LoadNhaSach();
-
+                loadNS(nhaView.sort(false, "MA"));
             }
         }
         private void button3_Click(object sender, EventArgs e)
         {
             if (rb_M.Checked)
             {
-                if (rb_M.Checked)
-                nhaView.sort(true, "MA");
-                LoadNhaSach();
-                
+                loadNS(nhaView.sort(true, "MA"));
             }
+        }
+
+        private void loadNS(List<NhaSachDTO> nsList)
+        {
+            dGVNS.DataSource = nsList.ToList();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dGVNS.DataSource = nhaView.NhaSachList;
         }
         //--------------------------------------------------------------------------------
 
@@ -757,6 +796,11 @@ namespace QL_Sach.GUI
         private void radNVMacDinh_CheckedChanged(object sender, EventArgs e)
         {
             if (radNVMacDinh.Checked)
+                loadNV();
+        }
+        private void radNVMacDinh_Click(object sender, EventArgs e)
+        {
+            if (radNVMacDinh.Checked)
             {
                 loadNV();
                 radSort_Ma.Checked = false;
@@ -821,7 +865,11 @@ namespace QL_Sach.GUI
             }
         }
 
-        
+
+
+
+
+
 
 
 

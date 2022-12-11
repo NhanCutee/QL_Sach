@@ -200,16 +200,17 @@ namespace QL_Sach.BUS
 
         public List<NhanVienDTO> sort(bool isUp, string thuocTinh)
         {
-            NodeNhanVien listKQ = new NodeNhanVien(m_firstNode);
+            NhanVienBUS_DSLienKet listKQ = new NhanVienBUS_DSLienKet();
+            for (NodeNhanVien node1 = this.m_firstNode; node1 != null; node1 = node1.Next) // clone 1 danh sach de sap xep ko anh huong den danh sach cu
+                listKQ.themNV(node1.NhanVien);
+
             if (isUp == true)
             {
                 if (thuocTinh.ToUpper() == "MA")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1=node1.Next )
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1=node1.Next )
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.MaNV.CompareTo(node2.NhanVien.MaNV) >=1) 
                             {
@@ -222,11 +223,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "TEN")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.TenNV.CompareTo(node2.NhanVien.TenNV) >= 1)
                             {
@@ -239,11 +238,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "DC")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.DiaChi.CompareTo(node2.NhanVien.DiaChi) >= 1)
                             {
@@ -256,11 +253,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "GT")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.GioiTinh==true)
                             {
@@ -273,11 +268,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "NS")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.NgaySinh.CompareTo(node2.NhanVien.NgaySinh) >= 1)
                             {
@@ -290,11 +283,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "NOILV")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.NhaSachLamViec.CompareTo(node2.NhanVien.NhaSachLamViec) >= 1)
                             {
@@ -307,11 +298,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "CV")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.ChucVu.CompareTo(node2.NhanVien.ChucVu) >= 1)
                             {
@@ -328,30 +317,26 @@ namespace QL_Sach.BUS
             {
                 if (thuocTinh.ToUpper() == "MA")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.MaNV.CompareTo(node2.NhanVien.MaNV) <= 1)
+                            if (node1.NhanVien.MaNV.CompareTo(node2.NhanVien.MaNV) < 1)
                             {
-                                NhanVienDTO nv = node1.NhanVien;
-                                node1.NhanVien = node2.NhanVien;
-                                node2.NhanVien = nv;
+                                NhanVienDTO nv = new NhanVienDTO(node1.NhanVien);
+                                node1.NhanVien = new NhanVienDTO(node2.NhanVien);
+                                node2.NhanVien = new NhanVienDTO(nv);
                             }
                         }
                     }
                 }
                 else if (thuocTinh.ToUpper() == "TEN")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.TenNV.CompareTo(node2.NhanVien.TenNV) <= 1)
+                            if (node1.NhanVien.TenNV.CompareTo(node2.NhanVien.TenNV)  <1)
                             {
                                 NhanVienDTO nv = node1.NhanVien;
                                 node1.NhanVien = node2.NhanVien;
@@ -362,13 +347,11 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "DC")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.DiaChi.CompareTo(node2.NhanVien.DiaChi) <= 1)
+                            if (node1.NhanVien.DiaChi.CompareTo(node2.NhanVien.DiaChi) < 1)
                             {
                                 NhanVienDTO nv = node1.NhanVien;
                                 node1.NhanVien = node2.NhanVien;
@@ -379,11 +362,9 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "GT")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
                             if (node1.NhanVien.GioiTinh == false)
                             {
@@ -396,13 +377,11 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "NS")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.NgaySinh.CompareTo(node2.NhanVien.NgaySinh) <= 1)
+                            if (node1.NhanVien.NgaySinh.CompareTo(node2.NhanVien.NgaySinh) < 1)
                             {
                                 NhanVienDTO nv = node1.NhanVien;
                                 node1.NhanVien = node2.NhanVien;
@@ -413,13 +392,11 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "NOILV")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.NhaSachLamViec.CompareTo(node2.NhanVien.NhaSachLamViec) <= 1)
+                            if (node1.NhanVien.NhaSachLamViec.CompareTo(node2.NhanVien.NhaSachLamViec) < 1)
                             {
                                 NhanVienDTO nv = node1.NhanVien;
                                 node1.NhanVien = node2.NhanVien;
@@ -430,13 +407,11 @@ namespace QL_Sach.BUS
                 }
                 else if (thuocTinh.ToUpper() == "CV")
                 {
-                    for (NodeNhanVien node1 = listKQ; node1 != null; node1 = node1.Next)
+                    for (NodeNhanVien node1 = listKQ.FirstNode; node1 != null; node1 = node1.Next)
                     {
-                        if (node1.Next == null)
-                            break;
-                        for (NodeNhanVien node2 = node1.Next; node2 != null; node1 = node2.Next)
+                        for (NodeNhanVien node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            if (node1.NhanVien.ChucVu.CompareTo(node2.NhanVien.ChucVu) <= 1)
+                            if (node1.NhanVien.ChucVu.CompareTo(node2.NhanVien.ChucVu) < 1)
                             {
                                 NhanVienDTO nv = node1.NhanVien;
                                 node1.NhanVien = node2.NhanVien;
@@ -448,10 +423,11 @@ namespace QL_Sach.BUS
             }
 
             List<NhanVienDTO> list = new List<NhanVienDTO>();
-            NodeNhanVien node = listKQ;
+            NodeNhanVien node = listKQ.FirstNode;
             while(node !=null)
             {
-                list.Add(node.NhanVien);
+                if(node.NhanVien.MaNV!="")
+                    list.Add(node.NhanVien);
                 node = node.Next;
             }
 

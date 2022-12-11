@@ -15,6 +15,7 @@ namespace QL_Sach.BUS
 
         public nodeLienKet2()
         {
+            this.nhasachDTO= new NhaSachDTO();
             this.next = null;
             this.prev = null;
         }
@@ -176,32 +177,51 @@ namespace QL_Sach.BUS
 
         public List<NhaSachDTO> sort(bool isUp, string thuocTinh)
         {
-            List<NhaSachDTO> listKQ = NhaSachList ;
+            NhaSachBUS_DSLienKet listKQ = new NhaSachBUS_DSLienKet();
+            for (nodeLienKet2 node1 = this.firstNode; node1 != null; node1 = node1.Next) // clone 1 danh sach de sap xep ko anh huong den danh sach cu
+                listKQ.themNhaSach(node1.NhaSachDTO);
             if (isUp == true)
             {
                 if (thuocTinh.ToUpper() == "MA")
                 {
-                    listKQ.Sort(
-                        delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                    for (nodeLienKet2 node1 = listKQ.firstNode; node1 != null; node1 = node1.Next)
+                    {
+                        for (nodeLienKet2 node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            return ns1.MaNhaSach.CompareTo(ns2.MaNhaSach);
+                            if (node1.NhaSachDTO.MaNhaSach.CompareTo(node2.NhaSachDTO.MaNhaSach) >= 1)
+                            {
+                                NhaSachDTO nv =node1.NhaSachDTO;
+                                node1.NhaSachDTO =node2.NhaSachDTO;
+                                node2.NhaSachDTO = nv;
+                            }
                         }
-                        );
+                    }
                 }                 
             }
             else
             {
                 if (thuocTinh.ToUpper() == "MA")
                 {
-                    listKQ.Sort(
-                        delegate (NhaSachDTO ns1, NhaSachDTO ns2)
+                    for (nodeLienKet2 node1 = listKQ.firstNode; node1 != null; node1 = node1.Next)
+                    {
+                        for (nodeLienKet2 node2 = node1.Next; node2 != null; node2 = node2.Next)
                         {
-                            return -(ns1.MaNhaSach.CompareTo(ns2.MaNhaSach));
+                            if (node1.NhaSachDTO.MaNhaSach.CompareTo(node2.NhaSachDTO.MaNhaSach) < 1)
+                            {
+                                NhaSachDTO nv = node1.NhaSachDTO;
+                                node1.NhaSachDTO = node2.NhaSachDTO;
+                                node2.NhaSachDTO = nv;
+                            }
                         }
-                        );
+                    }
                 }               
             }
-            return listKQ.ToList();
+
+            List<NhaSachDTO> list = new List<NhaSachDTO>();
+            for (nodeLienKet2 node1 = listKQ.firstNode; node1 != null; node1 = node1.Next) 
+                if(node1.NhaSachDTO.MaNhaSach!="")
+                    list.Add(node1.NhaSachDTO);
+            return list.ToList();
         }
     }
     }

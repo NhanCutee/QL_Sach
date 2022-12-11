@@ -310,8 +310,8 @@ namespace QL_Sach.BUS
                 return nhasachDSD.sort(isUp, thuocTinh);
             else if (loaiDS == "DSLK")
                 return nhasachDSLK.sort(isUp, thuocTinh);
-
-            return new List<NhaSachDTO>();
+            else
+                return new List<NhaSachDTO>();
         }
     }
     }
