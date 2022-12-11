@@ -144,14 +144,19 @@ namespace QL_Sach.BUS
 
         public void xoaTatCa()
         {
-            nodeLienKet2 node = this.firstNode;
+            
             nodeLienKet2 nodeTemp;
-            while (node != null)
+            while (firstNode != null)
             {
-                nodeTemp = node;
-                node = node.Next;
+                nodeTemp = firstNode;
+                
+                firstNode = firstNode.Next;
                 nodeTemp = null;
+                
             }
+            firstNode = new nodeLienKet2();
+            count = 0;
+            
         }
 
         public int soLuongNhaSach()

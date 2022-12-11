@@ -865,6 +865,11 @@ namespace QL_Sach.GUI
             }
         }
 
+        private void radNSTang_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
