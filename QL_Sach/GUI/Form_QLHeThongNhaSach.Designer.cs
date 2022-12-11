@@ -180,6 +180,7 @@
             this.tabSach.TabIndex = 0;
             this.tabSach.Text = "Sách";
             this.tabSach.UseVisualStyleBackColor = true;
+            this.tabSach.Click += new System.EventHandler(this.radSachListT_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -218,12 +219,10 @@
             // radSachListT
             // 
             this.radSachListT.AutoSize = true;
-            this.radSachListT.Checked = true;
             this.radSachListT.Location = new System.Drawing.Point(10, 16);
             this.radSachListT.Name = "radSachListT";
             this.radSachListT.Size = new System.Drawing.Size(48, 17);
             this.radSachListT.TabIndex = 0;
-            this.radSachListT.TabStop = true;
             this.radSachListT.Text = "ListT";
             this.radSachListT.UseVisualStyleBackColor = true;
             this.radSachListT.Click += new System.EventHandler(this.radSachListT_CheckedChanged);
@@ -572,12 +571,10 @@
             // radNSListT
             // 
             this.radNSListT.AutoSize = true;
-            this.radNSListT.Checked = true;
             this.radNSListT.Location = new System.Drawing.Point(10, 16);
             this.radNSListT.Name = "radNSListT";
             this.radNSListT.Size = new System.Drawing.Size(48, 17);
             this.radNSListT.TabIndex = 0;
-            this.radNSListT.TabStop = true;
             this.radNSListT.Text = "ListT";
             this.radNSListT.UseVisualStyleBackColor = true;
             this.radNSListT.Click += new System.EventHandler(this.radNSListT_CheckedChanged);
@@ -1093,12 +1090,10 @@
             // radNVListT
             // 
             this.radNVListT.AutoSize = true;
-            this.radNVListT.Checked = true;
             this.radNVListT.Location = new System.Drawing.Point(10, 16);
             this.radNVListT.Name = "radNVListT";
             this.radNVListT.Size = new System.Drawing.Size(48, 17);
             this.radNVListT.TabIndex = 0;
-            this.radNVListT.TabStop = true;
             this.radNVListT.Text = "ListT";
             this.radNVListT.UseVisualStyleBackColor = true;
             this.radNVListT.Click += new System.EventHandler(this.radNVListT_CheckedChanged);
