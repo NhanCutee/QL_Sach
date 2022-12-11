@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using QL_Sach.DTO;
 namespace QL_Sach.BUS
 {
@@ -39,6 +40,15 @@ namespace QL_Sach.BUS
             nhasachDTO = new NhaSachDTO[100];
             n = 0;
         }
+        public NhaSachDTO timNs(string ma)
+        {
+            for (int i = 0; i < this.n; i++)
+            {
+                if (this.nhasachDTO[i].MaNhaSach == ma)
+                    return this.nhasachDTO[i];
+            }
+            return null;
+        }
         public void themNhaSach(NhaSachDTO ns)
         {
 
@@ -54,8 +64,15 @@ namespace QL_Sach.BUS
             ns.DiaChi=enter_diaChi;
             ns.TenQuanLi = enter_tenQuanLi;
             ns.SoLuongNhanVien = enter_soLuongNhanVien;
-            nhasachDTO[n] = ns;
-            n++;
+            if (timNs(ns.MaNhaSach) == null)
+            {
+                nhasachDTO[n] = ns;
+                n++;
+            }
+            else
+            {
+                MessageBox.Show("Mã nhà sách " + ns.MaNhaSach + " đã có! Vui lòng nhập lại");
+            }    
         }
         public void suaNhaSach(int index, string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
         {
