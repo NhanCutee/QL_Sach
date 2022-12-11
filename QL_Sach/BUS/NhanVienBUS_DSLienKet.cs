@@ -116,24 +116,37 @@ namespace QL_Sach.BUS
 
         public bool xoaNV(string ma)
         {
-            NodeNhanVien node = this.timNV(ma);
-            if (node != null)
+
+            NodeNhanVien node = this.FirstNode;
+            if (ma == "")
+                return false;
+            else if (node.Prev == null && node.NhanVien.MaNV == ma)
             {
-               NodeNhanVien nodeTemp;
-                if(node.Prev==null) // node dau
-                {
-                    m_firstNode = m_firstNode.Next;
-                    m_firstNode.Prev = null;
-                }
-                else
-                {
-                    nodeTemp = node;
-                    node = node.Prev;
-                    node.Next = nodeTemp.Next;
-                    nodeTemp = null;
-                }
+                m_firstNode = m_firstNode.Next;
+                m_firstNode.Prev = null;
                 m_n--;
                 return true;
+            }
+            else
+            {
+                while (node.Next != null)
+                {
+                    if (node.NhanVien.MaNV == ma)
+                    {
+                        NodeNhanVien nodeTemp = node;
+                        node = node.Prev;
+                        node.Next = nodeTemp.Next;
+                        nodeTemp = null;
+                        m_n--;
+                        return true;
+                    }
+                    node = node.Next;
+                }
+                if(node.Next==null && node.NhanVien.MaNV == ma)
+                {
+                    node = node.Prev;
+                    node.Next = null;
+                }
             }
             return false;
         }

@@ -192,7 +192,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadSach();
                     return;
+                }
                 if (sachView.chuyenCauTrucDL("LibListT") == false || sachView.LoaiDS != "LibListT")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -207,7 +210,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS đặc?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadSach();
                     return;
+                }
                 if (sachView.chuyenCauTrucDL("DSDac") == false || sachView.LoaiDS != "DSDac")
                 {
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
@@ -226,7 +232,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS Liên kết?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadSach();
                     return;
+                }
                 if (sachView.chuyenCauTrucDL("DSLK") == false || sachView.LoaiDS != "DSLK")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -396,7 +405,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadNhaSach();
                     return;
+                }
                 if (nhaView.chuyenCauTrucDL("LibListT") == false || nhaView.LoaiDS != "LibListT")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -412,7 +424,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS đặc?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadNhaSach();
                     return;
+                }
                 if (nhaView.chuyenCauTrucDL("DSDac") == false || nhaView.LoaiDS != "DSDac")
                 {
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
@@ -431,7 +446,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS Liên kết?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    LoadNhaSach();
                     return;
+                }
                 if (nhaView.chuyenCauTrucDL("DSLK") == false || nhaView.LoaiDS != "DSLK")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -675,7 +693,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang ListT?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    loadNV();
                     return;
+                }
                 if (dsnv.chuyenCauTrucDL("LibListT") == false || dsnv.LoaiDS != "LibListT")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -690,7 +711,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS đặc?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    loadNV();
                     return;
+                }
                 if (dsnv.chuyenCauTrucDL("DSDac") == false || dsnv.LoaiDS != "DSDac")
                 {
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
@@ -708,7 +732,10 @@ namespace QL_Sach.GUI
             {
                 DialogResult dialogResult = MessageBox.Show("Chuyển sang DS Liên kết?", "Chú ý", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
+                {
+                    loadNV();
                     return;
+                }
                 if (dsnv.chuyenCauTrucDL("DSLK") == false || dsnv.LoaiDS != "DSLK")
                     MessageBox.Show("Chuyển cấu trúc dữ liệu thất bại", "Thông báo");
                 else
@@ -869,17 +896,6 @@ namespace QL_Sach.GUI
         {
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
         //--------------------------------------------------------------------------------

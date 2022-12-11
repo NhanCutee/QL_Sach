@@ -62,7 +62,7 @@ namespace QL_Sach.GUI
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(132, 66);
-            this.txtMaNV.MaxLength = 10;
+            this.txtMaNV.MaxLength = 20;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(244, 20);
             this.txtMaNV.TabIndex = 0;
