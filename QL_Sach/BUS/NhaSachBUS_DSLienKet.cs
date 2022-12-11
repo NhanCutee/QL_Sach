@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QL_Sach.BUS
 {
@@ -77,22 +78,45 @@ namespace QL_Sach.BUS
             count = 0;
             firstNode = new nodeLienKet2();
         }
+        public nodeLienKet2 timNs(string ma)
+        {
+            nodeLienKet2 node = firstNode;
+            while (node != null)
+            {
+                if (node.NhaSachDTO.MaNhaSach== ma)
+                    return node;
+                node = node.Next;
+            }
+            return null;
+        }
         public void themNhaSach(NhaSachDTO ns)
         {
-            nodeLienKet2 node = new nodeLienKet2(ns);
-            node.Next = firstNode;
-            firstNode.Prev = node;
-            firstNode = node;
-            count++;
+            
+                nodeLienKet2 node = new nodeLienKet2(ns);
+                node.Next = firstNode;
+                firstNode.Prev = node;
+                firstNode = node;
+                count++;
+            
+         
         }
 
         public void themNhaSach(string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
         {
-            nodeLienKet2 node = new nodeLienKet2(enter_maNhaSach, enter_tenNhaSach, enter_diaChi, enter_tenQuanLi, enter_soLuongNhanVien);
-            node.Next = firstNode;
-            firstNode.Prev = node;
-            firstNode = node;
-            count++;
+            if (timNs(enter_maNhaSach) == null)
+            {
+                nodeLienKet2 node = new nodeLienKet2(enter_maNhaSach, enter_tenNhaSach, enter_diaChi, enter_tenQuanLi, enter_soLuongNhanVien);
+                node.Next = firstNode;
+                firstNode.Prev = node;
+                firstNode = node;
+                count++;
+            }
+            else
+            {
+
+                MessageBox.Show("Mã nhà sách " + enter_maNhaSach + " đã có! Vui lòng nhập lại");
+
+            }
         }
 
         public void suaNhaSach(int index, string enter_maNhaSach, string enter_tenNhaSach, string enter_diaChi, string enter_tenQuanLi, int enter_soLuongNhanVien)
