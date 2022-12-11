@@ -136,48 +136,47 @@ namespace QL_Sach.BUS
             return soLuong;
         }
 
-        //fix loi file being use by another process
         public bool luuFile()
         {
-            FileStream fs = new FileStream("SachList.dat", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(fs, sachList);
-            fs.Close();
-
-            return true;
+            if (loaiDS == "LibListT")
+            {
+                return sachListT.luuFile();
+            }
+            else if (loaiDS == "DSDac")
+            {
+                return sachDSD.luuFile();
+            }
+            else if (loaiDS == "DSLK")
+            {
+                return sachDSLK.luuFile();
+            }
+            else return false;
         }
+
         public bool docFile()
         {
-            FileStream fs = null;
-            try {fs=new FileStream("SachList.dat", FileMode.Open); }
-            catch { return false; }
-            if (fs == null)
-                return false;
-            BinaryFormatter bf = new BinaryFormatter();
-            sachList = (List<SachDTO>)bf.Deserialize(fs);
-            fs.Close();
-            if (sachList.Count == 0)
-                return false;
-            //ghi vao loai du lieu hien tai
-            chuyenDoiDuLieu();
-            return true;
-        }
-
-        public bool docFile(string location)
-        {
-            FileStream fs = null;
-            try { fs=new FileStream(location, FileMode.Open); }
-            catch { return false; }
-            if (fs == null)
-                return false;
-            BinaryFormatter bf = new BinaryFormatter();
-            sachList = (List<SachDTO>)bf.Deserialize(fs);
-            fs.Close();
-            if (sachList.Count == 0)
-                return false;
-            //ghi vao loai du lieu hien tai
-            chuyenDoiDuLieu();
-            return true;
+            if (loaiDS == "LibListT")
+            {
+                if (!sachListT.docFile())
+                    return false;
+                sachList = sachListT.SachList;
+                return true;
+            }
+            else if (loaiDS == "DSDac")
+            {
+                if (!sachDSD.docFile())
+                    return false;
+                sachList = sachDSD.SachList;
+                return true;
+            }
+            else if (loaiDS == "DSLK")
+            {
+                if (!sachDSLK.docFile())
+                    return false;
+                sachList = sachDSLK.SachList;
+                return true;
+            }
+            else return false;
         }
 
         private bool chuyenDoiDuLieu()
@@ -215,70 +214,14 @@ namespace QL_Sach.BUS
 
         public List<SachDTO> timKiem(string tuKhoa)
         {
-            List<SachDTO> dsKetQua = new List<SachDTO>();
-            List<SachDTO> dsKetQua_MaSach = new List<SachDTO>();
-            List<SachDTO> dsKetQua_TenSach = new List<SachDTO>();
-            List<SachDTO> dsKetQua_TheLoai = new List<SachDTO>();
-            List<SachDTO> dsKetQua_TenTacGia = new List<SachDTO>();
-            List<SachDTO> dsKetQua_NhaXuatBan = new List<SachDTO>();
-            List<SachDTO> dsKetQua_NgayXuatBan = new List<SachDTO>();
-            List<SachDTO> dsKetQua_Gia = new List<SachDTO>();
-            List<SachDTO> dsKetQua_GhiChu = new List<SachDTO>();
-
-            foreach (SachDTO sach in sachList)
-            {
-              if(sach.MaSach == tuKhoa.ToUpper())
-                {
-                    dsKetQua_MaSach.Add(sach);
-                    continue;
-                }
-              else if(sach.TenSach == tuKhoa)
-                {
-                    dsKetQua_TenSach.Add(sach);
-                    continue;
-                }
-              else if (sach.TheLoai== tuKhoa)
-                {
-                    dsKetQua_TheLoai.Add(sach);
-                    continue;
-                }
-                else if (sach.TenTacGia== tuKhoa)
-                {
-                    dsKetQua_TenTacGia.Add(sach);
-                    continue;
-                }
-                else if (sach.NhaXuatBan== tuKhoa)
-                {
-                    dsKetQua_NhaXuatBan.Add(sach);
-                    continue;
-                }
-                else if (sach.NgayXuatBan.ToShortDateString()== tuKhoa)
-                {
-                    dsKetQua_NgayXuatBan.Add(sach);
-                    continue;
-                }
-                else if (sach.Gia.ToString()== tuKhoa)
-                {
-                    dsKetQua_Gia.Add(sach);
-                    continue;
-                }
-                else if (sach.GhiChu== tuKhoa)
-                {
-                    dsKetQua_GhiChu.Add(sach);
-                    continue;
-                }
-            }
-
-            dsKetQua= dsKetQua.Concat(dsKetQua_MaSach).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TenSach).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TheLoai).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TenTacGia).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_NhaXuatBan).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_NgayXuatBan).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_Gia).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_GhiChu).ToList();
-
-            return dsKetQua;
+            if (loaiDS == "LibListT")
+                return sachListT.timKiem(tuKhoa);
+            else if (loaiDS == "DSDac")
+                return sachDSD.timKiem(tuKhoa);
+            else if (loaiDS == "DSLK")
+                return sachDSLK.timKiem(tuKhoa);
+            else
+                return new List<SachDTO>();
         }
 
         public bool chuyenCauTrucDL(string ctdl)

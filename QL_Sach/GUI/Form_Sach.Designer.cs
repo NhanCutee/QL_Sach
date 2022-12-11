@@ -76,6 +76,7 @@ namespace QL_Sach.GUI
             this.textBox_TenSach.Name = "textBox_TenSach";
             this.textBox_TenSach.Size = new System.Drawing.Size(305, 20);
             this.textBox_TenSach.TabIndex = 1;
+            this.textBox_TenSach.Text = "Sách Test";
             // 
             // label_TenSach
             // 
@@ -89,10 +90,16 @@ namespace QL_Sach.GUI
             // comboBox_TheLoai
             // 
             this.comboBox_TheLoai.FormattingEnabled = true;
+            this.comboBox_TheLoai.Items.AddRange(new object[] {
+            "Triết học",
+            "Khoa học viễn tưởng",
+            "Tiểu thuyết",
+            "Lịch sử"});
             this.comboBox_TheLoai.Location = new System.Drawing.Point(137, 194);
             this.comboBox_TheLoai.Name = "comboBox_TheLoai";
             this.comboBox_TheLoai.Size = new System.Drawing.Size(305, 21);
             this.comboBox_TheLoai.TabIndex = 3;
+            this.comboBox_TheLoai.Text = "Triết học";
             // 
             // label3
             // 
@@ -115,10 +122,15 @@ namespace QL_Sach.GUI
             // comboBox_NhaXuatBan
             // 
             this.comboBox_NhaXuatBan.FormattingEnabled = true;
+            this.comboBox_NhaXuatBan.Items.AddRange(new object[] {
+            "Kim đồng",
+            "Alpha",
+            "NXB Trẻ"});
             this.comboBox_NhaXuatBan.Location = new System.Drawing.Point(137, 235);
             this.comboBox_NhaXuatBan.Name = "comboBox_NhaXuatBan";
             this.comboBox_NhaXuatBan.Size = new System.Drawing.Size(305, 21);
             this.comboBox_NhaXuatBan.TabIndex = 4;
+            this.comboBox_NhaXuatBan.Text = "Alpha";
             // 
             // label4
             // 
@@ -131,6 +143,7 @@ namespace QL_Sach.GUI
             // 
             // dateTimePicker_NgayXuatBan
             // 
+            this.dateTimePicker_NgayXuatBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_NgayXuatBan.Location = new System.Drawing.Point(137, 279);
             this.dateTimePicker_NgayXuatBan.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_NgayXuatBan.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
@@ -155,6 +168,7 @@ namespace QL_Sach.GUI
             this.textBox_GhiChu.Name = "textBox_GhiChu";
             this.textBox_GhiChu.Size = new System.Drawing.Size(305, 67);
             this.textBox_GhiChu.TabIndex = 7;
+            this.textBox_GhiChu.Text = "-";
             // 
             // label6
             // 
@@ -172,6 +186,7 @@ namespace QL_Sach.GUI
             this.textBox_Gia.Name = "textBox_Gia";
             this.textBox_Gia.Size = new System.Drawing.Size(305, 20);
             this.textBox_Gia.TabIndex = 6;
+            this.textBox_Gia.Text = "0";
             // 
             // label7
             // 
@@ -189,6 +204,7 @@ namespace QL_Sach.GUI
             this.textBox_TacGia.Name = "textBox_TacGia";
             this.textBox_TacGia.Size = new System.Drawing.Size(305, 20);
             this.textBox_TacGia.TabIndex = 2;
+            this.textBox_TacGia.Text = "Tác giả Test";
             // 
             // label_Title
             // 
@@ -237,7 +253,7 @@ namespace QL_Sach.GUI
             this.button_Huy.UseVisualStyleBackColor = false;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
-            // Form3
+            // Form_Sach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +279,7 @@ namespace QL_Sach.GUI
             this.Controls.Add(this.textbox_MaSach);
             this.Controls.Add(this.label_MaSach);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form3";
+            this.Name = "Form_Sach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
