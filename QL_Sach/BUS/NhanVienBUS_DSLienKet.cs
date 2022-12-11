@@ -54,8 +54,8 @@ namespace QL_Sach.BUS
                 NodeNhanVien node = this.m_firstNode;
                 while(node!=null)
                 {
-                   // if (node.Next == null)
-                     //   break;
+                    if (node.Next == null)
+                        break;
                     nvList.Add(node.NhanVien);
                     node = node.Next;
                 }
