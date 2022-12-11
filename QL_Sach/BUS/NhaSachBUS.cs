@@ -131,49 +131,6 @@ namespace QL_Sach.BUS
             return soLuong;
         }
 
-        //fix loi file being use by another process
-        public bool luuFile()
-        {
-            FileStream fs = new FileStream("NhaSachList.dat", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(fs, nhasachList);
-            fs.Close();
-
-            return true;
-        }
-        public bool docFile()
-        {
-            FileStream fs = null;
-            try { fs = new FileStream("NhaSachList.dat", FileMode.Open); }
-            catch { return false; }
-            if (fs == null)
-                return false;
-            BinaryFormatter bf = new BinaryFormatter();
-            nhasachList = (List<NhaSachDTO>)bf.Deserialize(fs);
-            fs.Close();
-            if (nhasachList.Count == 0)
-                return false;
-            //ghi vao loai du lieu hien tai
-            chuyenDoiDuLieu();
-            return true;
-        }
-
-        public bool docFile(string location)
-        {
-            FileStream fs = null;
-            try { fs = new FileStream(location, FileMode.Open); }
-            catch { return false; }
-            if (fs == null)
-                return false;
-            BinaryFormatter bf = new BinaryFormatter();
-            nhasachList = (List<NhaSachDTO>)bf.Deserialize(fs);
-            fs.Close();
-            if (nhasachList.Count == 0)
-                return false;
-            //ghi vao loai du lieu hien tai
-            chuyenDoiDuLieu();
-            return true;
-        }
 
         private bool chuyenDoiDuLieu()
         {
@@ -210,52 +167,14 @@ namespace QL_Sach.BUS
 
         public List<NhaSachDTO> timKiem(string tuKhoa)
         {
-            List<NhaSachDTO> dsKetQua = new List<NhaSachDTO>();
-            List<NhaSachDTO> dsKetQua_MaNhaSach = new List<NhaSachDTO>();
-            List<NhaSachDTO> dsKetQua_TenNhaSach = new List<NhaSachDTO>();
-            List<NhaSachDTO> dsKetQua_DiaChi = new List<NhaSachDTO>();
-            List<NhaSachDTO> dsKetQua_TenQuanLi = new List<NhaSachDTO>();
-            List<NhaSachDTO> dsKetQua_SoLuongNhanVien = new List<NhaSachDTO>();
-           
-
-            foreach (NhaSachDTO ns in nhasachList)
-            {
-                if (ns.MaNhaSach == tuKhoa.ToUpper())
-                {
-                    dsKetQua_MaNhaSach.Add(ns);
-                    continue;
-                }
-                else if (ns.TenNhaSach == tuKhoa)
-                {
-                    dsKetQua_TenNhaSach.Add(ns);
-                    continue;
-                }
-                else if (ns.DiaChi == tuKhoa)
-                {
-                    dsKetQua_DiaChi.Add(ns);
-                    continue;
-                }
-                else if (ns.TenQuanLi == tuKhoa)
-                {
-                    dsKetQua_TenQuanLi.Add(ns);
-                    continue;
-                }
-                else if (ns.SoLuongNhanVien.ToString() == tuKhoa)
-                {
-                    dsKetQua_SoLuongNhanVien.Add(ns);
-                    continue;
-                }
-                
-            }
-
-            dsKetQua = dsKetQua.Concat(dsKetQua_MaNhaSach).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TenNhaSach).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_DiaChi).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_TenQuanLi).ToList();
-            dsKetQua = dsKetQua.Concat(dsKetQua_SoLuongNhanVien).ToList();
-    
-
-            return dsKetQua;
+            if (loaiDS == "LibListT")
+                return nhasachListT.timKiem(tuKhoa);
+            else if (loaiDS == "DSDac")
+                return nhasachDSD.timKiem(tuKhoa);
+            else if (loaiDS == "DSLK")
+                return nhasachDSLK.timKiem(tuKhoa);
+            else
+                return new List<NhaSachDTO>();
         }
 
         public bool chuyenCauTrucDL(string ctdl)
@@ -313,8 +232,51 @@ namespace QL_Sach.BUS
             else
                 return new List<NhaSachDTO>();
         }
+
+        public bool luuFile()
+        {
+            if (loaiDS == "LibListT")
+            {
+                return nhasachListT.luuFile();
+            }
+            else if (loaiDS == "DSDac")
+            {
+                return nhasachDSD.luuFile();
+            }
+            else if (loaiDS == "DSLK")
+            {
+                return nhasachDSLK.luuFile();
+            }
+            else return false;
+        }
+
+        public bool docFile()
+        {
+            if (loaiDS == "LibListT")
+            {
+                if (!nhasachListT.docFile())
+                    return false;
+                nhasachList = nhasachListT.NhaSachList;
+                return true;
+            }
+            else if (loaiDS == "DSDac")
+            {
+                if (!nhasachDSD.docFile())
+                    return false;
+                nhasachList =nhasachDSD.NhaSachList;
+                return true;
+            }
+            else if (loaiDS == "DSLK")
+            {
+                if (!nhasachDSLK.docFile())
+                    return false;
+                nhasachList = nhasachDSLK.NhaSachList;
+                return true;
+            }
+            else return false;
+        }
     }
-    }
+}
 
     
 

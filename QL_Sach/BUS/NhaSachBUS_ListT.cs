@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QL_Sach.DTO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
+using System.IO;
 
 namespace QL_Sach.BUS
 {
@@ -105,6 +106,88 @@ namespace QL_Sach.BUS
                 }
             }
             return listKQ.ToList();
+        }
+
+
+        public bool luuFile()
+        {
+            try
+            {
+                FileStream fs = new FileStream("NhaSachData.bin", FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(fs, this.NhaSachList);
+                fs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool docFile()
+        {
+            try
+            {
+                FileStream fs = new FileStream("NhaSachData.bin", FileMode.Open);
+                BinaryFormatter bf = new BinaryFormatter();
+                this.NhaSachList = (List<NhaSachDTO>)bf.Deserialize(fs);
+                fs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public List<NhaSachDTO> timKiem(string tuKhoa)
+        {
+            List<NhaSachDTO> dsKetQua = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_MaNhaSach = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_TenNhaSach = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_DiaChi = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_TenQuanLi = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_SoLuongNhanVien = new List<NhaSachDTO>();
+
+
+            foreach (NhaSachDTO ns in nhasachList)
+            {
+                if (ns.MaNhaSach == tuKhoa.ToUpper())
+                {
+                    dsKetQua_MaNhaSach.Add(ns);
+                    continue;
+                }
+                else if (ns.TenNhaSach == tuKhoa)
+                {
+                    dsKetQua_TenNhaSach.Add(ns);
+                    continue;
+                }
+                else if (ns.DiaChi == tuKhoa)
+                {
+                    dsKetQua_DiaChi.Add(ns);
+                    continue;
+                }
+                else if (ns.TenQuanLi == tuKhoa)
+                {
+                    dsKetQua_TenQuanLi.Add(ns);
+                    continue;
+                }
+                else if (ns.SoLuongNhanVien.ToString() == tuKhoa)
+                {
+                    dsKetQua_SoLuongNhanVien.Add(ns);
+                    continue;
+                }
+
+            }
+
+            dsKetQua = dsKetQua.Concat(dsKetQua_MaNhaSach).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_TenNhaSach).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_DiaChi).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_TenQuanLi).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_SoLuongNhanVien).ToList();
+
+            return dsKetQua;
         }
     }
 }

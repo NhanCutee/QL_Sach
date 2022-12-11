@@ -1,7 +1,9 @@
 ﻿using QL_Sach.DTO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -58,6 +60,15 @@ namespace QL_Sach.BUS
                 for (nodeLienKet2 node = firstNode; node.Next != null; node = node.Next)
                     nhasachList.Add(node.NhaSachDTO);
                 return nhasachList;
+            }
+            set
+            {
+                this.xoaTatCa();
+                List<NhaSachDTO> nsList = value;
+                foreach (NhaSachDTO ns in nsList)
+                {
+                    this.themNhaSach(ns);
+                }
             }
         }
 
@@ -228,8 +239,91 @@ namespace QL_Sach.BUS
                     list.Add(node1.NhaSachDTO);
             return list.ToList();
         }
+
+        public bool luuFile()
+        {
+            try
+            {
+                FileStream fs = new FileStream("NhaSachData.bin", FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(fs, this.NhaSachList);
+                fs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool docFile()
+        {
+            try
+            {
+                FileStream fs = new FileStream("NhaSachData.bin", FileMode.Open);
+                BinaryFormatter bf = new BinaryFormatter();
+                this.NhaSachList = (List<NhaSachDTO>)bf.Deserialize(fs);
+                fs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public List<NhaSachDTO> timKiem(string tuKhoa)
+        {
+            List<NhaSachDTO> dsKetQua = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_MaNhaSach = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_TenNhaSach = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_DiaChi = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_TenQuanLi = new List<NhaSachDTO>();
+            List<NhaSachDTO> dsKetQua_SoLuongNhanVien = new List<NhaSachDTO>();
+
+
+            for(nodeLienKet2 node1 = this.firstNode; node1 !=null && node1.NhaSachDTO.MaNhaSach!="";node1=node1.Next)
+            {
+                if (node1.NhaSachDTO.MaNhaSach == tuKhoa.ToUpper())
+                {
+                    dsKetQua_MaNhaSach.Add(node1.NhaSachDTO);
+                    continue;
+                }
+                else if (node1.NhaSachDTO.TenNhaSach == tuKhoa)
+                {
+                    dsKetQua_TenNhaSach.Add(node1.NhaSachDTO);
+                    continue;
+                }
+                else if (node1.NhaSachDTO.DiaChi == tuKhoa)
+                {
+                    dsKetQua_DiaChi.Add(node1.NhaSachDTO);
+                    continue;
+                }
+                else if (node1.NhaSachDTO.TenQuanLi == tuKhoa)
+                {
+                    dsKetQua_TenQuanLi.Add(node1.NhaSachDTO);
+                    continue;
+                }
+                else if (node1.NhaSachDTO.SoLuongNhanVien.ToString() == tuKhoa)
+                {
+                    dsKetQua_SoLuongNhanVien.Add(node1.NhaSachDTO);
+                    continue;
+                }
+
+            }
+
+            dsKetQua = dsKetQua.Concat(dsKetQua_MaNhaSach).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_TenNhaSach).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_DiaChi).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_TenQuanLi).ToList();
+            dsKetQua = dsKetQua.Concat(dsKetQua_SoLuongNhanVien).ToList();
+
+            return dsKetQua;
+        }
+
     }
-    }
+}
 
 
 

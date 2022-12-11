@@ -185,18 +185,24 @@ namespace QL_Sach.BUS
         {
             if (loaiDS == "LibListT")
             {
+                if(!nhanVienListT.docFile())
+                    return false; 
                 nhanVienList = nhanVienListT.NhanVienList;
-                return nhanVienListT.docFile();
+                return true;
             }
             else if (loaiDS == "DSDac")
             {
+                if(!nhanVienDSDac.docFile())
+                    return false;
                 nhanVienList = nhanVienDSDac.NhanVienList;
-                return nhanVienDSDac.docFile();
+                return true;
             }
             else if (loaiDS == "DSLK")
             {
+                if(!nhanVienDSLK.docFile())
+                    return false;
                 nhanVienList = nhanVienDSLK.NhanVienList;
-                return nhanVienDSLK.docFile();
+                return true;
             }
             else return false;
         }
